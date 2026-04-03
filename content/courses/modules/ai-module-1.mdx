@@ -1,0 +1,464 @@
+---
+title: "Ai-module-1"
+slug: "ai-module-1"
+description: ":root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E3"
+order: 1
+---
+
+:root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E30613; --accent-inactive: rgba(227,6,19,0.2); --mobile-breakpoint: 768px; --tablet-breakpoint: 1024px; --mobile-padding: 0.1rem; --tablet-padding: 1.5rem; } body { font-family: "Mulish", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--main-bg); color: var(--primary-text); line-height: 1.6; } /\* Стили для плавающей кнопки поделиться \*/ .share-floating-btn { position: fixed; bottom: 100px; right: 30px; z-index: 1000; display: flex; flex-direction: column; align-items: center; } .share-btn { background: #3B82F6; color: white; padding: 14px 20px; border-radius: 50px; border: none; box-shadow: 0 6px 20px rgba(59, 130, 246, 0.3); cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); min-height: 50px; min-width: 50px; } .share-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4); background: #2563EB; } /\* Выпадающее меню \*/ .share-dropdown { position: absolute; bottom: 70px; right: 0; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); width: 280px; opacity: 0; visibility: hidden; transform: translateY(20px) scale(0.95); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 1002; } .share-dropdown.active { opacity: 1; visibility: visible; transform: translateY(0) scale(1); } .share-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem 0.5rem; border-bottom: 1px solid #e5e7eb; } .share-header span { font-weight: 600; color: var(--primary-text); } .close-share { background: none; border: none; color: var(--secondary-text); cursor: pointer; padding: 4px; border-radius: 4px; transition: all 0.2s ease; } .close-share:hover { background: #f3f4f6; color: var(--primary-text); } /\* Опции поделиться \*/ .share-options { padding: 0.75rem; display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; } .share-option { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 8px; background: none; border: 1px solid #e5e7eb; border-radius: 8px; cursor: pointer; transition: all 0.2s ease; font-size: 0.8rem; color: var(--primary-text); } .share-option:hover { background: #f8fafc; border-color: #3B82F6; transform: translateY(-2px); } .share-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: white; } /\* Цаета иконок \*/ .telegram { background: #0088cc; } .whatsapp { background: #25D366; } .vk { background: #4C75A3; } .twitter { background: #1DA1F2; } .copy { background: #6B7280; } .qr { background: #8B5CF6; } .email { background: #DC2626; } /\* Поле с URL \*/ .share-url { padding: 0.75rem 1rem; border-top: 1px solid #e5e7eb; display: flex; gap: 8px; } #shareUrlInput { flex: 1; padding: 8px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 0.8rem; background: #f9fafb; } .copy-url-btn { background: #3B82F6; color: white; border: none; border-radius: 6px; padding: 8px 12px; cursor: pointer; transition: background 0.2s ease; } .copy-url-btn:hover { background: #2563EB; } /\* Оверлей \*/ .share-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.5); opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1001; } .share-overlay.active { opacity: 1; visibility: visible; } /\* Модальное окно QR-кода \*/ .qr-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.7); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 1003; } .qr-modal.active { opacity: 1; visibility: visible; } .qr-modal-content { background: white; border-radius: 12px; padding: 1.5rem; max-width: 300px; width: 90%; text-align: center; } .qr-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; } .qr-header h3 { margin: 0; color: var(--primary-text); } .close-qr { background: none; border: none; color: var(--secondary-text); cursor: pointer; padding: 4px; border-radius: 4px; } .close-qr:hover { background: #f3f4f6; } .qr-code-container { padding: 1rem; background: white; border-radius: 8px; margin: 1rem 0; } /\* Адаптивность \*/ @media (max-width: 768px) { .share-floating-btn { bottom: 90px; right: 20px; } .share-btn { padding: 12px 16px; font-size: 0.8rem; min-height: 44px; min-width: 44px; } .share-text { display: none; } .share-btn { border-radius: 50%; width: 50px; height: 50px; justify-content: center; } .share-dropdown { width: 260px; right: -10px; } .share-options { grid-template-columns: 1fr; } } @media (max-width: 480px) { .share-floating-btn { bottom: 80px; right: 15px; } .share-btn { width: 45px; height: 45px; } .share-dropdown { width: 240px; } } /\* Анимации \*/ @keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } .share-floating-btn { animation: slideInUp 0.6s ease-out; } /\* Стили для плавающей кнопки поделиться - КРАСНАЯ ВЕРСИЯ \*/ .share-floating-btn { position: fixed; bottom: 100px; right: 30px; z-index: 1000; display: flex; flex-direction: column; align-items: center; } .share-btn { background: var(--accent-active); color: white; padding: 14px 20px; border-radius: 50px; border: none; box-shadow: 0 6px 20px rgba(227, 6, 19, 0.3); cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); min-height: 50px; min-width: 50px; } .share-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 8px 25px rgba(227, 6, 19, 0.4); background: #c4050f; } /\* Обновленные цвета для иконок в выпадающем меню \*/ .share-option:hover { background: #fef2f2; border-color: var(--accent-active); transform: translateY(-2px); } /\* Кнопка копирования ссылки \*/ .copy-url-btn { background: var(--accent-active); color: white; border: none; border-radius: 6px; padding: 8px 12px; cursor: pointer; transition: background 0.2s ease; } .copy-url-btn:hover { background: #c4050f; } /\* Уведомления тоже в красных тонах \*/ .share-notification { background: var(--accent-active) !important; } /\* Простая графика QR-кода в красном цвете \*/ .qr-modal-content canvas { border: 2px solid var(--accent-active); } /\* Адаптивность остается без изменений \*/ @media (max-width: 768px) { .share-floating-btn { bottom: 90px; right: 20px; } .share-btn { padding: 12px 16px; font-size: 0.8rem; min-height: 44px; min-width: 44px; } .share-text { display: none; } .share-btn { border-radius: 50%; width: 50px; height: 50px; justify-content: center; } .share-dropdown { width: 260px; right: -10px; } .share-options { grid-template-columns: 1fr; } } @media (max-width: 480px) { .share-floating-btn { bottom: 80px; right: 15px; } .share-btn { width: 45px; height: 45px; } .share-dropdown { width: 240px; } } /\* Анимации \*/ @keyframes slideInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } } .share-floating-btn { animation: slideInUp 0.6s ease-out; } /\*свойство для подсветки "База ИИ" в хлебных крошках при наведении \*/ .breadcrumb-item { cursor: pointer; transition: color 0.3s ease; text-decoration: none; } .breadcrumb-item:hover { color: var(--accent-active) !important; } .fa-home { transition: color 0.3s ease; } .fa-home:hover { color: var(--accent-active) !important; } /\* ===== АДАПТИВНЫЕ ТАБЫ ===== \*/ .tab-navigation { display: flex; flex-direction: column; gap: 0.25rem; width: 100%; } .tab-button { transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 0.25rem 0.5rem; min-height: 44px; justify-content: center; border-radius: 8px; margin-bottom: 0.25rem; width: 100%; display: flex; align-items: center; text-align: center; cursor: pointer; } .tab-button.active { color: var(--accent-active); border-bottom-color: var(--accent-active); } .tab-button:hover { color: var(--accent-active); background-color: var(--block-bg); } .ai-module-content .cta-button { background: var(--accent-active) !important; color: white !important; border-radius: 8px !important; text-decoration: none !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.3s ease !important; border: none !important; cursor: pointer !important; padding: 0.75rem 1.5rem !important; margin: 0.5rem !important; font-size: 0.9rem !important; min-height: 44px !important; } .ai-module-content .cta-button:hover { background: #c4050f !important; transform: translateY(-2px) !important; box-shadow: 0 8px 25px rgba(227, 6, 19, 0.3) !important; } /\* Специфичные стили для кнопок в подвале \*/ .footer-navigation .cta-button { width: 100% !important; max-width: 500px !important; /\* Убраны опасные свойства для текста \*/ } /\*Для всех модулей добавляем ===== КОМПОНЕНТЫ ===== \*/ .quiz-option { transition: all 0.3s ease; cursor: pointer; padding: 0.4rem; margin: 0.3rem 0; border: 1px solid #d1d5db; border-radius: 6px; background: white; font-size: 0.9rem; } .quiz-option:hover { background: var(--block-bg); } .quiz-option.correct { background: #10B981; color: white; border-color: #10B981; } .quiz-option.incorrect { background: var(--accent-active); color: white; border-color: var(--accent-active); } .ai-hierarchy { position: relative; background: linear-gradient(135deg, var(--block-bg) 0%, white 100%); border-radius: 12px; padding: var(--mobile-padding); margin: 0.2rem 0; } .hierarchy-level { margin: 0.25rem 0; padding: 0.5rem; border-radius: 8px; background: white; border-left: 4px solid var(--accent-active); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; transform: none; } .timeline-item { position: relative; padding-left: 1.5rem; margin: 1.5rem 0; } .timeline-item::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 12px; height: 12px; background: var(--accent-active); border-radius: 50%; } .timeline-item::after { content: ''; position: absolute; left: 5px; top: 1.2rem; width: 2px; height: calc(100% + 1rem); background: var(--accent-inactive); } .timeline-item:last-child::after { display: none; } .flip-card { background-color: transparent; width: 100%; height: 150px; perspective: 1000px; margin: 0.75rem 0; } .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; } .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); } .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-direction: column; text-align: center; overflow: hidden; box-sizing: border-box; } .flip-card-front { background-color: var(--block-bg); } .flip-card-back { background-color: var(--accent-active); color: white; transform: rotateY(180deg); } .accordion { border: 1px solid #e5e5e5; border-radius: 8px; margin: 1rem 0; } .accordion-header { padding: 1rem; background-color: var(--block-bg); cursor: pointer; border-radius: 8px 8px 0 0; transition: background-color 0.3s ease; } .accordion-header:hover { background-color: rgba(240, 244, 247, 0.7); } .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; } .accordion.active .accordion-content { max-height: none; padding: 1rem; overflow: visible; } .accordion-header { position: relative; padding: 1rem 1rem 2rem 1rem; /\* Увеличиваем нижний отступ для стрелки \*/ cursor: pointer; transition: all 0.3s ease; } /\* Стрелка под текстом \*/ .accordion-header::after { content: 'f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 50%; bottom: 0.5rem; transform: translateX(-50%); transition: transform 0.3s ease; color: var(--accent-active); font-size: 0.9em; } .accordion.active .accordion-header::after { transform: translateX(-50%) rotate(180deg); } /\* Стрелка поворачивается при раскрытии \*/ .accordion.active .accordion-header::after { transform: translateY(-50%) rotate(180deg); } .accordion-header:hover { background-color: rgba(227, 6, 19, 0.1); /\* Легкий красный оттенок \*/ box-shadow: 0 2px 8px rgba(227, 6, 19, 0.15); transform: translateY(-1px); } .content-block { background: var(--block-bg); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-active); } .chart-container { position: relative; height: 200px; margin: 1.5rem 0; } .content-section { margin-bottom: 2rem; } .highlight-box { background: linear-gradient(135deg, #fff 0%, var(--block-bg) 100%); border-left: 4px solid var(--accent-active); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; } .example-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; } .example-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; } /\* Стили для компактных карточек игроков \*/ .country-section { background: white; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(227, 6, 19, 0.1); } .country-header { display: flex; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent-active); } .country-header h3 { color: #2563eb !important; } .country-flag { font-size: 1.25rem; margin-right: 0.5rem; } .company-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1rem; } .company-item { background: #f8fafc; padding: 1rem; border-radius: 6px; } .company-name { font-weight: 600; color: #1e293b; margin-bottom: 0.25rem; } .company-model { color: #475569; font-size: 0.875rem; margin-bottom: 0.5rem; } .company-link { color: #2563eb !important; text-decoration: none; font-size: 0.875rem; } .company-link:hover { text-decoration: underline; } .company-facts { background: var(--block-bg); padding: 1rem; border-radius: 6px; font-size: 0.875rem; color: var(--secondary-text); margin-top: 0.75rem; } .country-strategy { background: var(--block-bg); padding: 1rem; border-radius: 6px; font-size: 0.875rem; color: var(--secondary-text); border-left: 3px solid var(--accent-active); } .breadcrumb-item { cursor: pointer; transition: color 0.3s ease; text-decoration: none; } .breadcrumb-item:hover { color: var(--accent-active) !important; } .tab-content { display: none; } .tab-content.active { display: block; } /\* ===== АДАПТИВНАЯ НАВИГАЦИЯ В ПОДВАЛЕ ===== \*/ .footer-navigation { display: flex; flex-direction: column; gap: 1rem; align-items: center; width: 100%; } .nav-button { width: 100% !important; max-width: 280px !important; justify-content: center; } /\* ===== МЕДИА-ЗАПРОСЫ ===== \*/ /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ @media (max-width: 768px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 480px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 360px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 768px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 480px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 360px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Уменьшить отступы в хлебных крошках \*/ @media (max-width: 768px) { .breadcrumb .flex { padding: 0.2rem 0 !important; } } /\* Компактные отступы для заголовка модуля \*/ @media (max-width: 768px) { header.text-center { margin-bottom: 0.5rem !important; } header h1 { margin-bottom: 0.2rem !important; } } @media (max-width: 768px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 480px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 360px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } /\* Для очень маленьких экранов \*/ @media (max-width: 480px) { /\* Уменьшаем табы \*/ .tab-navigation { gap: 0.25rem !important; /\* Минимальное расстояние между табами \*/ padding: 0.25rem 0 !important; } .tab-button { padding: 0.5rem 0.75rem !important; /\* Уменьшаем отступы \*/ font-size: 0.75rem !important; /\* Уменьшаем шрифт \*/ min-height: 36px !important; /\* Уменьшаем высоту \*/ margin-bottom: 0 !important; /\* Убираем отступы между табами \*/ } /\* Уменьшаем иконки \*/ .tab-button i { font-size: 0.65rem !important; margin-right: 0.25rem !important; } /\* Делаем табы более компактными \*/ .tab-button { white-space: nowrap; flex: 1; /\* Равномерно распределяем пространство \*/ min-width: 0; /\* Позволяем сжиматься \*/ } /\* Контейнер табов \*/ .tab-navigation { display: flex !important; flex-wrap: nowrap !important; overflow-x: visible !important; /\* Убираем прокрутку \*/ width: 100% !important; } } /\* Для экстремально маленьких экранов (менее 360px) \*/ @media (max-width: 360px) { .tab-button { padding: 0.4rem 0.6rem !important; font-size: 0.7rem !important; min-height: 34px !important; } .tab-button i { font-size: 0.6rem !important; margin-right: 0.2rem !important; } /\* Можно скрыть текст и оставить только иконки на самых маленьких экранах \*/ .tab-button span:not(.fa) { display: none; } .tab-button i { margin-right: 0 !important; } } /\* Мобильная версия \*/ @media (max-width: 768px) { .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.6rem 1.2rem !important; margin: 0.4rem !important; font-size: 0.85rem !important; min-height: 40px !important; } .footer-navigation .nav-button:last-child { max-width: 180px !important; min-width: 150px !important; } .footer-navigation { gap: 0.75rem !important; flex-wrap: wrap !important; justify-content: center !important; } .footer-navigation .cta-button { max-width: 220px !important; } /\* Упрощаем hover-эффекты на мобильных \*/ .hierarchy-level:hover { transform: none; } .example-card:hover { transform: none; } } @media (max-width: 768px) { .flip-card-front, .flip-card-back { padding: 0.5rem; font-size: 0.9em; line-height: 1.3; } } @media (max-width: 480px) { .flip-card-front, .flip-card-back { padding: 0.25rem; font-size: 0.8em; line-height: 1.2; } } /\* Планшетная версия \*/ @media (min-width: 769px) and (max-width: 1024px) { h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.85rem 1.75rem !important; margin: 0.75rem !important; font-size: 0.95rem !important; min-height: 46px !important; } .example-grid { grid-template-columns: repeat(2, 1fr); } .chart-container { height: 250px; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .hierarchy-level:hover { transform: translateX(8px); } .example-card:hover { transform: translateY(-2px); } } /\* Десктопная версия \*/ @media (min-width: 1025px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .breadcrumb { flex-wrap: nowrap; font-size: 1rem; } .module-counter { text-align: right; margin-top: 0; width: auto; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 1rem 2rem !important; margin: 1rem !important; font-size: 1rem !important; min-height: 48px !important; } /\* РАВНОМЕРНОЕ РАСПРЕДЕЛЕНИЕ ТАБОВ \*/ .tab-navigation { flex-direction: row; gap: 0.25rem; width: 100%; } .tab-button { width: 100%; flex: 1; } .ai-hierarchy { padding: 2rem; } .hierarchy-level:hover { transform: translateX(8px); } .example-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } .company-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } .flip-card { height: 200px; } .chart-container { height: 400px; } .text-block { max-width: 100%; } .content-section { margin-bottom: 3rem; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .example-card:hover { transform: translateY(-2px); } } /\* Социальное доказательство + CTA \*/ /\* .social-proof-cta { background: white; border: 2px solid var(--accent-active); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; text-align: center; } .stats { margin-bottom: 1rem; color: var(--secondary-text); display: flex; align-items: center; justify-content: center; gap: 8px; } .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; } .cta-primary, .cta-secondary { padding: 10px 20px; border-radius: 8px; border: none; cursor: pointer; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: all 0.3s ease; } .cta-primary { background: var(--accent-active); color: white; } .cta-secondary { background: white; color: var(--accent-active); border: 2px solid var(--accent-active); } \*/
+
+[](https://tu.by/ai-main/)[](https://tu.by/ai-main/)/ Модуль 1
+
+Модуль 1 из 7
+
+Поделиться
+
+Поделиться модулем
+
+Telegram
+
+WhatsApp
+
+ВКонтакте
+
+Twitter
+
+Скопировать ссылку
+
+QR-код
+
+Email
+
+### QR-код модуля
+
+Отсканируйте для быстрого доступа к модулю
+
+# Модуль 1: ИИ сегодня - Простая картина мира
+
+Получите четкое представление о месте ИИ в современном мире, его компонентах и трендах
+
+Обзор Углубленно Практика
+
+## Что такое ИИ и как он устроен?
+
+Искусственный интеллект можно представить как многоуровневую пирамиду, где каждый уровень строится на предыдущем. Понимание этой иерархии критически важно для любого, кто хочет эффективно использовать ИИ - инструменты в работе.
+
+
+
+### Искусственный интеллект (AI) - Artificial Intelligence
+
+**Пояснение:** Общая цель включает в себя создание "машин" - то есть компьютерных систем, алгоритмов и программ, которые способны выполнять задачи, обычно требующие человеческого интеллекта.
+
+**Аналогия:** Цель «Построить здание». Это самая общая задача. Неважно, что это будет-сарай, дом или небоскреб. Главное-создать искусственное сооружение.
+
+
+
+### Машинное обучение (ML) - Machine Learning
+
+**Пояснение:** Подход, при котором компьютер учится решать задачу на примерах данных, а не по жёстким инструкциям и вместо программирования, мы показываем множество примеров.
+
+**Аналогия:** Машинное обучение похоже на фабрику, которая учится делать идеальные детали для строительства. Она изучает тысячи фотографий домов и сама понимает, из каких основных частей (стен, окон, крыш) состоит любой дом. В итоге мы получаем набор этих умных деталей, из которых можно быстро собрать даже новый тип здания, просто немного по - другому их комбинируя.
+
+
+
+### Нейронные сети (NN) - Neural Networks
+
+**Пояснение:** Это компьютерные алгоритмы, которые работают по принципу человеческого мозга. Они состоят из множества взаимосвязанных «нейронов», которые учатся распознавать сложные закономерности в данных. Чем больше данных они обрабатывают, тем точнее становятся их прогнозы и решения.
+
+**Аналогия:** Арматурный каркас-это скелет нейронной сети, её архитектура. Многослойные связи между нейронами, как прутья, придают модели гибкость и мощь. Сами по себе эти слои - лишь пустая конструкция, но, будучи «залиты» бетоном (данными), они обретают способность решать сложные задачи, определяя форму и возможности будущей постройки.
+
+
+
+### Глубокое обучение (DL) - Deep Learning
+
+**Пояснение:** Машинное обучение с использованием очень больших и сложных нейронных сетей со множеством слоёв.
+
+**Аналогия:** «Строительство небоскрёба». Для этого нужен не простой каркас, а невероятно сложный, многоуровневый (глубокий) и прочный. Каждый новый этаж-это новый «слой» в сети, который позволяет решать всё более сложные задачи (чем выше, тем лучше обзор и сложнее инженерия).
+
+
+
+### Большие языковые модели (LLM) - Large Language Models
+
+**Пояснение:** Это очень большая нейросеть, которую натренировали на множестве текстов. Она научилась понимать смысл и сама писать тексты, как человек.
+
+**Аналогия:** Создание LLM похоже на возведение уникального небоскрёба. Сначала закладывается мощный фундамент и каркас (нейросеть), затем его «обучают»-как оснащают здание умными системами связи, чтобы оно могло эффективно работать с информацией.
+
+#### Краткий итог для запоминания:
+
+Хочу построить здание (AI)
+
+...использую современные технологии (ML)
+
+...а именно, мощный стальной каркас (NN)
+
+...чтобы возвести небоскрёб (DL)
+
+...и вот перед вами "Уникальный небоскреб" (LLM)
+
+## Краткая история ИИ: От мечты к реальности
+
+История искусственного интеллекта - это история человеческих амбиций, надежд, разочарований и триумфов. Понимание этого пути помогает лучше оценить текущие возможности и ограничения ИИ.
+
+### 1940-1950е: Теоретические основы
+
+**Алан Тьюринг** заложил математические основы вычислительной техники и в 1950 году предложил знаменитый тест Тьюринга - способ определить, может ли машина мыслить как человек.
+
+В 1956 году на конференции в Дартмуте **Джон Маккарти** впервые использовал термин "искусственный интеллект", формально основав новую научную дисциплину.
+
+**Интересный факт:** Тьюринг предсказал, что к 2000 году машины смогут обманывать 30% людей в течение 5 - минутного разговора. Это предсказание оказалось удивительно точным!
+
+### 1960-1990е: Первые практические системы
+
+**Unimate (1961)** - первый промышленный робот, начал работать на заводе General Motors. Это была первая коммерческая реализация ИИ в производстве.
+
+**ELIZA (1964)** - первый чат - бот, который мог поддерживать простую беседу, имитируя психотерапевта. Многие пользователи были поражены его "пониманием".
+
+**Deep Blue против Каспарова (1997)**\- знаковый момент, когда компьютер IBM впервые победил действующего чемпиона мира по шахматам в официальном матче.
+
+**ИИ - зимы:** В этот период были два периода "ИИ - зим" (1970е и 1980е), когда финансирование исследований резко сократилось из - за завышенных ожиданий и недостаточных результатов.
+
+### 2000е - сегодня: Революция машинного обучения
+
+**Roomba (2002)** - первый массовый домашний робот, который продемонстрировал, что ИИ может быть полезным в повседневной жизни.
+
+**iPhone с Siri (2011)**\- голосовые помощники стали доступны миллионам пользователей, изменив представление о взаимодействии с технологиями.
+
+**Watson в Jeopardy (2011)**\- система IBM продемонстрировала способность понимать естественный язык и работать с неструктурированными данными.
+
+**GPT - 3 (2020)**\- прорыв в области языковых моделей, показавший, что ИИ может генерировать качественный текст, практически неотличимый от человеческого.
+
+**AlphaFold 2 (DeepMind) (2020)**\-революционный прорыв в предсказании структуры белков. AlphaFold 2 решила проблему, которая мучила биологов более 50 лет (так называемая "проблема фолдинга белка"). Это открыло новые горизонты в биохимии, медицине (разработка лекарств) и биотехнологиях.
+
+**DALL-E 2 (апрель 2022)**\- прорыв в генерации изображений из текста с разрешением 1024×1024 пикселей.
+
+**ChatGPT (30 ноября 2022)**\- запуск публичной версии, которая достигла 100 миллионов пользователей за 2 месяца и стала самым быстрорастущим приложением в истории.
+
+**GPT - 4 (март 2023)**\- значительное улучшение качества языковой модели и добавление возможности обработки изображений.
+
+**Взрывной рост ИИ - инструментов: (2023)**\- Midjourney, Stable Diffusion, Claude, Bard и десятки других конкурирующих систем.
+
+**Поисковые системы с ИИ: (2025)**\-интеграция ChatGPT в поиск, развитие Perplexity, Grok.
+
+**ИИ - агенты: (2025)**\- переход от простых чат-ботов к автономным агентам, способным выполнять сложные задачи.
+
+## ИИ вокруг нас: Невидимый помощник
+
+Многие думают, что ИИ - это что - то футуристическое. На самом деле, вы уже взаимодействуете с ИИ десятки раз в день, даже не замечая этого. Осознание этого факта кардинально меняет отношение к технологии.
+
+ИИ стал настолько интегрированным в нашу жизнь, что воспринимается как естественная часть цифрового опыта. Это не случайность - это результат десятилетий развития, направленного на создание невидимых, но мощных помощников.
+
+### Повседневная жизнь
+
+#### Поисковые системы Google
+
+Каждый поисковый запрос обрабатывается сложными алгоритмами ML, которые учитывают ваше местоположение, историю поиска, время дня и тысячи других факторов для персонализации результатов.
+
+#### Голосовые помощники
+
+Siri, Alexa, Google Assistant используют сложные нейронные сети для распознавания речи, понимания интонаций и контекста ваших запросов.
+
+#### Рекомендательные системы
+
+Netflix анализирует не только что вы смотрите, но и когда вы ставите на паузу, перематываете или бросаете просмотр, чтобы предложить идеальный контент.
+
+#### Автокоррекция и предиктивный текст
+
+Ваш смартфон изучает ваш стиль письма и предсказывает следующие слова с точностью, которая постоянно улучшается.
+
+### Бизнес - применения
+
+#### Интеллектуальные чат-боты
+
+Современные чат-боты могут решать до 80% типовых запросов клиентов, работая 24/7 и постоянно обучаясь на новых диалогах.
+
+#### Предиктивная аналитика
+
+Розничные сети используют ИИ для прогнозирования спроса, оптимизации запасов и ценообразования в режиме реального времени.
+
+#### Автоматическая генерация контента
+
+Маркетинговые агентства используют ИИ для создания персонализированных email-кампаний, описаний товаров и даже целых статей.
+
+#### Системы безопасности
+
+Банки анализируют миллионы транзакций в секунду, выявляя подозрительные операции с точностью выше 99%.
+
+#### Парадокс ИИ
+
+Чем лучше работает ИИ, тем менее заметным он становится. Когда технология работает идеально, мы перестаем замечать ее как ИИ и воспринимаем как естественную функцию устройства. Это называется "эффектом ИИ"-как только ИИ решает задачу хорошо, люди перестают считать это искусственным интеллектом.
+
+## Главные тренды 2025 года
+
+2025 год станет переломным в развитии ИИ. Мы наблюдаем четыре ключевых тренда, которые кардинально изменят то, как мы взаимодействуем с искусственным интеллектом и используем его в бизнесе.
+
+### Продвинутое рассуждение (Reasoning Models)
+
+Новое поколение ИИ - моделей кардинально отличается от предыдущих. Если раньше ИИ работал по принципу "быстрого ответа", генерируя текст практически мгновенно, то модели рассуждения могут "думать" минутами.
+
+**Как это работает:** Модель получает задачу и начинает внутренний диалог с самой собой, рассматривая разные подходы, проверяя логику, выявляя ошибки и корректируя свои выводы. Этот процесс напоминает то, как человек решает сложную математическую задачу.
+
+**Практическое применение:** Такие модели идеально подходят для стратегического планирования, анализа сложных бизнес-кейсов, разработки маркетинговых стратегий, где важна не скорость, а качество и глубина размышлений.
+
+**Пример:** Вместо быстрого ответа "увеличьте рекламный бюджет", модель рассуждения проанализирует текущие показатели, рыночную ситуацию, конкурентов и предложит комплексную стратегию с обоснованием каждого решения.
+
+### Длинные контекстные окна
+
+Одним из главных ограничений ранних LLM была "память"-способность удерживать и обрабатывать ограниченный объем информации одновременно. В 2025 году это ограничение практически исчезает.
+
+**Технический прорыв:** Новые модели могут обрабатывать контекст объемом до 2 миллионов токенов-это примерно 1500 страниц текста или 3-4 часа аудиозаписи одновременно.
+
+**Революция в работе:** Теперь можно загрузить в ИИ весь годовой отчет компании, все email - переписки с клиентом, полную документацию по проекту и получить синтезированный анализ всей этой информации.
+
+**Бизнес-кейс:** Маркетолог может загрузить все материалы кампании за год (брифы, креативы, отчеты, обратную связь) и попросить ИИ выявить паттерны успешных и неуспешных решений для планирования следующего года.
+
+### ИИ - агенты и мультиагентные системы
+
+Это самый революционный тренд 2025 года. Мы переходим от ИИ - помощников, которые отвечают на вопросы, к ИИ - сотрудникам, которые могут выполнять комплексные задачи автономно.
+
+**Что такое ИИ - агент:** Это система, которая может ставить цели, планировать шаги для их достижения, использовать различные инструменты (поиск, анализ данных, создание контента), оценивать результаты и корректировать план действий.
+
+**Мультиагентные системы:** Несколько специализированных ИИ - агентов работают как команда сотрудников, где каждый отвечает за свою часть работы, но все вместе решают общую задачу.
+
+**Будущее работы:** Раньше обработкой заявки в салоне красоты занимались сотрудники: администратор записывал клиента, проверял расписание и наличие материалов, а потом напоминал о визите. Теперь эту работу выполняет ИИ: несколько агентов берут на себя каждую задачу и обмениваются данными, чтобы заявка была обработана быстро и без ошибок-это и есть мультиагентная система. ИИ делает это быстрее, без усталости и может обрабатывать десятки заявок одновременно, чего человеку достичь сложно.
+
+### Мультимодальность: Слияние всех типов контента
+
+Современные ИИ - системы преодолевают барьеры между различными типами контента. Они могут одновременно работать с текстом, изображениями, видео, аудио и даже кодом как с единым потоком информации.
+
+**Практические возможности:** Вы можете показать ИИ скриншот веб - сайта, рассказать голосом о проблемах с дизайном, приложить техническое задание в PDF, и система создаст новый дизайн, объяснит изменения текстом и даже сгенерирует код.
+
+**Революция в коммуникации:** Исчезает необходимость переводить идеи в текстовой формат. Можно работать с ИИ так же естественно, как с человеком - показывать, рассказывать, демонстрировать.
+
+**Например:** Вы хотите обновить интерьер комнаты. Загружаете фото помещения, голосом объясняете, что хотите больше света и уюта, добавляете список мебели из PDF - каталога. ИИ предложит варианты дизайна, покажет визуализации и составит список покупок.
+
+## Ключевые игроки на мировой арене ИИ
+
+Развитие ИИ стало вопросом национальной безопасности и экономического превосходства.
+
+🇺🇸
+
+### США: Глобальное лидерство
+
+OpenAI
+
+LLM: ChatGPT 5.1
+
+[https://chatgpt.com/](https://chatgpt.com/)
+
+**Интересный факт:** ChatGPT 5.1 набирает 94.6% на AIME 2025 по математике и 74.9% на SWE-bench по программированию-результаты уровня профессиональных разработчиков.
+
+Anthropic
+
+LLM: Claude Sonnet 4 / Opus 4.1
+
+[https://claude.ai/](https://claude.ai/)
+
+**Интересный факт:** Claude 4 Sonnet решает 64% задач по программированию в автономном режиме-в 1.7 раза лучше предыдущих версий.
+
+Google
+
+LLM: Gemini 3 Pro
+
+[https://gemini.google.com](https://gemini.google.com)
+
+**Интересный факт:** Gemini 3 Pro занял первое место на WebDev Arena, опережая конкурентов на +147 Elo пунктов в разработке веб - приложений.
+
+Meta
+
+LLM: Llama 4 Scout, Llama 4 Maverick
+
+[https://www.llama.com/](https://llama.meta.com)
+
+**Интересный факт:** Llama 4 Scout имеет контекстное окно в 10 миллионов токенов и может работать на одной GPU H100-революция в доступности ИИ.
+
+xAI
+
+LLM: Grok 4
+
+[https://grok.com/](https://grok.com/)
+
+**Интересный факт:** К сентябрю 2025 года Grok 4 интегрировалась с экосистемой SpaceX для анализа телеметрических данных в реальном времени, помогая выявлять аномалии в системах управления, энергоснабжения и полезной нагрузки спутников, что усиливает её применение в космических технологиях.
+
+**Стратегия:** Делать ставку на прорывные технологии через частный сектор. Крупнейшие ИТ - гиганты (OpenAI, Google DeepMind, Anthropic, Meta) формируют рынок, развивают масштабные LLM и коммерческие сервисы. Поддержка венчурного капитала и лидерство в инфраструктуре обеспечивают доминирование США в ИИ.
+
+🇨🇳
+
+### Китай: Масштаб и государственная поддержка
+
+DeepSeek V3.2
+
+LLM: DeepSeek V3.2
+
+[https://www.deepseek.com](https://www.deepseek.com)
+
+**Интересный факт:** DeepSeek V3.2 первая модель с гибридной архитектурой, умеющая переключаться между режимами "мышления" и "быстрого ответа".
+
+Baidu
+
+LLM: ERNIE 4.5 Turbo / Ernie X1.1
+
+[https://yiyan.baidu.com/](https://yiyan.baidu.com/)
+
+**Интересный факт:** ERNIE 4.0 - первая китайская LLM, получившая официальное разрешение правительства на публичное использование.
+
+Alibaba
+
+LLM: Qwen-3 Max
+
+[https://chat.qwen.ai/](https://chat.qwen.ai/)
+
+**Интересный факт:** Alibaba снизила цены на API на 97%, сделав ИИ доступным для миллионов малых предприятий в Азии.
+
+Moonshot AI
+
+LLM: Kimi K2
+
+[https://www.kimi.com/](https://www.kimi.com/)
+
+**Интересный факт:** На бенчмарке SWE-Bench Verified, проверяющем способность ИИ исправлять ошибки в коде, Kimi K2 показала 69,2% точности, что на уровне Claude Opus 4 и выше большинства конкурентов - при этом модель полностью open-source.
+
+**Стратегия:** Использовать огромные объемы данных (1,4 млрд пользователей), массовое финансирование и госрегулирование. Китай лидирует по числу публикаций и патентов, развивает конкуренцию между десятками локальных компаний, формирует доступные по цене альтернативы западным моделям.
+
+🇷🇺
+
+### Россия: Импортозамещение и локальные решения
+
+Сбер
+
+LLM: GigaChat 2.0 MAX
+
+[https://giga.chat/](https://giga.chat/)
+
+**Интересный факт:** GigaChat 2.0 MAX прошел аттестацию по финансовой грамотности и банковскому делу - единственная в мире ИИ - модель с такой сертификацией.
+
+Яндекс
+
+LLM: YandexGPT 5.1 Pro
+
+[https://alice.yandex.ru/](https://alice.yandex.ru/)
+
+**Интересный факт:** YandexGPT 5.1 Pro повысила точность ответов с 60% до 71%, став самой точной моделью для русскоязычных задач.
+
+**Стратегия:** Сосредоточиться на технологической независимости и национальной экосистеме. Поддержка русского языка и более 100 языков народов России, собственные облачные и вычислительные мощности (Сбер, Яндекс), импортозамещение и контроль над данными - ключ к цифровому суверенитету.
+
+eur
+
+### Европа (Франция): Регулирование и ответственность
+
+Mistral AI
+
+LLM: Mistral Large 2 / Medium 3.1
+
+[https://chat.mistral.ai/](https://chat.mistral.ai/)
+
+**Интересный факт:** К сентябрю 2025 года чатбот Le Chat от Mistral AI получил функцию Memories, позволяющую запоминать предыдущие разговоры и предпочтения пользователей, а также интеграцию с более чем 20 enterprise-инструментами, включая Asana, Atlassian и Snowflake.
+
+**Стратегия:** Формировать конкурентную экосистему ИИ с акцентом на ответственность, регулирование и защиту данных. Французская Mistral AI стала символом европейских амбиций: открытые веса моделей, исследовательская база и миллиарды инвестиций. Европа строит собственные дата-центры и AI-кампусы, чтобы укрепить позиции на глобальной арене.
+
+#### Основные тренды:
+
+**США:** Лидеры в коммерческих закрытых моделях, венчурном финансировании и масштабных технологических мощностях.
+
+**Китай:** Масштабная государственная поддержка, огромные объёмы данных, акцент на крупные модели и контроль.
+
+**Россия:** Суверенитет технологий, импортозамещение, развитие облачной и вычислительной инфраструктуры, поддержка национальных языков, усиление государственного регулирования.
+
+**Европа / Франция:** Ответственность, открытость, законы, защита данных, строительство собственной инфраструктуры, развитие исследовательских и стартап - экосистем, поддержка “европейских чемпионов” на глобальной арене.
+
+## Проверка знаний
+
+#### 1\. Что является самым широким понятием в иерархии ИИ?
+
+Искусственный интеллект (AI)
+
+Машинное обучение (ML)
+
+Большие языковые модели (LLM)
+
+Нейронные сети (NN)
+
+✓ Правильно! ИИ - это родительская технология для всех остальных.
+
+#### 2\. Ваш смартфон предлагает следующее слово при наборе текста, а музыкальный сервис создает плейлист под ваше настроение. Какая технология, описанная в модуле, лежит в основе этих функций?
+
+Только ИИ - агенты
+
+Машинное обучение (ML)
+
+Только Нейронные сети (NN)
+
+Парадокс ИИ
+
+✓ Верно! Тест Тьюринга был предложен в 1950 году.
+
+#### 3\. Что лучше всего описывает «Парадокс ИИ», упомянутый в обзоре?
+
+Чем лучше и незаметнее работает технология, тем реже мы считаем её искусственным интеллектом
+
+ИИ никогда не сможет мыслить как человек
+
+Создание ИИ всегда требует огромных вычислительных мощностей
+
+ИИ представляет экзистенциальную угрозу для человечества
+
+✓ Правильно! Рекомендательные системы используют ML для анализа предпочтений.
+
+#### 4\. Вспомните аналогию со строительством из первого раздела. Какому этапу соответствует «возведение невероятно сложного, многоуровневого каркаса для небоскрёба»?
+
+Искусственный интеллект (AI)
+
+Глубокое обучение (DL)
+
+Машинное обучение (ML)
+
+Большие языковые модели (LLM)
+
+✓ Правильно! Китай лидирует в научных публикациях и патентах по ИИ.
+
+#### 5\. Что отличает модели рассуждения от обычных LLM?
+
+Они работают быстрее
+
+Они могут "думать" и пересматривать свои выводы
+
+Они потребляют меньше энергии
+
+Они работают только с текстом
+
+✓ Верно! Модели рассуждения могут проводить внутренний диалог и корректировать свои ответы.
+
+## Ключевые термины
+
+### LLM
+
+Большие языковые модели. Это нейросети, обученные на гигантских объемах текста для понимания и генерации человеческой речи. Примеры: ChatGPT, YandexGPT, GigaChat.
+
+### Нейронные сети (NN)
+
+Тип искусственного интеллекта, который имитирует работу человеческого мозга через сеть взаимосвязанных узлов (нейронов)
+
+### Машинное обучение
+
+Подход, при котором машины учатся на примерах и опыте, а не следуют заранее запрограммированным правилам
+
+### ИИ - агенты
+
+Автономные ИИ - системы, которые могут ставить цели, планировать действия и выполнять сложные задачи самостоятельно
+
+### Мультимодальность
+
+Способность ИИ одновременно работать с разными типами данных: текст, изображения, аудио, видео
+
+### Контекстное окно
+
+Объем информации, который ИИ может удерживать и обрабатывать одновременно во время работы
+
+Обзор Углубленно Практика
+
+[Главная страница](https://tu.by/ai-main/)
+
+Модуль 1 из 7
+
+[Следующий модуль](https://tu.by/ai-module-2/)
+
+// Управление табами document.addEventListener('DOMContentLoaded', function() { console.log('🚀 Инициализация системы табов'); // Переменные для отслеживания прогресса (если нужно) let completedSteps = 0; let scrollProgress = false; // Функция для переключения табов function switchTab(targetTab) { console.log(\`🔄 Переключение на таб: ${targetTab}\`); // Удаляем активный класс со всех кнопок табов const allTabButtons = document.querySelectorAll('.tab-button'); allTabButtons.forEach(button => { button.classList.remove('active'); }); // Скрываем все контентные блоки табов const allTabContent = document.querySelectorAll('.tab-content'); allTabContent.forEach(content => { content.style.display = 'none'; content.classList.remove('active'); }); // Активируем все кнопки табов с соответствующим data-tab const targetButtons = document.querySelectorAll(\`\[data-tab="${targetTab}"\]\`); targetButtons.forEach(button => { button.classList.add('active'); console.log(\`✅ Кнопка таба "${targetTab}" активирована\`); }); // Показываем целевой контент const targetContent = document.getElementById(targetTab); if (targetContent) { targetContent.style.display = 'block'; targetContent.classList.add('active'); console.log(\`✅ Контент таба "${targetTab}" показан\`); // Прокрутка до самого верха страницы window.scrollTo({ top: 0, behavior: 'smooth' }); } else { console.error(\`❌ Контент для таба "${targetTab}" не найден\`); } } // Находим все кнопки табов const tabButtons = document.querySelectorAll('.tab-button'); console.log(\`📋 Найдено ${tabButtons.length} кнопок табов\`); // Добавляем обработчики клика для всех кнопок табов tabButtons.forEach(button => { const tabId = button.getAttribute('data-tab'); console.log(\`🔗 Настройка обработчика для таба: ${tabId}\`); button.addEventListener('click', function(e) { e.preventDefault(); switchTab(tabId); // Обновляем URL history.pushState(null, null, \`#${tabId}\`); }); }); // Определяем начальный активный таб let activeTab = null; // Проверяем, есть ли уже активный таб в URL const hash = window.location.hash.substring(1); if (hash && document.getElementById(hash)) { activeTab = hash; console.log(\`🎯 Активный таб из URL: ${activeTab}\`); } else { // Ищем активную кнопку в HTML const activeButton = document.querySelector('.tab-button.active'); if (activeButton) { activeTab = activeButton.getAttribute('data-tab'); console.log(\`🎯 Найден активный таб в HTML: ${activeTab}\`); } } // Если активный таб не найден, используем первый доступный if (!activeTab && tabButtons.length > 0) { activeTab = tabButtons\[0\].getAttribute('data-tab'); console.log(\`🎯 Установлен первый таб по умолчанию: ${activeTab}\`); } // Применяем начальное состояние if (activeTab) { switchTab(activeTab); } console.log('✨ Система табов успешно инициализирована'); }); // Квизы document.querySelectorAll('.quiz-option').forEach(option => { option.addEventListener('click', function() { const question = this.closest('.quiz-question'); const options = question.querySelectorAll('.quiz-option'); const feedback = question.querySelector('.quiz-feedback'); const isCorrect = this.getAttribute('data-correct') === 'true'; // Отключение кликов options.forEach(opt => { opt.style.pointerEvents = 'none'; if (opt.getAttribute('data-correct') === 'true') { opt.classList.add('correct'); } else if (opt === this && !isCorrect) { opt.classList.add('incorrect'); } }); // Показ обратной связи feedback.classList.remove('hidden'); if (isCorrect) { feedback.innerHTML = '<p class="text-green-600">✓ Правильно!</p>'; } else { feedback.innerHTML = '<p class="text-red-600">✗ Неправильно. Правильный ответ выделен зеленым.</p>'; } }); }); // Флип-карточки document.querySelectorAll('.flip-card').forEach(card => { card.addEventListener('click', function() { this.classList.toggle('flipped'); }); }); // Аккордеоны document.querySelectorAll('.accordion-header').forEach(header => { header.addEventListener('click', function() { const accordion = this.closest('.accordion'); const isActive = accordion.classList.contains('active'); // Закрытие всех аккордеонов document.querySelectorAll('.accordion').forEach(acc => { acc.classList.remove('active'); }); // Открытие текущего, если он был закрыт if (!isActive) { accordion.classList.add('active'); } }); }); // Диаграмма истории ИИ const ctx = document.getElementById('historyChart').getContext('2d'); const historyChart = new Chart(ctx, { type: 'line', data: { labels: \['1950', '1960', '1970', '1980', '1990', '2000', '2010', '2020', '2025'\], datasets: \[{ label: 'Развитие ИИ', data: \[1, 2, 1, 1, 3, 4, 6, 8, 10\], borderColor: '#E30613', backgroundColor: 'rgba(227, 6, 19, 0.1)', tension: 0.4, fill: true, pointBackgroundColor: '#E30613', pointBorderColor: '#E30613', pointHoverRadius: 8 }\] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { const milestones = { 1950: 'Тест Тьюринга', 1956: 'Рождение термина "ИИ"', 1970: 'Первая ИИ - зима', 1980: 'Экспертные системы', 1990: 'Возрождение нейросетей', 2000: 'Интернет и большие данные', 2010: 'Глубокое обучение', 2020: 'GPT и трансформеры', 2025: 'ИИ - агенты и мультимодальность' }; return milestones\[context.label\] || 'Развитие ИИ'; } } } }, scales: { y: { beginAtZero: true, title: { display: true, text: 'Уровень развития' } }, x: { title: { display: true, text: 'Годы' } } } } }); // Иерархия ИИ document.querySelectorAll('.hierarchy-level').forEach(level => { level.addEventListener('click', function() { // Анимация клика this.style.transform = 'translateX(12px)'; setTimeout(() => { this.style.transform = 'translateX(8px)'; }, 200); }); }); // Добавить в существующий script function saveModule() { // Сохранение в localStorage const savedModules = JSON.parse(localStorage.getItem('savedAIModules') || '\[\]'); if (!savedModules.includes('module1')) { savedModules.push('module1'); localStorage.setItem('savedAIModules', JSON.stringify(savedModules)); } // Визуальная обратная связь showNotification('Модуль сохранен в вашей библиотеке!', 'success'); } function bookmarkPage() { if (window.sidebar && window.sidebar.addPanel) { // Firefox window.sidebar.addPanel(document.title, window.location.href, ""); } else if (window.external && ('AddFavorite' in window.external)) { // IE window.external.AddFavorite(window.location.href, document.title); } else { // Другие браузеры alert('Нажмите ' + (navigator.userAgent.toLowerCase().indexOf('mac') != -1 ? 'Cmd+D' : 'Ctrl+D') + ' чтобы добавить страницу в закладки.'); } } function showNotification(message, type) { const notification = document.createElement('div'); notification.className = \`notification ${type}\`; notification.innerHTML = \` <i class="fas fa-${type === 'success' ? 'check' : 'info'}"></i> ${message} \`; document.body.appendChild(notification); setTimeout(() => { notification.remove(); }, 3000); } // Инициализация при загрузке document.addEventListener('DOMContentLoaded', function() { // Проверка сохраненных модулей const savedModules = JSON.parse(localStorage.getItem('savedAIModules') || '\[\]'); if (savedModules.includes('module1')) { // Обновить UI для показа сохраненного состояния document.querySelectorAll('.tab-bookmark').forEach(bookmark => { bookmark.classList.add('saved'); }); } }); // Функции для кнопки "Поделиться" function toggleShareMenu() { const dropdown = document.getElementById('shareDropdown'); const overlay = document.getElementById('shareOverlay'); if (dropdown.classList.contains('active')) { closeShareMenu(); } else { dropdown.classList.add('active'); overlay.classList.add('active'); document.body.style.overflow = 'hidden'; } } function closeShareMenu() { const dropdown = document.getElementById('shareDropdown'); const overlay = document.getElementById('shareOverlay'); dropdown.classList.remove('active'); overlay.classList.remove('active'); document.body.style.overflow = ''; } // Функции для различных способов поделиться function shareSocial(platform) { const url = encodeURIComponent(window.location.href); const title = encodeURIComponent(document.title); const text = encodeURIComponent('Посмотрите этот интересный модуль по ИИ'); const shareUrls = { telegram: \`https://t.me/share/url?url=${url}&text=${text}\`, whatsapp: \`https://wa.me/?text=${text}%20${url}\`, vkontakte: \`https://vk.com/share.php?url=${url}&title=${title}&comment=${text}\`, twitter: \`https://twitter.com/intent/tweet?text=${text}&url=${url}\` }; if (shareUrls\[platform\]) { window.open(shareUrls\[platform\], '\_blank', 'width=600,height=400'); } // Закрываем меню после выбора closeShareMenu(); showShareNotification(\`Открывается ${getPlatformName(platform)}...\`); } function getPlatformName(platform) { const names = { telegram: 'Telegram', whatsapp: 'WhatsApp', vkontakte: 'ВКонтакте', twitter: 'Twitter' }; return names\[platform\] || platform; } function copyLink() { const urlInput = document.getElementById('shareUrlInput'); urlInput.select(); urlInput.setSelectionRange(0, 99999); navigator.clipboard.writeText(urlInput.value).then(() => { showShareNotification('success', 'Ссылка скопирована в буфер обмена!'); }).catch(() => { // Fallback для старых браузеров document.execCommand('copy'); showShareNotification('success', 'Ссылка скопирована!'); }); closeShareMenu(); } function shareEmail() { const subject = encodeURIComponent(document.title); const body = encodeURIComponent(\`Посмотрите этот модуль по ИИ: ${window.location.href}\`); window.location.href = \`mailto:?subject=${subject}&body=${body}\`; closeShareMenu(); } function showQRCode() { const modal = document.getElementById('qrModal'); modal.classList.add('active'); // Генерация QR-кода (упрощенная версия) generateSimpleQRCode(); } function closeQRCode() { const modal = document.getElementById('qrModal'); modal.classList.remove('active'); } function generateSimpleQRCode() { const canvas = document.getElementById('qrCanvas'); const ctx = canvas.getContext('2d'); const url = window.location.href; // Устанавливаем размер canvas canvas.width = 200; canvas.height = 200; // Очищаем canvas ctx.fillStyle = 'white'; ctx.fillRect(0, 0, canvas.width, canvas.height); // Простая визуализация QR-кода (для демо) ctx.fillStyle = 'black'; ctx.font = '14px Arial'; ctx.textAlign = 'center'; ctx.fillText('QR-код модуля', canvas.width / 2, 30); ctx.font = '10px Arial'; ctx.fillText('ИИ сегодня', canvas.width / 2, 50); // Простая графика вместо настоящего QR-кода ctx.beginPath(); ctx.rect(50, 70, 100, 100); ctx.strokeStyle = '#3B82F6'; ctx.lineWidth = 2; ctx.stroke(); ctx.font = '8px Arial'; ctx.fillStyle = '#6B7280'; ctx.fillText('Scan with camera', canvas.width / 2, 185); // В реальном проекте используйте библиотеку типа qrcode.js // new QRCode(canvas, { text: url, width: 200, height: 200 }); } function showShareNotification(type, message) { const notification = document.createElement('div'); notification.className = \`share-notification ${type}\`; notification.innerHTML = \` <i class="fas fa-${type === 'success' ? 'check-circle' : 'share-alt'}"></i> <span>${message}</span> \`; notification.style.cssText = \` position: fixed; top: 100px; right: 30px; background: ${type === 'success' ? '#10B981' : '#3B82F6'}; color: white; padding: 12px 20px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); display: flex; align-items: center; gap: 10px; z-index: 1004; animation: slideInRight 0.3s ease-out; font-size: 0.9rem; \`; document.body.appendChild(notification); setTimeout(() => { notification.style.animation = 'slideOutRight 0.3s ease-in'; setTimeout(() => { if (notification.parentNode) { notification.parentNode.removeChild(notification); } }, 300); }, 3000); } // Закрытие по ESC document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { closeShareMenu(); closeQRCode(); } }); // Инициализация при загрузке document.addEventListener('DOMContentLoaded', function() { // Устанавливаем актуальный URL в поле ввода const urlInput = document.getElementById('shareUrlInput'); if (urlInput) { urlInput.value = window.location.href; } // Показываем кнопку с задержкой setTimeout(() => { const shareBtn = document.getElementById('shareFloatingBtn'); if (shareBtn) { shareBtn.style.opacity = '1'; } }, 1500); });

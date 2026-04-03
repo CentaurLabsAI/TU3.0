@@ -1,0 +1,393 @@
+---
+title: "Ai-module-6"
+slug: "ai-module-6"
+description: ":root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E3"
+order: 6
+---
+
+:root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E30613; --accent-inactive: rgba(227,6,19,0.2); --mobile-breakpoint: 768px; --tablet-breakpoint: 1024px; --mobile-padding: 0.1rem; --tablet-padding: 1.5rem; } /\*свойство для подсветки "База ИИ" в хлебных крошках при наведении \*/ .breadcrumb-item { cursor: pointer; transition: color 0.3s ease; text-decoration: none; } .breadcrumb-item:hover { color: var(--accent-active) !important; } .fa-home { transition: color 0.3s ease; } .fa-home:hover { color: var(--accent-active) !important; } /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ h1 { font-size: 1.75rem; line-height: 1.2; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; } .text-block { line-height: 1.6; max-width: 100%; } body { font-family: "Mulish", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--main-bg); color: var(--primary-text); line-height: 1.6; } /\* ===== АДАПТИВНЫЕ ТАБЫ ===== \*/ .tab-navigation { display: flex; flex-direction: column; gap: 0.25rem; width: 100%; } .tab-button { transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 0.25rem 0.5rem; min-height: 44px; justify-content: center; border-radius: 8px; margin-bottom: 0.25rem; width: 100%; display: flex; align-items: center; text-align: center; cursor: pointer; } .tab-button.active { color: var(--accent-active); border-bottom-color: var(--accent-active); } .tab-button:hover { color: var(--accent-active); background-color: var(--block-bg); } /\* ===== АДАПТИВНЫЕ КРАСНЫЕ КНОПКИ CTA ===== \*/ .ai-module-content .cta-button, .ai-module-content .cta-button \* { background: var(--accent-active) !important; color: white !important; border-radius: 8px !important; text-decoration: none !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.3s ease !important; border: none !important; cursor: pointer !important; text-align: center !important; padding: 0.75rem 1.5rem !important; margin: 0.5rem !important; font-size: 0.9rem !important; min-height: 44px !important; white-space: nowrap !important; /\* ВАЖНО: запрет переноса \*/ } .ai-module-content .cta-button:hover, .ai-module-content .cta-button:hover \* { background: #c4050f !important; transform: translateY(-2px) !important; box-shadow: 0 8px 25px rgba(227, 6, 19, 0.3) !important; } /\* Специфичные стили для кнопок в подвале \*/ .footer-navigation .cta-button { width: 100% !important; max-width: 500px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; } /\*Для всех модулей добавляем ===== КОМПОНЕНТЫ ===== \*/ .quiz-option { transition: all 0.3s ease; cursor: pointer; padding: 0.4rem; margin: 0.3rem 0; border: 1px solid #d1d5db; border-radius: 6px; background: white; font-size: 0.9rem; } .quiz-option:hover { background: var(--block-bg); } .quiz-option.correct { background: #10B981; color: white; border-color: #10B981; } .quiz-option.incorrect { background: var(--accent-active); color: white; border-color: var(--accent-active); } .ai-hierarchy { position: relative; background: linear-gradient(135deg, var(--block-bg) 0%, white 100%); border-radius: 12px; padding: var(--mobile-padding); margin: 0.2rem 0; } .hierarchy-level { margin: 0.25rem 0; padding: 0.5rem; border-radius: 8px; background: white; border-left: 4px solid var(--accent-active); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; transform: none; } .flip-card { background-color: transparent; width: 100%; height: 150px; perspective: 1000px; margin: 0.75rem 0; } .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; } .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); } .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-direction: column; text-align: center; overflow: hidden; box-sizing: border-box; } .flip-card-front { background-color: var(--block-bg); } .flip-card-back { background-color: var(--accent-active); color: white; transform: rotateY(180deg); } .workflow-step { background: var(--block-bg); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; cursor: pointer; transition: all 0.3s ease; position: relative; border-left: 4px solid var(--accent-active); } .workflow-step:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); } .workflow-step.active { background: var(--accent-active); color: white; } .framework-card { background: white; border-radius: 8px; padding: 1.5rem; margin: 1rem 0; border: 1px solid #e5e5e5; transition: all 0.3s ease; cursor: pointer; } .framework-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: var(--accent-active); } .framework-card.selected { border-color: var(--accent-active); background: rgba(227,6,19,0.05); } .use-case-card { background: var(--block-bg); border-radius: 8px; padding: 1.5rem; margin: 1rem 0; border-left: 4px solid var(--accent-active); } .comparison-table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); } .comparison-table th { background: var(--accent-active); color: white; padding: 1rem; text-align: left; font-weight: 600; } .flip-card-back, .workflow-step.active, .comparison-table th { color: white !important; } .comparison-table td { padding: 1rem; border-bottom: 1px solid #e5e5e5; vertical-align: top; } .comparison-table tr:hover { background: var(--block-bg); } .agent-flow { display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; justify-content: center; } .flow-step { background: white; border: 2px solid var(--accent-active); border-radius: 50%; width: 120px; height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease; position: relative; } .flow-step:hover { background: var(--accent-active); color: white; transform: scale(1.05); } .flow-step.active { background: var(--accent-active); color: white; } .flow-arrow { width: 0; height: 0; border-left: 10px solid var(--accent-active); border-top: 8px solid transparent; border-bottom: 8px solid transparent; margin: 0 10px; align-self: center; } .chart-container { position: relative; height: 200px; margin: 1.5rem 0; } .content-section { margin-bottom: 2rem; } .highlight-box { background: linear-gradient(135deg, #fff 0%, var(--block-bg) 100%); border-left: 4px solid var(--accent-active); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; } .example-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; } .example-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; } @media (max-width: 768px) { .agent-flow { flex-direction: column; align-items: center; } .flow-arrow { transform: rotate(90deg); margin: 10px 0; } .flow-step { width: 100px; height: 100px; } .comparison-table { font-size: 0.875rem; } } .tooltip { position: absolute; background: var(--primary-text); color: white; padding: 8px 12px; border-radius: 6px; font-size: 0.875rem; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 10; max-width: 200px; text-align: center; } .workflow-step:hover .tooltip { opacity: 1; visibility: visible; bottom: 100%; left: 50%; transform: translateX(-50%); } /\* Стили для компактных карточек игроков \*/ .country-section { background: white; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(227, 6, 19, 0.1); } .country-header { display: flex; align-items: center; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--accent-active); } .country-header h3 { color: #2563eb !important; } .country-flag { font-size: 1.25rem; margin-right: 0.5rem; } .company-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-bottom: 1rem; } .company-item { background: #f8fafc; padding: 1rem; border-radius: 6px; } .company-name { font-weight: 600; color: #1e293b; margin-bottom: 0.25rem; } .company-model { color: #475569; font-size: 0.875rem; margin-bottom: 0.5rem; } .company-link { color: #2563eb !important; text-decoration: none; font-size: 0.875rem; } .company-link:hover { text-decoration: underline; } .company-facts { background: var(--block-bg); padding: 1rem; border-radius: 6px; font-size: 0.875rem; color: var(--secondary-text); margin-top: 0.75rem; } .country-strategy { background: var(--block-bg); padding: 1rem; border-radius: 6px; font-size: 0.875rem; color: var(--secondary-text); border-left: 3px solid var(--accent-active); } .breadcrumb-item { cursor: pointer; transition: color 0.3s ease; text-decoration: none; } .breadcrumb-item:hover { color: var(--accent-active) !important; } .tab-content { display: none; } .tab-content.active { display: block; } /\* ===== АДАПТИВНАЯ НАВИГАЦИЯ В ПОДВАЛЕ ===== \*/ .footer-navigation { display: flex; flex-direction: column; gap: 1rem; align-items: center; width: 100%; } .nav-button { width: 100% !important; max-width: 280px !important; justify-content: center; } /\* ===== МЕДИА-ЗАПРОСЫ ===== \*/ /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ @media (max-width: 768px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 480px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 360px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 768px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 480px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 360px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Уменьшить отступы в хлебных крошках \*/ @media (max-width: 768px) { .breadcrumb .flex { padding: 0.2rem 0 !important; } } /\* Компактные отступы для заголовка модуля \*/ @media (max-width: 768px) { header.text-center { margin-bottom: 0.5rem !important; } header h1 { margin-bottom: 0.2rem !important; } } @media (max-width: 768px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 480px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 360px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } /\* Для очень маленьких экранов \*/ @media (max-width: 480px) { /\* Уменьшаем табы \*/ .tab-navigation { gap: 0.25rem !important; /\* Минимальное расстояние между табами \*/ padding: 0.25rem 0 !important; } .tab-button { padding: 0.5rem 0.75rem !important; /\* Уменьшаем отступы \*/ font-size: 0.75rem !important; /\* Уменьшаем шрифт \*/ min-height: 36px !important; /\* Уменьшаем высоту \*/ margin-bottom: 0 !important; /\* Убираем отступы между табами \*/ } /\* Уменьшаем иконки \*/ .tab-button i { font-size: 0.65rem !important; margin-right: 0.25rem !important; } /\* Делаем табы более компактными \*/ .tab-button { white-space: nowrap; flex: 1; /\* Равномерно распределяем пространство \*/ min-width: 0; /\* Позволяем сжиматься \*/ } /\* Контейнер табов \*/ .tab-navigation { display: flex !important; flex-wrap: nowrap !important; overflow-x: visible !important; /\* Убираем прокрутку \*/ width: 100% !important; } } /\* Для экстремально маленьких экранов (менее 360px) \*/ @media (max-width: 360px) { .tab-button { padding: 0.4rem 0.6rem !important; font-size: 0.7rem !important; min-height: 34px !important; } .tab-button i { font-size: 0.6rem !important; margin-right: 0.2rem !important; } /\* Можно скрыть текст и оставить только иконки на самых маленьких экранах \*/ .tab-button span:not(.fa) { display: none; } .tab-button i { margin-right: 0 !important; } } /\* Мобильная версия \*/ @media (max-width: 768px) { .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.6rem 1.2rem !important; margin: 0.4rem !important; font-size: 0.85rem !important; min-height: 40px !important; } .footer-navigation .nav-button:last-child { max-width: 180px !important; min-width: 150px !important; } .footer-navigation { gap: 0.75rem !important; flex-wrap: wrap !important; justify-content: center !important; } .footer-navigation .cta-button { max-width: 220px !important; } /\* Упрощаем hover-эффекты на мобильных \*/ .hierarchy-level:hover { transform: none; } .example-card:hover { transform: none; } } @media (max-width: 768px) { .flip-card-front, .flip-card-back { padding: 0.5rem; font-size: 0.9em; line-height: 1.3; } } @media (max-width: 480px) { .flip-card-front, .flip-card-back { padding: 0.25rem; font-size: 0.8em; line-height: 1.2; } } /\* Планшетная версия \*/ @media (min-width: 769px) and (max-width: 1024px) { h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.85rem 1.75rem !important; margin: 0.75rem !important; font-size: 0.95rem !important; min-height: 46px !important; } .example-grid { grid-template-columns: repeat(2, 1fr); } .chart-container { height: 250px; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .hierarchy-level:hover { transform: translateX(8px); } .example-card:hover { transform: translateY(-2px); } } /\* Десктопная версия \*/ @media (min-width: 1025px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .breadcrumb { flex-wrap: nowrap; font-size: 1rem; } .module-counter { text-align: right; margin-top: 0; width: auto; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 1rem 2rem !important; margin: 1rem !important; font-size: 1rem !important; min-height: 48px !important; } /\* РАВНОМЕРНОЕ РАСПРЕДЕЛЕНИЕ ТАБОВ \*/ .tab-navigation { flex-direction: row; gap: 0.25rem; width: 100%; } .tab-button { width: 100%; flex: 1; } .ai-hierarchy { padding: 2rem; } .hierarchy-level:hover { transform: translateX(8px); } .example-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } .company-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } .flip-card { height: 200px; } .chart-container { height: 400px; } .text-block { max-width: 100%; } .content-section { margin-bottom: 3rem; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .example-card:hover { transform: translateY(-2px); } } /\* Добавить в медиа-запросы для мобильных \*/ @media (max-width: 768px) { .quiz-option { padding: 0.75rem !important; margin: 0.5rem 0 !important; font-size: 0.9rem !important; line-height: 1.4 !important; word-wrap: break-word !important; overflow-wrap: break-word !important; hyphens: auto !important; text-align: left !important; min-height: auto !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } .quiz-question h3 { font-size: 1rem !important; line-height: 1.3 !important; } } @media (max-width: 480px) { .quiz-option { padding: 0.6rem !important; font-size: 0.85rem !important; line-height: 1.3 !important; margin: 0.4rem 0 !important; } .quiz-question { padding: 0.75rem !important; } .quiz-question h3 { font-size: 0.95rem !important; } } @media (max-width: 360px) { .quiz-option { padding: 0.6rem !important; font-size: 0.85rem !important; line-height: 1.3 !important; margin: 0.4rem 0 !important; } .quiz-question { padding: 0.75rem !important; } .quiz-question h3 { font-size: 0.95rem !important; }} /\* Добавить в медиа-запросы для кругов\*/ @media (max-width: 768px) { .flow-step { width: 70px !important; height: 70px !important; padding: 0.3rem !important; } .flow-step i { font-size: 1.1rem !important; margin-bottom: 0.2rem !important; } .flow-step span { font-size: 0.65rem !important; line-height: 1 !important; } .agent-flow { gap: 0.5rem !important; } .flow-arrow { width: 15px !important; } } @media (max-width: 480px) { .flow-step { width: 60px !important; height: 60px !important; } .flow-step i { font-size: 1rem !important; } .flow-step span { font-size: 0.4rem !important; } }
+
+[](https://tu.by/ai-main/)[](https://tu.by/ai-main/)/ Модуль 6
+
+Модуль 6 из 7
+
+# Модуль 6: ИИ - агенты и мульти - агентные системы
+
+Понимание автономных ИИ - систем и принципов их совместной работы
+
+Обзор Углубленно Практика
+
+## От чат - бота к ИИ - агенту: В чем разница?
+
+Когда вы заходите на официальные сайты ChatGPT, Claude, Gemini или любой другой языковой модели, вы общаетесь с **чат-ботом** - это классический интерфейс вопрос - ответ. Такие системы отвечают на ваши запросы, но не могут самостоятельно планировать долгосрочные действия или работать автономно над сложными задачами.
+
+**ИИ-агенты** - это принципиально другой уровень. Это автономные системы, которые могут самостоятельно ставить подцели, планировать последовательность действий, использовать внешние инструменты и учиться на своих ошибках для достижения сложных целей.
+
+### Чат-боты (ChatGPT, Claude, Gemini)
+
+-   Работают в режиме вопрос-ответ
+-   Ограниченная память разговора
+-   Не могут планировать действия
+-   Требуют постоянного управления человеком
+-   Реактивное поведение
+
+### ИИ-агенты
+
+-   **Автономное планирование и выполнение**
+-   **Долгосрочная память о задачах**
+-   **Использование внешних инструментов**
+-   **Обучение на собственном опыте**
+-   **Проактивные действия**
+
+### Как работает ИИ - агент: Цикл принятия решений
+
+В отличие от простых чат - ботов, ИИ - агенты работают по циклу принятия решений. Представьте умного помощника, который может не только отвечать на вопросы, но и самостоятельно разрабатывать план действий, выполнять его, анализировать результаты и корректировать свои действия для достижения лучшего результата.
+
+Анализ
+
+Изучение задачи, доступных ресурсов и ограничений
+
+Планирование
+
+Создание пошагового плана для достижения цели
+
+Выполнение
+
+Реализация плана с использованием доступных инструментов
+
+Обучение
+
+Анализ результатов и корректировка подхода для будущих задач
+
+#### Детали этапа:
+
+## Суперспособности ИИ - агентов
+
+### Работа с инструментами
+
+Агент может не только использовать готовые инструменты (поиск в интернете, календари, API), но и создавать новые специализированные инструменты для решения конкретных задач.
+
+**Пример:** Агент для анализа рынка может самостоятельно написать скрипт для извлечения данных с определенного сайта, если готового инструмента не существует.
+
+### Долгосрочная память
+
+В отличие от чат - ботов, которые забывают разговор после его завершения, ИИ-агенты могут сохранять и использовать информацию из прошлых взаимодействий для выполнения будущих задач.
+
+**Пример:** Агент - помощник помнит ваши предпочтения в работе, прошлые проекты и может использовать эту информацию для более точных рекомендаций.
+
+## Мульти - агентные системы: Команда ИИ
+
+Как и в реальной жизни, сложные задачи лучше решать командой. **Мульти - агентные системы** работают по тому же принципу - любую сложную задачу можно разбить на простые шаги, и каждый агент специализируется на решении одной конкретной подзадачи. Это снижает риски ошибок, позволяет вызывать агентов по мере необходимости и обеспечивает отказоустойчивость- если один агент "сломается", остальные продолжают работать.
+
+### Разделение сложности
+
+Сложная задача автоматически разбивается на простые, понятные шаги, которые легче выполнить и проверить.
+
+**Пример:** Создание презентации = исследование + анализ + дизайн + написание текста
+
+### Снижение рисков
+
+Каждый агент отвечает за свою область. Ошибка одного агента не влияет на работу других, что делает систему более надежной.
+
+**Пример:** Сбой в агенте - дизайнере не помешает агенту - аналитику собрать данные
+
+### Параллельная работа
+
+Несколько агентов могут работать одновременно над разными частями задачи, значительно ускоряя процесс выполнения.
+
+**Пример:** Пока один агент собирает данные, другой уже готовит шаблон отчета
+
+### Простой пример: Агентская команда для интернет - магазина
+
+**Агент - Аналитик:** Отслеживает продажи и тренды
+
+**Агент - Маркетолог:** Создает рекламные кампании
+
+**Агент - Поддержки:** Отвечает на вопросы клиентов
+
+**Агент - Координатор:** Управляет всей командой
+
+**Результат:** Магазин работает 24/7 с минимальным участием человека, каждый агент фокусируется на своей задаче, а координатор следит за общим результатом.
+
+## Реальные примеры применения ИИ - агентов
+
+### HR - отдел: Автоматизация найма сотрудников
+
+80%
+
+времени экономится
+
+10x
+
+ускорение отбора
+
+95%
+
+точность подбора
+
+#### Как работает агентская команда:
+
+1\. **Агент - Поисковик:** Сканирует LinkedIn, HeadHunter, GitHub в поисках подходящих кандидатов
+
+2\. **Агент - Аналитик:** Оценивает резюме по навыкам, опыту и соответствию требованиям
+
+3\. **Агент - Планировщик:** Автоматически назначает собеседования и отправляет приглашения
+
+4\. **Агент - Координатор:** Собирает обратную связь и готовит финальные рекомендации
+
+**Результат:** HR - специалисты тратят время только на важные решения и финальные интервью с лучшими кандидатами.
+
+### Интернет - магазин: Персонализированные продажи
+
+#### Команда агентов:
+
+-   **Агент - Аналитик:** Изучает поведение покупателей и их предпочтения
+-   **Агент - Рекомендаций:** Предлагает персональные товары для каждого клиента
+-   **Агент - Ценообразования:** Устанавливает оптимальные цены и скидки
+-   **Агент - Поддержки:** Отвечает на вопросы и помогает с покупками
+
+#### Впечатляющие результаты:
+
+-   Увеличение продаж на 40%
+-   Повышение удовлетворенности клиентов
+-   Сокращение времени обработки заказов
+-   Автоматическая работа 24/7
+
+**Ключевая особенность:** Каждый клиент получает уникальный опыт покупок, как если бы с ним работал персональный консультант.
+
+### Научные исследования: Ускорение открытий
+
+В научной сфере ИИ - агенты революционизируют процесс исследований, автоматизируя рутинные задачи и позволяя ученым сосредоточиться на творческих аспектах работы.
+
+#### Исследовательская команда:
+
+-   **Агент - Библиотекарь:** Ищет и анализирует научные статьи
+-   **Агент - Статистик:** Обрабатывает данные и строит модели
+-   **Агент - Экспериментатор:** Планирует и проводит опыты
+-   **Агент - Писатель:** Оформляет результаты в научные статьи
+
+5x
+
+ускорение исследований
+
+90%
+
+экономия времени на рутине
+
+**Перспектива:** ИИ - агенты могут самостоятельно генерировать и проверять научные гипотезы, значительно ускоряя темпы научного прогресса.
+
+## Инструменты для создания ИИ - агентов
+
+Для создания ИИ - агентов используются разные подходы. Если вы новичок или хотите быстро протестировать идею, вам подойдут визуальные конструкторы. Если же вы разработчик и вам нужен полный контроль, ваш выбор - это профессиональные фреймворки.
+
+### Простые инструменты (No - Code / Low - Code)
+
+Эти инструменты позволяют создавать рабочие процессы и автоматизации, соединяя готовые блоки. Они не являются полноценными фреймворками для разработки агентов, но служат отличной точкой входа. Например, n8n позволяет объединить несколько сервисов, включая языковые модели, для создания простого агентского процесса.
+
+Инструмент
+
+Ключевые особенности
+
+Применение
+
+Сложность
+
+**n8n**
+
+Визуальный конструктор
+
+• Визуальные рабочие процессы
+• Соединение разных сервисов через API
+• Гибкая настройка логики
+• Открытый исходный код
+
+Автоматизация маркетинга, аналитики, создание простых ботов для личных задач
+
+Низкая
+
+**Make (бывший Integromat)**
+
+Визуальный конструктор
+
+• Большая библиотека готовых интеграций
+• Мощный визуальный интерфейс
+• Гибкое управление данными
+• Облачная платформа
+
+Интеграция приложений, автоматизация бизнеса, создание сложных цепочек без кода
+
+Средняя
+
+### Профессиональные фреймворки для разработки
+
+Когда требуются высокие стандарты разработки - как в банковской сфере, государственных учреждениях, крупных корпорациях-необходимы профессиональные инструменты. Эти фреймворки обеспечивают:
+
+#### Безопасность
+
+Шифрование, аудит действий, соответствие стандартам безопасности
+
+#### Масштабируемость
+
+Обработка тысяч запросов, распределенная архитектура
+
+#### Надежность
+
+Отказоустойчивость, резервирование, мониторинг
+
+Фреймворк
+
+Ключевые особенности
+
+Лучше всего подходит для
+
+**LangChain**
+
+Python/JavaScript
+
+• Модульная архитектура
+• **LangGraph** для сложных процессов
+• Более 600 готовых интеграций
+• Активное сообщество
+
+API - ориентированные решения, сложные цепочки обработки данных
+
+**Microsoft AutoGen**
+
+Python
+
+• Гибкие мульти - агентные диалоги
+• Специализация на программировании
+• **Human - in - the - Loop** подход
+• Интеграция с Azure
+
+Автоматизация разработки, кодогенерация, тестирование софта
+
+**CrewAI**
+
+Python
+
+• Ролевая модель агентов
+• **Crew - of - Crews** иерархия
+• Простота использования
+• Встроенные инструменты
+
+Многоролевая автоматизация, создание контента, управление проектами
+
+**Semantic Kernel**
+
+C#/.NET
+
+• Высочайшая безопасность
+• Интеграция с Microsoft 365
+• **Конституционные правила**
+• Enterprise - ready
+
+**Банки, госучреждения**, крупный бизнес, финтех
+
+### Иерархические системы: Эффективное управление сложностью
+
+Представьте большую компанию: есть генеральный директор, который ставит общие цели, и есть отделы, каждый из которых отвечает за свою область. Точно так же работают иерархические мульти-агентные системы - есть **Агент-Менеджер**, который разбивает сложную задачу на простые части и поручает их **специализированным Агентам - Исполнителям**.
+
+#### Как это работает:
+
+**Агент - Менеджер** получает общую задачу от пользователя
+
+Разбивает ее на конкретные подзадачи
+
+Назначает каждую подзадачу подходящему агенту-специалисту
+
+Контролирует выполнение и собирает результаты
+
+Объединяет результаты в финальный ответ
+
+#### Ключевые преимущества:
+
+**Масштабируемость:** Легко добавлять новых агентов
+
+**Надежность:** Сбой одного агента не останавливает всю систему
+
+**Специализация:** Каждый агент - эксперт в своей области
+
+**Эффективность:** Параллельное выполнение задач
+
+#### Практический пример: Создание маркетинговой кампании
+
+**Задача:** "Создай маркетинговую кампанию для нового продукта"
+
+**Агент-Менеджер** разбивает задачу:
+
+1\. **Агенту - Аналитику:** "Изучи целевую аудиторию и конкурентов"
+
+2\. **Агенту - Креатору:** "Создай рекламные тексты и концепции"
+
+3\. **Агенту - Дизайнеру:** "Разработай визуальные материалы"
+
+4\. **Агенту - Планировщику:** "Составь медиаплан и бюджет"
+
+**Результат:** Полная кампания готова за несколько часов вместо недель ручной работы.
+
+## Проверка знаний
+
+#### 1\. Главное отличие ИИ - агента от чат - бота?
+
+ИИ - агенты могут автономно планировать и выполнять сложные задачи
+
+ИИ - агенты быстрее отвечают на вопросы
+
+ИИ - агенты лучше понимают естественный язык
+
+ИИ - агенты дешевле в использовании
+
+✓ Правильно! ИИ - агенты могут автономно планировать и выполнять сложные задачи.
+
+#### 2\. Какой фреймворк лучше всего подходит для банков и госучреждений?
+
+LangChain - из-за большого количества интеграций
+
+Semantic Kernel - из-за высоких стандартов безопасности
+
+CrewAI - из-за простоты использования
+
+AutoGen - из-за Microsoft поддержки
+
+✓ Верно! Semantic Kernel - из-за высоких стандартов безопасности.
+
+#### 3\. Главное преимущество мульти - агентных систем?
+
+Разделение сложных задач на простые специализированные части
+
+Они дешевле одиночных агентов
+
+Они работают быстрее чат - ботов
+
+Они не требуют программирования
+
+✓ Правильно! Разделение сложных задач на простые специализированные части
+
+## Ключевые термины
+
+### ИИ - агент
+
+Автономная система, способная самостоятельно планировать, выполнять задачи и учиться на опыте для достижения поставленных целей
+
+### Мульти - агентная система
+
+Несколько ИИ - агентов, работающих совместно для решения сложных задач, где каждый агент специализируется на определенной функции
+
+### Агент - Менеджер
+
+Координирующий агент в иерархической системе, который разбивает сложные задачи на подзадачи и управляет их выполнением
+
+### Долгосрочная память
+
+Способность ИИ - агента сохранять и использовать информацию из предыдущих взаимодействий для улучшения качества работы
+
+Обзор Углубленно Практика
+
+[Предыдущий модуль](https://tu.by/ai-module-5/)
+
+Модуль 6 из 7
+
+[Следующий модуль](https://tu.by/ai-module-7/)
+
+// Управление табами document.addEventListener('DOMContentLoaded', function() { console.log('🚀 Инициализация системы табов'); // Переменные для отслеживания прогресса (если нужно) let completedSteps = 0; let scrollProgress = false; // Функция для переключения табов function switchTab(targetTab) { console.log(\`🔄 Переключение на таб: ${targetTab}\`); // Удаляем активный класс со всех кнопок табов const allTabButtons = document.querySelectorAll('.tab-button'); allTabButtons.forEach(button => { button.classList.remove('active'); }); // Скрываем все контентные блоки табов const allTabContent = document.querySelectorAll('.tab-content'); allTabContent.forEach(content => { content.style.display = 'none'; content.classList.remove('active'); }); // Активируем все кнопки табов с соответствующим data-tab const targetButtons = document.querySelectorAll(\`\[data-tab="${targetTab}"\]\`); targetButtons.forEach(button => { button.classList.add('active'); console.log(\`✅ Кнопка таба "${targetTab}" активирована\`); }); // Показываем целевой контент const targetContent = document.getElementById(targetTab); if (targetContent) { targetContent.style.display = 'block'; targetContent.classList.add('active'); console.log(\`✅ Контент таба "${targetTab}" показан\`); // Прокрутка до самого верха страницы window.scrollTo({ top: 0, behavior: 'smooth' }); } else { console.error(\`❌ Контент для таба "${targetTab}" не найден\`); } } // Находим все кнопки табов const tabButtons = document.querySelectorAll('.tab-button'); console.log(\`📋 Найдено ${tabButtons.length} кнопок табов\`); // Добавляем обработчики клика для всех кнопок табов tabButtons.forEach(button => { const tabId = button.getAttribute('data-tab'); console.log(\`🔗 Настройка обработчика для таба: ${tabId}\`); button.addEventListener('click', function(e) { e.preventDefault(); switchTab(tabId); // Обновляем URL history.pushState(null, null, \`#${tabId}\`); }); }); // Определяем начальный активный таб let activeTab = null; // Проверяем, есть ли уже активный таб в URL const hash = window.location.hash.substring(1); if (hash && document.getElementById(hash)) { activeTab = hash; console.log(\`🎯 Активный таб из URL: ${activeTab}\`); } else { // Ищем активную кнопку в HTML const activeButton = document.querySelector('.tab-button.active'); if (activeButton) { activeTab = activeButton.getAttribute('data-tab'); console.log(\`🎯 Найден активный таб в HTML: ${activeTab}\`); } } // Если активный таб не найден, используем первый доступный if (!activeTab && tabButtons.length > 0) { activeTab = tabButtons\[0\].getAttribute('data-tab'); console.log(\`🎯 Установлен первый таб по умолчанию: ${activeTab}\`); } // Применяем начальное состояние if (activeTab) { switchTab(activeTab); } console.log('✨ Система табов успешно инициализирована'); }); // Квизы document.querySelectorAll('.quiz-option').forEach(option => { option.addEventListener('click', function() { const question = this.closest('.quiz-question'); const options = question.querySelectorAll('.quiz-option'); const feedback = question.querySelector('.quiz-feedback'); const isCorrect = this.getAttribute('data-correct') === 'true'; // Отключение кликов options.forEach(opt => { opt.style.pointerEvents = 'none'; if (opt.getAttribute('data-correct') === 'true') { opt.classList.add('correct'); } else if (opt === this && !isCorrect) { opt.classList.add('incorrect'); } }); // Показ обратной связи feedback.classList.remove('hidden'); if (isCorrect) { feedback.innerHTML = '<p class="text-green-600">✓ Правильно!</p>'; } else { feedback.innerHTML = '<p class="text-red-600">✗ Неправильно. Правильный ответ выделен зеленым.</p>'; } }); }); // Интерактивная схема workflow function showStepDetails(step) { const details = { 'observe': 'Агент анализирует поставленную задачу, изучает доступные ресурсы и определяет ограничения. Это критический этап, где закладывается понимание того, что нужно сделать.', 'plan': 'На основе анализа агент создает детальный план действий, определяет последовательность шагов и выбирает необходимые инструменты для выполнения задачи.', 'act': 'Агент приступает к выполнению плана, используя доступные инструменты и ресурсы. Может взаимодействовать с внешними системами и API.', 'reflect': 'После выполнения агент анализирует результаты, определяет успешность действий и сохраняет полученный опыт для улучшения будущих решений.' }; // Сброс активных состояний document.querySelectorAll('.flow-step').forEach(s => s.classList.remove('active')); // Активация выбранного шага document.querySelector(\`\[data-step="${step}"\]\`).classList.add('active'); // Показ деталей const detailsDiv = document.getElementById('step-details'); const descriptionP = document.getElementById('step-description'); descriptionP.innerHTML = details\[step\]; detailsDiv.classList.remove('hidden'); completedSteps++; updateProgress(); } // Выбор фреймворка function selectFramework(card, type) { document.querySelectorAll('.framework-card').forEach(c => c.classList.remove('selected')); card.classList.add('selected'); completedSteps++; updateProgress(); } // Квизы document.querySelectorAll('.quiz-option').forEach(option => { option.addEventListener('click', function() { const question = this.closest('.quiz-question'); const options = question.querySelectorAll('.quiz-option'); const feedback = question.querySelector('.quiz-feedback'); const isCorrect = this.getAttribute('data-correct') === 'true'; // Отключение кликов options.forEach(opt => { opt.style.pointerEvents = 'none'; if (opt.getAttribute('data-correct') === 'true') { opt.classList.add('correct'); } else if (opt === this && !isCorrect) { opt.classList.add('incorrect'); } }); // Показ обратной связи feedback.classList.remove('hidden'); if (isCorrect) { feedback.innerHTML = '<p class="text-green-600">✓ Правильно!</p>'; } else { feedback.innerHTML = '<p class="text-red-600">✗ Неправильно. Правильный ответ выделен зеленым.</p>'; } }); }); // Флип-карточки document.querySelectorAll('.flip-card').forEach(card => { card.addEventListener('click', function() { this.classList.toggle('flipped'); }); }); // Обработка скролла для прогресса let scrollProgress = false; window.addEventListener('scroll', function() { if (!scrollProgress && window.scrollY > 500) { scrollProgress = true; completedSteps++; updateProgress(); } });

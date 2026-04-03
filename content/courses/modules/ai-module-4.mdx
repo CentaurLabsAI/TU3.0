@@ -1,0 +1,687 @@
+---
+title: "Ai-module-4"
+slug: "ai-module-4"
+description: ":root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E3"
+order: 4
+---
+
+:root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E30613; --accent-inactive: rgba(227,6,19,0.2); --mobile-breakpoint: 768px; --tablet-breakpoint: 1024px; --mobile-padding: 0.1rem; --tablet-padding: 1.5rem; } /\*свойство для подсветки "База ИИ" в хлебных крошках при наведении \*/ .breadcrumb-item { cursor: pointer; transition: color 0.3s ease; text-decoration: none; } .breadcrumb-item:hover { color: var(--accent-active) !important; } .fa-home { transition: color 0.3s ease; } .fa-home:hover { color: var(--accent-active) !important; } /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ h1 { font-size: 1.75rem; line-height: 1.2; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; } .text-block { line-height: 1.6; max-width: 100%; } body { font-family: "Mulish", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--main-bg); color: var(--primary-text); line-height: 1.6; overflow-x: hidden; } /\* ===== АДАПТИВНЫЕ ТАБЫ ===== \*/ .tab-navigation { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; } .tab-button { transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 0.25rem 0.5rem; min-height: 44px; justify-content: center; border-radius: 8px; margin-bottom: 0.25rem; width: 100%; display: flex; align-items: center; text-align: center; cursor: pointer; font-size: 0.9rem; } .tab-button.active { color: var(--accent-active); border-bottom-color: var(--accent-active); } .tab-button:hover { color: var(--accent-active); background-color: var(--block-bg); } /\* ===== АДАПТИВНЫЕ КРАСНЫЕ КНОПКИ CTA ===== \*/ .ai-module-content .cta-button, .ai-module-content .cta-button \* { background: var(--accent-active) !important; color: white !important; border-radius: 8px !important; text-decoration: none !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.3s ease !important; border: none !important; cursor: pointer !important; text-align: center !important; padding: 0.75rem 1.5rem !important; margin: 0.5rem !important; font-size: 0.9rem !important; min-height: 44px !important; white-space: nowrap !important; } .ai-module-content .cta-button:hover, .ai-module-content .cta-button:hover \* { background: #c4050f !important; transform: translateY(-2px) !important; box-shadow: 0 8px 25px rgba(227, 6, 19, 0.3) !important; } /\* Специфичные стили для кнопок в подвале \*/ .footer-navigation .cta-button { width: 100% !important; max-width: 500px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; } /\*Для всех модулей добавляем ===== КОМПОНЕНТЫ ===== \*/ .quiz-option { transition: all 0.3s ease; cursor: pointer; padding: 0.4rem; margin: 0.3rem 0; border: 1px solid #d1d5db; border-radius: 6px; background: white; font-size: 0.9rem; } .quiz-option:hover { background: var(--block-bg); } .quiz-option.correct { background: #10B981; color: white; border-color: #10B981; } .quiz-option.incorrect { background: var(--accent-active); color: white; border-color: var(--accent-active); } .ai-hierarchy { position: relative; background: linear-gradient(135deg, var(--block-bg) 0%, white 100%); border-radius: 12px; padding: var(--mobile-padding); margin: 0.2rem 0; } .hierarchy-level { margin: 0.25rem 0; padding: 0.5rem; border-radius: 8px; background: white; border-left: 4px solid var(--accent-active); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; transform: none; font-size: 0.9rem; } .tab-content { display: none; } .tab-content.active { display: block; } .flip-card { background-color: transparent; width: 100%; height: 150px; perspective: 1000px; margin: 0.75rem 0; } .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; } .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); } .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-direction: column; text-align: center; overflow: hidden; box-sizing: border-box; font-size: 0.9rem; } .flip-card-front { background-color: var(--block-bg); } .flip-card-back { background-color: var(--accent-active); color: white; transform: rotateY(180deg); } .prompt-builder { background: linear-gradient(135deg, var(--block-bg) 0%, white 100%); border-radius: 12px; padding: 1rem; margin: 1rem 0; } .accordion { border: 1px solid #e5e5e5; border-radius: 8px; margin: 1rem 0; } .accordion-header { padding: 1rem; background-color: var(--block-bg); cursor: pointer; border-radius: 8px 8px 0 0; transition: background-color 0.3s ease; } .accordion-header:hover { background-color: rgba(240, 244, 247, 0.7); } .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; } .accordion.active .accordion-content { max-height: none; padding: 1rem; overflow: visible; } .accordion-header { position: relative; padding: 1rem 1rem 2rem 1rem; /\* Увеличиваем нижний отступ для стрелки \*/ cursor: pointer; transition: all 0.3s ease; } /\* Стрелка под текстом \*/ .accordion-header::after { content: '\\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 50%; bottom: 0.5rem; transform: translateX(-50%); transition: transform 0.3s ease; color: var(--accent-active); font-size: 0.9em; } .accordion.active .accordion-header::after { transform: translateX(-50%) rotate(180deg); } /\* Стрелка поворачивается при раскрытии \*/ .accordion.active .accordion-header::after { transform: translateY(-50%) rotate(180deg); } .accordion-header:hover { background-color: rgba(227, 6, 19, 0.1); /\* Легкий красный оттенок \*/ box-shadow: 0 2px 8px rgba(227, 6, 19, 0.15); transform: translateY(-1px); } .content-block { background: var(--block-bg); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-active); } .prompt-component { margin: 1rem 0; padding: 1rem; border-radius: 8px; background: white; border-left: 4px solid var(--accent-active); font-size: 0.9rem; } .generated-prompt { background: var(--primary-text); color: white; padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; margin-top: 1rem; font-size: 0.85rem; } .template-card { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: 1rem 0; transition: transform 0.3s ease; font-size: 0.9rem; } .template-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.15); } .before-after { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0; } .prompt-example { padding: 1rem; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 0.85rem; } .bad-prompt { background: #FEE2E2; border-left: 4px solid #EF4444; } .good-prompt { background: #DCFCE7; border-left: 4px solid #22C55E; } .search-bar { width: 100%; padding: 0.75rem; border: 2px solid var(--block-bg); border-radius: 8px; font-size: 0.9rem; transition: border-color 0.3s ease; } .search-bar:focus { outline: none; border-color: var(--accent-active); } .filter-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; } .filter-btn { padding: 0.5rem 0.75rem; border: 2px solid var(--block-bg); background: white; border-radius: 20px; cursor: pointer; transition: all 0.3s ease; font-size: 0.8rem; } .filter-btn.active { background: var(--accent-active); color: white; border-color: var(--accent-active); } .anatomy-section { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0; } .anatomy-card { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid var(--accent-active); font-size: 0.9rem; } /\* УЛУЧШЕННЫЕ СТИЛИ ДЛЯ КОНСТРУКТОРА ПРОМПТОВ \*/ .prompt-result-section { background: white; border-radius: 12px; padding: 1rem; margin: 1.5rem 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1); border: 1px solid #e2e8f0; position: relative; top: auto; z-index: 10; } .result-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 1rem; } .stats-bar { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.75rem; background: var(--block-bg); border-radius: 8px; font-size: 0.8rem; margin-bottom: 1rem; } .stat-item { display: flex; align-items: center; gap: 0.5rem; color: var(--secondary-text); } .result-content { width: 100%; background: #0f172a; color: #e2e8f0; padding: 1rem; border-radius: 8px; font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace; font-size: 0.8rem; line-height: 1.5; min-height: 200px; max-height: 400px; overflow-y: auto; white-space: pre-wrap; border: none; resize: vertical; } .result-content:focus { outline: none; box-shadow: 0 0 0 3px rgba(227,6,19,0.1); } .tooltip { position: relative; } .tooltip:hover::after { content: attr(data-tooltip); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); background: rgba(17, 24, 39, 0.95); color: white; padding: 0.5rem 0.75rem; border-radius: 8px; font-size: 0.8rem; white-space: nowrap; z-index: 100; margin-bottom: 0.5rem; } /\* Стили для конструктора-НОВЫЕ ДОБАВЛЕННЫЕ СТИЛИ \*/ .builder-section { background: white; border-radius: 12px; padding: 1rem; margin: 0.75rem 0; box-shadow: 0 2px 6px rgba(0,0,0,0.05); border: 1px solid #f1f5f9; transition: all 0.3s ease; position: relative; } .builder-section:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); } .builder-section.has-content { border-left: 4px solid var(--success); } .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem; flex-wrap: wrap; } .section-title { font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 0.5rem; } .section-description { color: #6b7280; font-size: 0.8rem; margin: 0.25rem 0 0.75rem 0; } .example-text { color: #9ca3af; font-size: 0.75rem; font-style: italic; margin: 0.25rem 0; } .quick-actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.5rem 0; } .dropdown-select { background: var(--block-bg); border: 1px solid #e2e8f0; padding: 0.5rem; border-radius: 6px; font-size: 0.8rem; cursor: pointer; transition: all 0.2s ease; width: 100%; } .dropdown-select:hover, .dropdown-select:focus { background: white; border-color: var(--accent-active); outline: none; } .smart-input { width: 100%; padding: 0.75rem; border: 2px solid #e2e8f0; border-radius: 8px; font-size: 0.9rem; transition: all 0.3s ease; resize: vertical; min-height: 80px; } .smart-input:focus { outline: none; border-color: var(--accent-active); box-shadow: 0 0 0 3px rgba(227,6,19,0.1); } .smart-input.has-content { border-color: var(--success); } .format-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin: 0.5rem 0; } .format-option { background: var(--block-bg); border: 2px solid transparent; border-radius: 8px; padding: 0.5rem; text-align: center; cursor: pointer; transition: all 0.3s ease; font-size: 0.8rem; } .format-option:hover, .format-option.selected { border-color: var(--accent-active); background: white; box-shadow: 0 2px 8px rgba(227,6,19,0.15); } .technique-card { background: white; border: 2px solid #e2e8f0; border-radius: 8px; padding: 0.75rem; margin: 0.5rem 0; cursor: pointer; transition: all 0.3s ease; font-size: 0.8rem; } .technique-card:hover { border-color: var(--accent-active); box-shadow: 0 2px 8px rgba(227,6,19,0.15); } .technique-card.active { border-color: var(--accent-active); background: rgba(227,6,19,0.05); } .example-item { display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem 0; padding: 0.75rem; background: var(--block-bg); border-radius: 8px; align-items: flex-start; } .action-buttons { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; } .btn-primary { background: var(--accent-active); color: white; padding: 0.75rem 1rem; border-radius: 8px; border: none; font-weight: 600; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.9rem; width: 100%; } .btn-primary:hover { background: #cc0512; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(227,6,19,0.3); } .btn-secondary { background: white; color: var(--primary-text); padding: 0.75rem 1rem; border-radius: 8px; border: 2px solid #e2e8f0; font-weight: 500; cursor: pointer; transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 0.9rem; width: 100%; } .btn-secondary:hover { border-color: var(--accent-active); color: var(--accent-active); } .slide-in { animation: slideIn 0.3s ease-out; } /\* НОВЫЕ СТИЛИ ДЛЯ РЕАЛЬНОГО ВРЕМЕНИ \*/ .realtime-indicator { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0.75rem; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--success); border-radius: 20px; font-size: 0.8rem; color: var(--success); font-weight: 500; } .pulse { width: 6px; height: 6px; background: var(--success); border-radius: 50%; animation: pulse 2s infinite; } @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } } @keyframes slideIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } } /\* ===== АДАПТИВНАЯ НАВИГАЦИЯ В ПОДВАЛЕ ===== \*/ .footer-navigation { display: flex; flex-direction: column; gap: 0.75rem; align-items: center; width: 100%; } .nav-button { width: 100% !important; max-width: 280px !important; justify-content: center; } /\* ===== МЕДИА-ЗАПРОСЫ ===== \*/ /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ @media (max-width: 768px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p, ul { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 480px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p, ul { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 360px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p, ul { line-height: 1.4 !important; font-size: 0.9rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 768px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 480px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 360px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Уменьшить отступы в хлебных крошках \*/ @media (max-width: 768px) { .breadcrumb .flex { padding: 0.2rem 0 !important; } } /\* Компактные отступы для заголовка модуля \*/ @media (max-width: 768px) { header.text-center { margin-bottom: 0.5rem !important; } header h1 { margin-bottom: 0.2rem !important; } } @media (max-width: 768px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 480px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 360px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } /\* ===== МЕДИА-ЗАПРОСЫ ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ ===== \*/ /\* Мобильная версия - ТАБЫ ПО ДВЕ В РЯД \*/ @media (max-width: 768px) { .tab-navigation { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; } .tab-button { margin-bottom: 0 !important; min-height: 44px; font-size: 0.8rem; padding: 0.75rem 0.5rem; border-radius: 8px; border-bottom: 2px solid transparent; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: center; justify-content: center; } .tab-button.active { border-bottom-color: var(--accent-active); } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.6rem 1.2rem !important; margin: 0.4rem !important; font-size: 0.85rem !important; min-height: 40px !important; } .footer-navigation .nav-button:last-child { max-width: 180px !important; min-width: 150px !important; } .footer-navigation { gap: 0.75rem !important; flex-wrap: wrap !important; justify-content: center !important; } .footer-navigation .cta-button { max-width: 220px !important; } /\* Упрощаем hover-эффекты на мобильных \*/ .hierarchy-level:hover { transform: none; } .example-card:hover { transform: none; } /\* Улучшаем отображение конструктора промптов \*/ .grid.grid-cols-1.lg\\:grid-cols-2.gap-8 { grid-template-columns: 1fr; gap: 1rem; } /\* Улучшаем читаемость длинного контента \*/ .result-content { font-size: 0.75rem; min-height: 150px; max-height: 300px; } } /\* Для очень маленьких экранов \*/ @media (max-width: 480px) { .tab-navigation { grid-template-columns: 1fr 1fr; gap: 0.4rem; } .tab-button { padding: 0.6rem 0.3rem !important; font-size: 0.75rem !important; min-height: 40px !important; } /\* Уменьшаем иконки \*/ .tab-button i { font-size: 0.7rem !important; margin-right: 0.3rem !important; } /\* Уменьшаем отступы контента \*/ .max-w-6xl.mx-auto.px-4 { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } /\* Уменьшаем заголовки \*/ h1 { font-size: 1.5rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1.1rem; } /\* Уменьшаем карточки \*/ .anatomy-card, .template-card, .builder-section { padding: 0.75rem; } /\* Улучшаем читаемость текста \*/ .text-block, .section-description, .example-text { font-size: 0.85rem; line-height: 1.5; } } /\* Для экстремально маленьких экранов (менее 360px) \*/ @media (max-width: 360px) { .tab-navigation { grid-template-columns: 1fr 1fr; gap: 0.3rem; } .tab-button span:not(.fa) { display: inline !important; /\* ✅ ВОССТАНАВЛИВАЕМ ТЕКСТ \*//\* Убираем скрытие текста на маленьких экранах \*/ } .tab-button { padding: 0.5rem 0.25rem !important; font-size: 0.7rem !important; min-height: 36px !important; } .tab-button i { font-size: 0.6rem !important; /\* ✅ Уменьшаем иконки вместо скрытия текста \*/ margin-right: 0.2rem !important; } .flip-card { height: 100px; } .btn-primary, .btn-secondary { padding: 0.6rem 0.8rem; font-size: 0.8rem; } /\* Уменьшаем все шрифты \*/ body { font-size: 0.9rem; } /\* Можно скрыть текст и оставить только иконки на самых маленьких экранах \*/ .tab-button span:not(.fa) { display: none; } .tab-button i { margin-right: 0 !important; font-size: 0.8rem !important; } /\* Еще больше уменьшаем отступы \*/ .max-w-6xl.mx-auto.px-4 { padding-left: 0.25rem !important; padding-right: 0.25rem !important; } /\* Уменьшаем кнопки \*/ .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.5rem 1rem !important; font-size: 0.8rem !important; min-height: 36px !important; } /\* Уменьшаем flip-карточки \*/ .flip-card { height: 120px; margin: 0.5rem 0; } .flip-card-front, .flip-card-back { padding: 0.5rem; font-size: 0.75rem; } } @media (max-width: 768px) { .flip-card-front, .flip-card-back { padding: 0.5rem; font-size: 0.8em; line-height: 1.3; } } @media (max-width: 480px) { .flip-card-front, .flip-card-back { padding: 0.25rem; font-size: 0.75em; line-height: 1.2; } } /\* Планшетная версия \*/ @media (min-width: 769px) and (max-width: 1024px) { .tab-navigation { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; } .tab-button { margin-bottom: 0 !important; min-height: 44px; font-size: 0.85rem; padding: 0.8rem 0.5rem; } h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.85rem 1.75rem !important; margin: 0.75rem !important; font-size: 0.95rem !important; min-height: 46px !important; } .example-grid { grid-template-columns: repeat(2, 1fr); } .chart-container { height: 250px; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .hierarchy-level:hover { transform: translateX(8px); } .example-card:hover { transform: translateY(-2px); } /\* Улучшаем конструктор для планшетов \*/ .anatomy-section { grid-template-columns: repeat(2, 1fr); } .format-grid { grid-template-columns: repeat(3, 1fr); } } /\* Десктопная версия \*/ @media (min-width: 1025px) { .tab-navigation { display: flex; flex-direction: row; gap: 0.25rem; width: 100%; } .tab-button { width: 100%; flex: 1; margin-bottom: 0.25rem; } h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .breadcrumb { flex-wrap: nowrap; font-size: 1rem; } .module-counter { text-align: right; margin-top: 0; width: auto; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 1rem 2rem !important; margin: 1rem !important; font-size: 1rem !important; min-height: 48px !important; } .ai-hierarchy { padding: 2rem; } .hierarchy-level:hover { transform: translateX(8px); } .example-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } .company-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } .flip-card { height: 200px; } .chart-container { height: 400px; } .text-block { max-width: 100%; } .content-section { margin-bottom: 3rem; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .example-card:hover { transform: translateY(-2px); } /\* Полная версия конструктора для десктопа \*/ .anatomy-section { grid-template-columns: repeat(3, 1fr); } .format-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); } .prompt-result-section { position: sticky; top: 100px; } } /\* Добавить в медиа-запросы для мобильных \*/ @media (max-width: 768px) { .quiz-option { padding: 0.75rem !important; margin: 0.5rem 0 !important; font-size: 0.9rem !important; line-height: 1.4 !important; word-wrap: break-word !important; overflow-wrap: break-word !important; hyphens: auto !important; text-align: left !important; min-height: auto !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } .quiz-question h3 { font-size: 1rem !important; line-height: 1.3 !important; } } @media (max-width: 480px) { .quiz-option { padding: 0.6rem !important; font-size: 0.85rem !important; line-height: 1.3 !important; margin: 0.4rem 0 !important; } .quiz-question { padding: 0.75rem !important; } .quiz-question h3 { font-size: 0.95rem !important; } } @media (max-width: 360px) { .quiz-option { padding: 0.6rem !important; font-size: 0.85rem !important; line-height: 1.3 !important; margin: 0.4rem 0 !important; } .quiz-question { padding: 0.75rem !important; } .quiz-question h3 { font-size: 0.95rem !important; }} /\* Адаптация заголовков в аккордеонах для мобильных \*/ @media (max-width: 768px) { .accordion .accordion-content h3, .content-block h3 { font-size: 1rem !important; line-height: 1.3 !important; margin-bottom: 0.75rem !important; } } @media (max-width: 480px) { .accordion .accordion-content h3, .content-block h3 { font-size: 0.95rem !important; line-height: 1.25 !important; margin-bottom: 0.5rem !important; } } @media (max-width: 360px) { .accordion .accordion-content h3, .content-block h3 { font-size: 0.9rem !important; line-height: 1.2 !important; margin-bottom: 0.4rem !important; } }
+
+[](https://tu.by/ai-main/)[](https://tu.by/ai-main/)/ Модуль 4
+
+Модуль 4 из 7
+
+# Модуль 4: Prompt Engineering - Искусство общения с ИИ
+
+Освойте практические навыки создания эффективных промптов и максимально раскройте потенциал ИИ в работе
+
+Обзор Углубленно Практика Конструктор промптов
+
+## Анатомия промпта: из чего состоит эффективный запрос
+
+Эффективный промпт -это не просто вопрос к ИИ, а структурированная инструкция, состоящая из нескольких ключевых компонентов. Понимание этих компонентов превращает общение с ИИ из случайного диалога в точный инструмент достижения целей.
+
+### Роль (Персона)
+
+Присвоение ИИ конкретной экспертной роли активирует нужные области его знаний и определяет стиль ответа.
+
+**Пример 1:** Ты-мой учитель английского. Объясняй простыми словами.
+
+**Пример 2:** Действуй как дружелюбный фитнес-тренер и составь лёгкий план тренировок.
+
+### Задача (Действие)
+
+Четкая команда, указывающая ИИ конкретное действие. Используйте глаголы действия: "создай", "проанализируй", "сравни".
+
+**Пример 1:** Объясни разницу между словами make и do простыми словами.
+
+**Пример 2:** Составь план лёгкой тренировки на 20 минут для новичка.
+
+### Контекст
+
+Справочная информация, которая помогает ИИ понять специфику вашей ситуации и избежать неверных предположений.
+
+**Пример 1:** Я начинающий студент, знаю только базовую грамматику и 100 слов.
+
+**Пример 2:** У меня сидячая работа и нет спортивного опыта, хочу тренироваться дома без оборудования.
+
+### Формат вывода
+
+Указание желаемой структуры ответа делает результат готовым к использованию без дополнительной обработки.
+
+**Пример 1:** Дай список слов в таблице с колонками: слово, перевод, пример предложения.
+
+**Пример 2:** Составь план тренировки в виде таблицы: упражнение, количество повторений, время отдыха.
+
+### Примеры
+
+Один-два примера желаемого результата значительно повышают точность выполнения сложных задач.
+
+**Пример 1:** Объясняй так, как в этом образце: word-перевод-короткое предложение с этим словом. Например: book-книга-I read a book.
+
+**Пример 2:** Составь упражнения в таком формате: упражнение-количество повторов-время отдыха. Например: приседания-15-30 секунд.
+
+### Входные данные
+
+Конкретная информация, которую нужно обработать-текст, данные, ссылки или документы.
+
+**Пример 1:** Вот текст для разбора: “I have a cat. She is very playful.
+
+**Пример 2:** Вот мои данные: рост 170 см, вес 70 кг, хочу тренироваться 3 раза в неделю дома.
+
+#### 💡 Ключевой принцип
+
+**Prompt Engineering - это новое "программирование" естественным языком.** Вместо кода вы используете структурированные инструкции для получения предсказуемых результатов. Чем точнее инструкция, тем лучше результат.
+
+
+
+
+## Базовые техники промптинга
+
+### Zero-shot промптинг
+
+Это самый простой способ дать команду ИИ: вы даёте только инструкцию, без примеров. Модель полностью полагается на свои знания, полученные при обучении.
+
+Пример:
+
+"Назови столицу Франции." "Скажи, какой цвет получается при смешении синего и жёлтого." "Переведи на английский: "Привет, как дела?""
+
+**Когда использовать:** Подходит для простых задач, которые модель хорошо понимает: определить, положительный или отрицательный отзыв, перевести короткий текст, написать краткий ответ.
+
+### Few-shot промптинг
+
+Вы даёте ИИ 2–5 примеров, чтобы он понял шаблон и смог применить его к новой задаче. Особенно полезно, если нужен определённый стиль или формат ответа.
+
+Пример 1:
+
+"Создание коротких советов::
+
+Ситуация: «Хочу научиться быстро читать» → “Ставь таймер на 10 минут каждый день'
+
+Ситуация: «Хочу высыпаться» → “Ложись спать и вставай в одно и то же время'
+
+Ситуация: «Хочу больше двигаться» → ?"
+
+Пример 2:
+
+"Классификация предметов:
+
+Объект: стул → мебель'
+
+Объект: ручка → канцелярия'
+
+Объект: тетрадь → ?"
+
+Пример 3:
+
+"Создай заголовки в стиле интернет-магазина:
+
+Товар: кроссовки Nike → 'Оригинальные кроссовки Nike со скидкой 30%'
+
+Товар: iPhone 15 → 'iPhone 15-новый уровень технологий в вашем кармане'
+
+Товар: мужская куртка → ?"
+
+**Когда использовать:** Создание контента по шаблону, извлечение структурированных данных
+
+### Chain-of-Thought (Цепочка рассуждений)
+
+Эта техника побуждает ИИ «думать вслух», разбивая сложную задачу на логические шаги. Без пошагового рассуждения модель часто действует линейно и может упустить важные детали или допустить ошибки, особенно в сложных задачах. Благодаря пошаговому подходу точность анализа и выводов значительно повышается.
+
+Пример:
+
+"Проанализируй эффективность этой рекламной кампании. Рассуждай пошагово:
+
+1\. Сначала оцени основные метрики
+
+2\. Сравни с отраслевыми стандартами
+
+3\. Выяви сильные и слабые стороны
+
+4\. Дай рекомендации по улучшению
+
+Данные кампании: \[вставить данные\]"
+
+**Когда использовать:** Аналитические задачи, стратегическое планирование, сложные вычисления
+
+#### 🎯 Правило выбора техники
+
+-   **Zero-shot:** Для простых, стандартных задач
+-   **Few-shot:** Когда нужен специфический формат или стиль
+-   **Chain-of-Thought:** Для сложного анализа и принятия решений
+
+
+
+## Распространенные ошибки и как их избежать
+
+### ❌ Типичные ошибки
+
+-   **Неопределенность:** "Помоги с маркетингом" вместо конкретной задачи
+-   **Отсутствие контекста:** Просьба проанализировать без предоставления данных
+-   **Противоречивые требования:** "Кратко, но подробно"-невыполнимые условия
+-   **Ожидание идеала с первого раза:** Промптинг-итеративный процесс
+-   **Игнорирование формата:** Получение неструктурированного ответа
+
+### ✅ Как исправить
+
+-   **Будьте конкретны:** Указывайте объем, стиль, целевую аудиторию
+-   **Предоставляйте контекст:** Всегда объясняйте специфику вашей ситуации
+-   **Проверяйте логику:** Убедитесь, что требования не противоречат друг другу
+-   **Итерируйте:** Уточняйте промпт на основе первых результатов
+-   **Всегда указывайте формат:** Таблица, список, параграфы-будьте точны
+
+#### 🔄 Принцип итеративного улучшения
+
+Лучшие промпты создаются не сразу. Начните с базовой версии, проанализируйте результат и уточните:
+
+1.  **Первая версия:** Базовый промпт с основными требованияи
+2.  **Анализ результата:** Что не устраивает в ответе ИИ?
+3.  **Уточнение:** Добавление недостающих деталей или ограничений
+4.  **Тестирование:** Проверка улучшенной версии
+5.  **Повторение:** До достижения нужного качества
+
+## Продвинутые методы промптинга
+
+### Когда использовать продвинутые методы?
+
+Эти техники требуют больше времени и токенов, но дают качественно лучшие результаты для сложных задач:
+
+-   Когда стоимость ошибки высока
+-   Для стратегических решений
+-   При работе с важными данными
+-   Для создания инновационных решений
+
+### Цепочка мыслей (Chain - of - Thought, CoT)
+
+###
+
+Это самый простой, но мощный продвинутый метод. Вместо того чтобы просить ИИ дать финальный ответ сразу, вы просите его объяснить свои рассуждения пошагово
+
+Простая аналогия как объяснить ребенку, почему 2+2=4:
+
+**Действие:** Вы не просто говорите ответ «четыре», а показываете:
+«Сначала у тебя есть 2 яблока 🍎🍎. Потом ты добавляешь еще 2 яблока 🍏🍏.
+
+**Действие:** Давай посчитаем их вместе: один, два, три, четыре. Получается четыре!»
+
+Пример: Планирование меню на неделю.
+
+❌ Плохой промпт:
+
+Составь меню на неделю для семьи из 4 человек.
+
+**Проблема:** ИИ может выдать слишком общее, несбалансированное или нереалистичное меню.
+
+✅ Хороший промпт (с CoT):
+
+Действуй как профессиональный диетолог. Составь сбалансированное меню на 7 дней для семьи из 4 человек (2 взрослых, 2 ребенка). Сначала рассуждай пошагово:
+1\. Учти, что нужно включать белки, жиры и углеводы.
+2\. Спланируй 3 основных приема пищи в день.
+3\. Предложи 1-2 перекуса.
+4\. Продумай, как можно использовать оставшиеся продукты (например, курица с ужина может пойти в салат на следующий день).
+После этого предоставь финальное меню в виде таблицы: День | Завтрак | Обед | Ужин
+
+Результат: ИИ выдаст логичное и продуманное меню, так как он сначала продумал все критерии.
+
+### Автоматическая цепочка мыслей (Auto - CoT)
+
+###
+
+Это развитие метода CoT. Если CoT требует от вас вручную писать примеры шагов рассуждения для каждой задачи, то Auto-CoT автоматизирует этот процесс. Он сам генерирует пошаговые рассуждения, чтобы затем использовать их как примеры
+
+Простая аналогия: студент, который сам себе пишет шпаргалки:
+
+Вы не тратите время на составление идеального примера для CoT. Вместо этого вы даете ИИ несколько простых вопросов, и он сам «размышляет» над ними. Эти самосозданные размышления он потом использует, чтобы отвечать на более сложные вопросы в рамках той же темы.
+
+Пример: решение математических задач.
+
+❌ Плохой промпт:
+
+Вычислить 15×23−(45+12).
+
+
+
+**Проблема:** ИИ может выдать неверный результат, не показывая промежуточные вычисления.
+
+✅ Хороший промпт (с Auto - CoT):
+
+Действуй как математический репетитор. Используй следующий пример пошагового рассуждения для решения задачи.
+Пример задачи: Вычислить 5×12+8.
+Мысль 1: Сначала выполняем умножение: 5×12=60.
+Мысль 2: Затем выполняем сложение: 60+8=68.
+Финальный ответ: 68.
+А теперь реши следующую задачу, используя те же шаги: Вычислить 15×23−(45+12).
+
+
+
+Результат: ИИ сам сгенерирует мысли для примера, а затем применит эту структуру для решения вашей задачи. Это позволяет масштабировать CoT без дополнительных трудозатрат.
+
+### Метод "Рассуждай и действуй" (ReAct)
+
+###
+
+Представьте, что вы-детектив. Чтобы раскрыть дело, вы не просто сидите и думаете, вы думаете, потом действуете (изучаете улики), потом думаете снова, учитывая новые данные. Это и есть ReAct.
+Этот метод-основа для создания ИИ-агентов, которые могут взаимодействовать с внешними инструментами (поисковые системы, базы данных и т.д.)
+
+Пример: поиск идеи для стартапа:
+
+Действуй как бизнес-аналитик.
+\*\*Мысль:\*\* Мне нужно найти перспективную нишу для стартапа. Начну с анализа трендов.
+\*\*Действие:\*\* Использую инструмент "Поиск в интернете", чтобы найти "Топ-10 бизнес-трендов 2025 года".
+\*\*Наблюдение:\*\* Получил список: "зеленая энергетика", "ИИ-образование", "умные дома"...
+\*\*Мысль:\*\* "ИИ-образование" звучит интересно. Нужно проверить, есть ли конкуренты.
+\*\*Действие:\*\* Использую инструмент "Поиск в интернете", чтобы найти "конкуренты ИИ-образовательных платформ".
+\*\*Наблюдение:\*\* Нашел 5 крупных конкурентов. У них есть мобильные приложения, но нет...
+\*\*Мысль:\*\* О, у них нет этого! Мой стартап может заполнить эту нишу...
+
+Применение: Комплексные исследования, пошаговое решение бизнес-задач, создание стратегий.
+
+### Дерево мыслей (Tree of Thoughts, ToT)
+
+###
+
+Это развитие CoT. Если CoT-это одна дорога, то ToT-это несколько дорог одновременно. ИИ размышляет над несколькими возможными вариантами решения, оценивает их, а затем выбирает наиболее перспективный.
+Простая аналогия: мозговой штурм с коллегами. Вы не просто предлагаете одну идею, а выслушиваете несколько вариантов от разных людей (разные «ветви» дерева), обсуждаете их плюсы и минусы, и только потом выбираете лучшую
+
+Пример: планирование рекламной кампании:
+
+Ты-креативный директор. Придумай 3 разных концепции рекламной кампании для нового энергетического напитка.
+Концепция 1: Фокус на спортсменах и достижении целей.
+Концепция 2: Фокус на студентах и повышении концентрации.
+Концепция 3: Фокус на любителях вечеринок и активном отдыхе. Для каждой концепции опиши целевую аудиторию, ключевое сообщение и основные каналы продвижения. После этого проанализируй все 3 варианта по критериям: уникальность, потенциальный охват, бюджет. Выбери лучшую концепцию и объясни свой выбор.
+
+Применение: Стратегическое планирование, креативные задачи, сложное принятие решений.
+
+### Граф мыслей (Graph of Thoughts, GoT)
+
+###
+
+Это логическое развитие ToT. Если ToT-это набор ветвящихся деревьев, то GoT позволяет мыслям не просто разветвляться, но и сливаться, образовывать циклы и возвращаться к предыдущим шагам. Это более гибкая и сложная структура, имитирующая нейронную сеть человеческого мозга
+
+Простая аналогия: разработка программного обеспечения:
+
+Вы не просто следуете одной дорожной карте (CoT) или исследуете несколько параллельных веток (ToT). Вы можете вернуться к предыдущему шагу, если обнаружили ошибку, или объединить два успешных решения в одно, чтобы создать более сложный, оптимизированный продукт.
+
+Пример: разработка сложной бизнес-стратегии
+
+Промпт:
+
+
+Разработай стратегию выхода на новый рынок для стартапа в сфере кибербезопасности. Используй метод "Граф мыслей".
+1\. Начни с "мысли-узла": "Анализ рынка".
+2\. Разветви его на 3 "мысли-узла": "Исследование конкурентов", "Поиск ниши", "Анализ законодательства".
+3\. Для "Поиска ниши" и "Исследования конкурентов" сгенерируй гипотезы и оцени их. Например, "гипотеза 1: фокус на малый бизнес", "гипотеза 2: фокус на финансовый сектор".
+4\. Создай "мысль-узел" "Оценка рисков" и "слияй" в него результаты из предыдущих узлов. Например, "Оценка рисков" должна учитывать данные из "Анализа законодательства" и гипотез.
+5\. Сформулируй финальную стратегию на основе наилучших путей и слияний, которые ты обнаружил.
+
+Применение: Мультиагентные системы, комплексные задачи с обратной связью, генерация сложных творческих произведений.
+
+### Метод самосогласованности (Self - Consistency)
+
+###
+
+ИИ, как и человек, может "забыться" и дать нелогичный ответ. Самосогласованность заставляет его перепроверять себя, генерируя несколько разных вариантов ответа и выбирая самый надежный
+
+Простая аналогия: голосование экспертов
+
+Если вы хотите найти правильный ответ, вы спросите нескольких экспертов. Если двое из них дадут один и тот же ответ, а третий-другой, вы, скорее всего, поверите большинству.
+
+Пример: поиск критической ошибки в коде
+
+❌ Плохой промпт:
+
+Найди ошибку в этом коде: \[ваш код\].
+
+**Проблема:** ИИ может выдать только одно предположение, которое может быть неверным.
+
+✅ Хороший промпт (с самосогласованностью):
+
+Ты-опытный разработчик. Проанализируй следующий код и найди ошибку. Сгенерируй 3 разных варианта поиска ошибки.
+Вариант 1: Проверь логику работы с переменными.
+Вариант 2: Проверь синтаксис и вызовы функций.
+Вариант 3: Проверь граничные условия и обработку исключений.
+Cравни результаты и дай самый вероятный вариант с обоснованием.
+
+Применение: Критически важные расчеты, проверка фактов, финансовый анализ.
+
+### Цепочка верификации (Chain - of - Verification, CoVe)
+
+###
+
+Это продвинутая техника самосогласованности, направленная на снижение галлюцинаций (ложной информации). Вместо того чтобы просто генерировать разные ответы, CoVe заставляет модель критически оценивать и проверять свою собственную работу
+
+Простая аналогия: научный редактор:
+
+Сначала редактор пишет черновик статьи. Затем он составляет список вопросов для проверки фактов. Потом он проверяет каждый факт, а затем переписывает статью, чтобы устранить ошибки и неточности. Это делает финальный текст намного более надежным.
+
+Пример: написание статьи на основе фактов.
+
+❌ Плохой промпт:
+
+Напиши статью о самых распространенных видах акул.
+
+**Проблема:** ИИ может "выдумать" несуществующие факты, цифры или виды.
+
+✅ Хороший промпт (с CoVe):
+
+Действуй как журналист-исследователь. Напиши статью о 5 самых распространенных видах акул. Используй метод "Цепочка верификации".
+1\. Генерация: Напиши черновик статьи.
+Планирование верификации: Составь список из 5 вопросов для проверки фактов, которые ты написал (например, "Действительно ли большая белая акула-самый крупный хищник в океане?").
+Верификация: Ответь на каждый вопрос, обращаясь к своим внутренним знаниям. Если ответ не совпадает с фактом из черновика, исправь его.
+Финальный черновик: Используй проверенную информацию, чтобы написать финальную, точную статью.
+
+Применение: Создание контента, требующего высокой точности (медицина, юриспруденция, научные исследования), написание отчетов.
+
+### XML - структурирование
+
+###
+
+Это не метод рассуждения, а способ форматирования промпта, который делает его более понятным для ИИ. Использование XML-тегов, таких как , или
+
+, помогает ИИ четко различать разные части вашего запроса
+
+Простая аналогия: заполнение анкеты по пунктам:
+
+Вместо того чтобы писать всё сплошным текстом, вы заполняете анкету, где четко указано: «Фамилия: \_\_», «Имя: \_\_». Это устраняет двусмысленность и гарантирует, что ИИ понимает, какая информация к чему относится.
+
+❌ Плохой промпт:
+
+Напиши статью о пользе медитации. Статья должна быть в научном стиле. Обязательно включи данные последних исследований.
+
+
+
+**Проблема:** ИИ может неверно определить, что является контекстом, что-задачей, а что-ограничениями.
+
+✅ Хороший промпт (с XML-структурированием):
+
+
+&ltrequest>
+&lttask>Написать статью.</task>
+&ltsubject>Польза медитации для снижения стресса.</subject>
+&ltconstraints>
+&ltstyle>Научный, строгий.
+</style> &ltlength&gt500 слов.</length>
+&ltsources> Включить ссылки на 2-3 последних исследования.</sources>
+</constraints>
+&ltoutput>Предоставить финальную статью.</output>
+</request>
+
+Применение: Создание сложных запросов с множеством параметров, автоматизация рабочих процессов, взаимодействие ИИ с другими системами.
+
+### Мета - промптинг (Meta - 00prompting)
+
+###
+
+Это использование ИИ для генерации или управления другими промптами. Вместо того чтобы писать промпт вручную, вы просите ИИ сделать это за вас
+
+Простая аналогия: менеджер проекта:
+
+Вместо того чтобы самому выполнять все задачи, вы нанимаете менеджера, который знает, как правильно делегировать задачи разным специалистам и как собрать их работу в финальный продукт. В этом случае менеджер-это ваш ИИ-помощник, а специалисты-другие ИИ-модели или инструменты.
+
+Пример: создание идеального промпта для генерации изображений
+
+Промпт:
+
+
+Пример: создание идеального промпта для генерации изображений \`Действуй как эксперт по созданию промптов для генерации изображений. Задача: Сгенерируй 5 разных промптов, которые максимально детализируют изображение старинного города. Требования к промптам:
+Промпт 1: Фокус на текстурах и освещении.
+Промпт 2: Фокус на атмосфере и настроении.
+Промпт 3: Фокус на деталях архитектуры и перспективе.
+Промпт 4: Фокус на элементах фэнтези.
+Промпт 5: Фокус на ретро-футуристическом стиле. Предоставь только промпты, без лишних объяснений.\`
+
+Применение: Автоматизация промпт-инжиниринга, создание сложных рабочих процессов, где один ИИ-агент управляет другими, итеративное улучшение промптов.
+
+### Продвинутые ролевые промпты (Enhanced Role Prompting)
+
+###
+
+Это развитие простого ролевого промпта, где вы даете ИИ не только роль, но и детальный набор правил, навыков и ограничений, чтобы он максимально точно имитировал эксперта
+
+Простая аналогия: актер, который готовится к роли:
+
+Просто сказать актеру «играй доктора»-это базовый промпт. Но если вы дадите ему сценарий с точными репликами, объясните мотивацию персонажа, его манеру речи и профессиональный жаргон-это продвинутый ролевой промпт. Результат будет гораздо более убедительным.
+
+Пример: анализ юридического документа.
+
+❌ Плохой промпт:
+
+Действуй как юрист. Проанализируй этот договор.
+
+
+
+**Проблема:** Ответ будет слишком общим и может содержать неточности.
+
+✅ Хороший промпт (с продвинутой ролью):
+
+Действуй как корпоративный юрист с 15-летним опытом, специализирующийся на сделках слияния и поглощения (M&A). Навыки: Знание российского законодательства в сфере корпоративного права. Способность находить скрытые риски и двусмысленности в формулировках. Умение кратко и по существу излагать сложные правовые вопросы. Задача: Проанализируй приложенный проект договора о партнерстве и выяви все потенциальные риски для моей компании. Сформулируй свои замечания в виде маркированного списка с обоснованием для каждого пункта.\`
+
+Применение: Получение высокоспециализированных ответов, глубокий анализ данных, имитация профессиональных консультантов.
+
+### Цепочечный промптинг (Prompt Chaining)
+
+###
+
+Это метод, при котором вы последовательно соединяете несколько промптов, где выход одного становится входом для следующего. Это позволяет решать сложные задачи по частям, как конвейер
+
+Простая аналогия: сборочный цех:
+
+На первом этапе детали собираются, на втором-красятся, на третьем-тестируются. Вы не пытаетесь сделать всё сразу в одном промпте, а разбиваете процесс на логичные, управляемые шаги.
+
+Пример: создание маркетингового плана
+
+Промпт:
+
+
+Промпт 1 (Анализ): "Проанализируй профиль идеального клиента для онлайн-курса по программированию. Предоставь 5 ключевых характеристик."
+Промпт 2 (Генерация): "Используя 5 характеристик из предыдущего анализа, сгенерируй 10 идей для рекламных постов в социальных сетях."
+Промпт 3 (Оценка): "Оцени 10 идей для постов по шкале от 1 до 10 по критериям: оригинальность, виральность, соответствие ЦА. Выбери 3 лучшие идеи и объясни свой выбор."
+
+Применение: Поэтапное решение сложных задач, построение автоматизированных рабочих процессов, создание гибких и управляемых систем на основе ИИ.
+
+### APE (Automatic Prompt Engineering)
+
+###
+
+APE-это метод, при котором ИИ автоматически генерирует и тестирует промпты, чтобы найти наиболее эффективный. Вам достаточно предоставить ему несколько пар "вход-выход", а он сам будет "инженерить" промпт
+
+Простая аналогия: оптимизация рекламы:
+
+Вы не знаете, какой рекламный текст сработает лучше всего. Вы создаете 10 разных вариантов и запускаете A/B-тест. С помощью APE ИИ делает то же самое, но не с рекламными объявлениями, а с промптами.
+
+Пример: поиск лучшего промпта для классификации текста
+
+Промпт:
+
+
+Я хочу, чтобы ты классифицировал следующий текст. У меня есть несколько примеров, как это должно работать. Сгенерируй промпт, который будет работать лучше всего на основе этих примеров.
+Пример 1: Вход: "Мне нравится это приложение!" Выход: "Позитивный"
+Пример 2: Вход: "Кажется, что-то не работает..." Выход: "Негативный"\`
+
+Применение: Автоматический поиск оптимальных промптов, когда вы не можете сформулировать их самостоятельно, ускорение разработки и прототипирования, создание кастомных моделей без ручного труда.
+
+### OPRO (Optimization by PROmpting)
+
+###
+
+OPRO - это продвинутая форма APE, разработанная Google DeepMind. Это итеративный процесс оптимизации промпта, где ИИ - модель выступает в роли «оптимизатора», который постепенно улучшает промпт, основываясь на результатах предыдущих попыток
+
+Простая аналогия: тренер по фитнесу:
+
+Тренер (ИИ-оптимизатор) наблюдает за вашей тренировкой (выполнением задачи), анализирует результаты (производительность промпта) и дает вам новую, улучшенную программу (новый промпт) для следующей попытки. Этот цикл повторяется до достижения оптимального результата.
+
+Пример: оптимизация промпта для генерации кода
+
+Мета-промпт (для ИИ-оптимизатора):
+
+
+"Ты-оптимизатор промптов. Твоя задача-улучшить следующий промпт для генерации Python-кода, чтобы он был более точным и кратким. Ниже представлена история итераций с их результатами. История итераций:
+Итерация 1:
+Промпт: "Напиши код на Python, чтобы отсортировать список чисел."
+Результат: (Результат выполнения)-Код работает, но неэффективен.
+Итерация 2:
+Промпт: "Напиши эффективный алгоритм сортировки списка Python."
+Результат: (Результат выполнения)-Алгоритм стал эффективнее, но не всегда работает с отрицательными числами.
+Итерация 3:
+Промпт: "Напиши эффективный и надежный алгоритм сортировки списка на Python, который учитывает отрицательные числа."
+Результат: (Результат выполнения)-Алгоритм работает идеально.
+Твоя задача: На основе этой истории предложи новый, улучшенный промпт для следующей итерации."\`
+
+Применение: Сложные задачи, где промпт требует тонкой настройки, научные исследования, поиск оптимальных решений в различных областях.
+
+### Активный промптинг (Active Prompting)
+
+###
+
+Это метод, который использует обратную связь от человека, чтобы улучшать промпты. ИИ сам определяет, в каких случаях ему требуется помощь, и просит у человека уточнения
+
+Простая аналогия: ученик, который не стесняется задавать вопросы:
+
+Вместо того чтобы гадать и делать ошибку, ученик (ИИ) поднимает руку и спрашивает у учителя (человека) то, в чем он не уверен. Это позволяет избежать ошибок и повысить качество обучения.
+
+Пример: генерация сложного отчета
+
+Промпт:
+
+Промпт (от человека): "Напиши финансовый отчет за 2024 год, включая анализ доходов, расходов и прогнозов на 2025 год. " Ответ ИИ: "Я могу это сделать, но мне не хватает данных. Вопрос к вам: Не могли бы вы предоставить точные цифры доходов и расходов? Какие ключевые факторы нужно учесть для прогноза на 2025 год (например, запуск нового продукта, изменения в законодательстве)? Предоставьте эту информацию, и я подготовлю точный отчет.""
+
+Применение: Задачи, требующие человеческого контроля и точных данных, обучение ИИ-систем на реальных примерах, создание интерактивных ассистентов.
+
+### Least-to-Most Prompting
+
+###
+
+Это двухэтапный метод, предназначенный для решения очень сложных задач. Сначала вы просите ИИ разбить большую проблему на серию более простых шагов, а затем просите его решить каждый шаг последовательно, используя результат предыдущего шага как вход для следующего
+
+Простая аналогия: строительство дома:
+
+Вы не начинаете со строительства крыши. Сначала вы разбиваете процесс на шаги:
+1) подготовка фундамента,
+2) возведение стен,
+3) установка крыши,
+4) внутренняя отделка.
+И только после этого вы выполняете каждый шаг в правильном порядке.
+
+Пример: написание научного обзора
+
+Промпт:
+
+
+Промпт 1 (Разбивка): "Разбей задачу 'Написать обзор литературы по квантовым вычислениям' на серию простых шагов. Каждый шаг должен быть логичным и выполняться последовательно." Ответ ИИ:
+Поиск источников: Найти актуальные научные статьи и книги.
+Обобщение: Прочитать и кратко изложить основные идеи каждой статьи.
+Анализ: Сравнить выводы разных исследований и выявить общие тенденции и противоречия.
+Синтез: Объединить все выводы в связный текст научного обзора.
+Промпт 2 (Решение, с использованием результатов):
+"Используя шаг 1 (Список источников), выполни шаг 2 (Обобщение) для каждой статьи. Затем, используя эти обобщения, выполни шаг 3 (Анализ)...."\`
+
+Применение: Решение сложных научных или математических задач, планирование сложных проектов, написание длинных и структурированных текстов.
+
+## Проверка знаний
+
+#### 1\. Какой компонент промпта помогает активировать нужные области знаний ИИ?
+
+Роль (Персона)
+
+Контекст
+
+Формат вывода
+
+Примеры
+
+✓ Правильно! Роль активирует специализированные знания ИИ.
+
+#### 2\. Какой метод лучше всего подходит для сложного анализа с пошаговыми рассужденияи?
+
+Zero - shot промптинг
+
+Few - shot промптинг
+
+Chain - of - Thought
+
+Self - consistency
+
+✓ Верно! Chain - of - Thought заставляет ИИ рассуждать пошагово.
+
+#### 3\. Что является главной проблемой плохого промпта "Напиши что - нибудь о маркетинге"?
+
+Неопределенность и отсутствие контекста
+
+Слишком сложная формулировка
+
+Отсутствие примеров
+
+Неправильная роль
+
+✓ Правильно! Промпт слишком расплывчатый и неконкретный.
+
+## Ключевые термины
+
+### Zero - shot промптинг
+
+Простейший метод-прямая инструкция без примеров. ИИ полагается только на знания из обучения
+
+### Few - shot промптинг
+
+Предоставление 2-5 примеров для обучения ИИ паттерну. Эффективно для специфических форматов
+
+### Chain - of - Thought
+
+Техника "думай вслух"-ИИ разбивает сложную задачу на логические шаги перед ответом
+
+### Self - consistency
+
+Генерация нескольких ответов разными способами с выбором наиболее согласованного результата
+
+## Конструктор промптов. Создай свой эффективный промпт
+
+
+
+### 🎭 1. Роль
+
+Выберите роль, от лица которой будет отвечать ИИ:
+
+Выберите роль... 🍳 Повар ✈️ Путешественник 🌱 Садовод 📈 Маркетолог ⚖️ Юрист 💪 Фитнес-тренер 💻 Программист 📚 Историк 💰 Финансовый консультант 👩‍🏫 Учитель 🎨 Дизайнер
+
+### 🎯 2. Задача
+
+Четко опишите, что должен сделать ИИ:
+
+### 🔍 3. Контекст
+
+Добавьте важные детали и ограничения:
+
+### 📋 4. Формат вывода
+
+Выберите, в каком виде хотите получить ответ:
+
+📝 Список 📊 Таблица 📋 План 💻 JSON ⚡ Кратко 📖 Подробно
+
+### 📥 5. Входные данные
+
+Данные, которые нужно обработать:
+
+🚀 Создать промпт
+
+### Готовый промпт
+
+0 символов
+
+0/6 разделов
+
+Ваш промпт появится здесь по мере заполнения полей... Начните с выбора роли эксперта или описания задачи.
+
+Копировать Очистить
+
+
+
+
+Обзор Углубленно Практика Конструктор промптов
+
+[Предыдущий модуль](https://tu.by/ai-module-3/)
+
+Модуль 4 из 7
+
+[Следующий модуль](https://tu.by/ai-module-5/)
+
+// Аккордеоны document.querySelectorAll('.accordion-header').forEach(header => { header.addEventListener('click', function() { const accordion = this.closest('.accordion'); const isActive = accordion.classList.contains('active'); // Закрытие всех аккордеонов document.querySelectorAll('.accordion').forEach(acc => { acc.classList.remove('active'); }); // Открытие текущего, если он был закрыт if (!isActive) { accordion.classList.add('active'); completedSteps++; updateProgress(); } }); }); // Управление табами document.addEventListener('DOMContentLoaded', function() { console.log('🚀 Инициализация системы табов'); // Переменные для отслеживания прогресса (если нужно) let completedSteps = 0; let scrollProgress = false; // Функция для переключения табов function switchTab(targetTab) { console.log(\`🔄 Переключение на таб: ${targetTab}\`); // Удаляем активный класс со всех кнопок табов const allTabButtons = document.querySelectorAll('.tab-button'); allTabButtons.forEach(button => { button.classList.remove('active'); }); // Скрываем все контентные блоки табов const allTabContent = document.querySelectorAll('.tab-content'); allTabContent.forEach(content => { content.style.display = 'none'; content.classList.remove('active'); }); // Активируем все кнопки табов с соответствующим data-tab const targetButtons = document.querySelectorAll(\`\[data-tab="${targetTab}"\]\`); targetButtons.forEach(button => { button.classList.add('active'); console.log(\`✅ Кнопка таба "${targetTab}" активирована\`); }); // Показываем целевой контент const targetContent = document.getElementById(targetTab); if (targetContent) { targetContent.style.display = 'block'; targetContent.classList.add('active'); console.log(\`✅ Контент таба "${targetTab}" показан\`); // Прокрутка до самого верха страницы window.scrollTo({ top: 0, behavior: 'smooth' }); } else { console.error(\`❌ Контент для таба "${targetTab}" не найден\`); } } // Находим все кнопки табов const tabButtons = document.querySelectorAll('.tab-button'); console.log(\`📋 Найдено ${tabButtons.length} кнопок табов\`); // Добавляем обработчики клика для всех кнопок табов tabButtons.forEach(button => { const tabId = button.getAttribute('data-tab'); console.log(\`🔗 Настройка обработчика для таба: ${tabId}\`); button.addEventListener('click', function(e) { e.preventDefault(); switchTab(tabId); // Обновляем URL history.pushState(null, null, \`#${tabId}\`); }); }); // Определяем начальный активный таб let activeTab = null; // Проверяем, есть ли уже активный таб в URL const hash = window.location.hash.substring(1); if (hash && document.getElementById(hash)) { activeTab = hash; console.log(\`🎯 Активный таб из URL: ${activeTab}\`); } else { // Ищем активную кнопку в HTML const activeButton = document.querySelector('.tab-button.active'); if (activeButton) { activeTab = activeButton.getAttribute('data-tab'); console.log(\`🎯 Найден активный таб в HTML: ${activeTab}\`); } } // Если активный таб не найден, используем первый доступный if (!activeTab && tabButtons.length > 0) { activeTab = tabButtons\[0\].getAttribute('data-tab'); console.log(\`🎯 Установлен первый таб по умолчанию: ${activeTab}\`); } // Применяем начальное состояние if (activeTab) { switchTab(activeTab); } console.log('✨ Система табов успешно инициализирована'); }); // Переменные для квизов и карточек let completedSteps = 0; function updateProgress() { // Функция-заглушка для совместимости } // Квизы document.querySelectorAll('.quiz-option').forEach(option => { option.addEventListener('click', function() { const question = this.closest('.quiz-question'); const options = question.querySelectorAll('.quiz-option'); const feedback = question.querySelector('.quiz-feedback'); const isCorrect = this.getAttribute('data-correct') === 'true'; options.forEach(opt => { opt.style.pointerEvents = 'none'; if (opt.getAttribute('data-correct') === 'true') { opt.classList.add('correct'); } else if (opt === this && !isCorrect) { opt.classList.add('incorrect'); } }); feedback.classList.remove('hidden'); if (isCorrect) { feedback.innerHTML = '<p class="text-green-600">✓ Правильно!</p>'; } else { feedback.innerHTML = '<p class="text-red-600">✗ Неправильно. Правильный ответ выделен зеленым.</p>'; } completedSteps++; updateProgress(); }); }); // Флип-карточки document.querySelectorAll('.flip-card').forEach(card => { card.addEventListener('click', function() { this.classList.toggle('flipped'); if (this.classList.contains('flipped')) { completedSteps++; updateProgress(); } }); }); // ======= ГЕНЕРАЦИЯ ПРОМПТА В РЕАЛЬНОМ ВРЕМЕНИ ======= function generatePromptRealTime() { const role = getCurrentRole(); const task = document.getElementById('taskInput').value.trim(); const context = document.getElementById('contextInput').value.trim(); const format = getCurrentFormat(); const examples = document.getElementById('examplesInput').value.trim(); const data = document.getElementById('dataInput').value.trim(); let prompt = ''; let filledSections = 0; // 1. Роль if (role) { prompt += \`Ты-${role}.\\n\\n\`; filledSections++; } // 2. Задача if (task) { prompt += \`Задача: ${task}\\n\\n\`; filledSections++; } // 3. Контекст if (context) { prompt += \`Контекст: ${context}\\n\\n\`; filledSections++; } // 4. Примеры (до формата, чтобы показать pattern) if (examples) { prompt += \`Примеры:\\n${examples}\\n\\n\`; filledSections++; } // 5. Формат if (format) { prompt += \`Формат ответа: ${format}\\n\\n\`; filledSections++; } // 6. Входные данные if (data) { prompt += \`Данные для обработки:\\n${data}\`; filledSections++; } // Обновляем интерфейс updatePromptDisplay(prompt.trim(), filledSections); currentPrompt = prompt.trim(); } // Получение текущей роли function getCurrentRole() { const roleSelect = document.getElementById('roleSelect'); const roleCustom = document.getElementById('roleCustom'); if (roleSelect.value === 'custom') { return roleCustom.value.trim(); } return roleSelect.value; } // Получение текущего формата function getCurrentFormat() { const customFormat = document.getElementById('formatCustom').value.trim(); if (customFormat) return customFormat; const selectedFormat = document.querySelector('.format-option.selected'); return selectedFormat ? selectedFormat.getAttribute('data-format') : ''; } // Обновление отображения промпта function updatePromptDisplay(prompt, filledSections) { const promptElement = document.getElementById('generatedPrompt'); const lengthElement = document.getElementById('promptLength'); const sectionsElement = document.getElementById('filledSections'); if (prompt) { promptElement.textContent = prompt; promptElement.style.color = '#e2e8f0'; } else { promptElement.textContent = \`Ваш промпт появится здесь по мере заполнения полей... Начните с выбора роли эксперта или описания задачи.\`; promptElement.style.color = '#6b7280'; } lengthElement.textContent = \`${prompt.length} символов\`; sectionsElement.textContent = \`${filledSections}/6 разделов\`; } // Обновление статуса поля (зеленая рамка если заполнено) function updateFieldStatus(element) { if (element.value.trim()) { element.classList.add('has-content'); } else { element.classList.remove('has-content'); } } // Обновление подсказки для роли function updateRoleHint(role) { const roleHint = document.getElementById('roleHint'); if (role && roleData\[role\]) { roleHint.textContent = \`Пример: "Ты-${roleData\[role\].hint}"\`; } else { roleHint.textContent = 'Пример: "Ты-опытный маркетолог с 10-летним стажем в digital-сфере"'; } } // Загрузка шаблона function loadTemplate(templateName) { const template = promptTemplates\[templateName\]; if (!template) return; // Заполняем поля const roleSelect = document.getElementById('roleSelect'); roleSelect.value = template.role || ''; document.getElementById('taskInput').value = template.task || ''; document.getElementById('contextInput').value = template.context || ''; document.getElementById('examplesInput').value = template.examples || ''; // Очищаем пользовательские поля document.getElementById('roleCustom').style.display = 'none'; document.getElementById('formatCustom').value = ''; document.getElementById('dataInput').value = ''; // Устанавливаем формат если есть if (template.format) { document.querySelectorAll('.format-option').forEach(opt => { opt.classList.remove('selected'); if (opt.getAttribute('data-format') === template.format) { opt.classList.add('selected'); } }); } // Обновляем все статусы полей document.querySelectorAll('.smart-input, .role-custom-input').forEach(updateFieldStatus); // Обновляем подсказку роли updateRoleHint(template.role); // Генерируем промпт и сохраняем generatePromptRealTime(); saveToLocalStorage(); // Показываем уведомление showNotification('Шаблон загружен!', 'success'); } // ======= ДЕЙСТВИЯ С ПРОМПТОМ ======= function copyPrompt() { if (!currentPrompt) { showNotification('Нечего копировать! Заполните хотя бы одно поле.', 'error'); return; } // Пытаемся скопировать через Clipboard API if (navigator.clipboard && window.isSecureContext) { navigator.clipboard.writeText(currentPrompt).then(() => { showNotification('Промпт скопирован в буфер обмена!', 'success'); }); } else { // Fallback для старых браузеров const textArea = document.createElement('textarea'); textArea.value = currentPrompt; document.body.appendChild(textArea); textArea.select(); document.execCommand('copy'); document.body.removeChild(textArea); showNotification('Промпт скопирован в буфер обмена!', 'success'); } } function clearForm() { if (confirm('Очистить все поля конструктора?')) { // Очищаем все поля document.getElementById('roleSelect').value = ''; document.getElementById('roleCustom').value = ''; document.getElementById('roleCustom').style.display = 'none'; document.getElementById('taskInput').value = ''; document.getElementById('contextInput').value = ''; document.getElementById('formatCustom').value = ''; document.getElementById('examplesInput').value = ''; document.getElementById('dataInput').value = ''; // Убираем выделение форматов document.querySelectorAll('.format-option').forEach(opt => opt.classList.remove('selected')); // Убираем статусы заполненности document.querySelectorAll('.smart-input, .role-custom-input').forEach(el => el.classList.remove('has-content')); // Сбрасываем подсказку роли updateRoleHint(''); // Очищаем промпт и сохраняем generatePromptRealTime(); saveToLocalStorage(); showNotification('Форма очищена', 'success'); } } // ======= ЛОКАЛЬНОЕ ХРАНЕНИЕ ======= function saveToLocalStorage() { const formData = { roleSelect: document.getElementById('roleSelect').value, roleCustom: document.getElementById('roleCustom').value, taskInput: document.getElementById('taskInput').value, contextInput: document.getElementById('contextInput').value, formatCustom: document.getElementById('formatCustom').value, examplesInput: document.getElementById('examplesInput').value, dataInput: document.getElementById('dataInput').value, selectedFormat: document.querySelector('.format-option.selected')?.getAttribute('data-format') || '' }; localStorage.setItem('promptBuilder', JSON.stringify(formData)); } function loadFromLocalStorage() { try { const saved = localStorage.getItem('promptBuilder'); if (!saved) return; const formData = JSON.parse(saved); // Восстанавливаем значения полей document.getElementById('roleSelect').value = formData.roleSelect || ''; document.getElementById('roleCustom').value = formData.roleCustom || ''; document.getElementById('taskInput').value = formData.taskInput || ''; document.getElementById('contextInput').value = formData.contextInput || ''; document.getElementById('formatCustom').value = formData.formatCustom || ''; document.getElementById('examplesInput').value = formData.examplesInput || ''; document.getElementById('dataInput').value = formData.dataInput || ''; // Восстанавливаем выбранный формат if (formData.selectedFormat) { document.querySelectorAll('.format-option').forEach(opt => { if (opt.getAttribute('data-format') === formData.selectedFormat) { opt.classList.add('selected'); } }); } // Показываем кастомное поле роли если нужно if (formData.roleSelect === 'custom') { document.getElementById('roleCustom').style.display = 'block'; } // Обновляем статусы полей document.querySelectorAll('.smart-input, .role-custom-input').forEach(updateFieldStatus); // Обновляем подсказку роли updateRoleHint(formData.roleSelect); } catch (e) { console.log('Ошибка загрузки сохраненных данных:', e); } } // ======= УТИЛИТЫ ======= function showNotification(message, type = 'info') { // Создаем уведомление const notification = document.createElement('div'); notification.className = \`fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 text-white ${ type === 'success' ? 'bg-green-500' : type === 'error' ? 'bg-red-500' : 'bg-blue-500' }\`; notification.textContent = message; document.body.appendChild(notification); // Убираем через 3 секунды setTimeout(() => { notification.remove(); }, 3000); } // Дебаунс для производительности function debounce(func, wait) { let timeout; return function executedFunction(...args) { const later = () => { clearTimeout(timeout); func(...args); }; clearTimeout(timeout); timeout = setTimeout(later, wait); }; } // ==== КОД КОНСТРУКТОРА ПРОМПТОВ ==== // Глобальные переменные конструктора let examples = \[\]; let currentTechniques = new Set(); let selectedFormat = ''; // Скрытие примеров при вводе текста function hideExample(exampleId) { const example = document.getElementById(exampleId); if (example) { example.style.display = 'none'; } } // Применение пресетов function applyPreset(type) { switch(type) { case 'zero-shot': document.getElementById('role-input').value = 'Ты-полезный ИИ-помощник, отвечающий точно и кратко'; document.getElementById('task-input').value = 'Ответь на следующий вопрос или выполни задачу'; break; case 'few-shot': document.getElementById('role-input').value = 'Ты-эксперт, который учится на примерах'; document.getElementById('task-input').value = 'Изучи примеры ниже и выполни аналогичную задачу'; examples = \[ {input: 'Пример входных данных', output: 'Пример желаемого результата'} \]; renderExamples(); break; case 'chain-of-thought': document.getElementById('role-input').value = 'Ты-методичный аналитик, решающий задачи пошагово'; document.getElementById('task-input').value = 'Реши задачу пошагово, объясняя каждый шаг'; currentTechniques.add('chain-of-thought'); document.getElementById('cot-checkbox').checked = true; break; case 'creative': document.getElementById('role-input').value = 'Ты-креативный генератор идей с богатым воображением'; document.getElementById('task-input').value = 'Создай оригинальные и творческие решения'; break; case 'analytical': document.getElementById('role-input').value = 'Ты-аналитик данных с опытом статистического анализа'; document.getElementById('task-input').value = 'Проведи глубокий анализ и предоставь обоснованные выводы'; break; } updatePreview(); } // Установка роли function setRole(roleText) { if (roleText) { document.getElementById('role-input').value = roleText; updatePreview(); hideExample('role-example'); } } // Добавление к задаче function addToTask(text) { if (text) { const taskInput = document.getElementById('task-input'); const currentValue = taskInput.value.trim(); taskInput.value = currentValue ? \`${currentValue} ${text}\` : text; updatePreview(); hideExample('task-example'); } } // Добавление к контексту function addToContext(text) { if (text) { const contextInput = document.getElementById('context-input'); const currentValue = contextInput.value.trim(); contextInput.value = currentValue ? \`${currentValue}\\n${text}\` : text; updatePreview(); hideExample('context-example'); } } // Выбор формата function selectFormat(format) { // Убираем выделение с других форматов document.querySelectorAll('.format-option').forEach(option => { option.classList.remove('selected'); }); // Выделяем выбранный формат event.target.closest('.format-option').classList.add('selected'); selectedFormat = format; document.getElementById('selected-format').value = format; // Устанавливаем инструкцию по формату let formatInstruction = ''; switch(format) { case 'список': formatInstruction = 'Представь результат в виде структурированного маркированного списка'; break; case 'таблица': formatInstruction = 'Оформи ответ в виде таблицы с четкими колонками и строками'; break; case 'план': formatInstruction = 'Создай пошаговый план с нумерованными пунктами'; break; case 'json': formatInstruction = 'Верни результат в JSON формате для программной обработки'; break; case 'markdown': formatInstruction = 'Используй Markdown разметку для структурирования ответа'; break; case 'презентация': formatInstruction = 'Структурируй как слайды презентации с заголовками и ключевыми пунктами'; break; } document.getElementById('format-input').value = formatInstruction; updatePreview(); hideExample('format-example'); } // Управление примерами function addExample() { examples.push({input: '', output: ''}); renderExamples(); hideExample('examples-example'); } function removeExample(index) { examples.splice(index, 1); renderExamples(); updatePreview(); } function renderExamples() { const container = document.getElementById('examples-list'); container.innerHTML = ''; examples.forEach((example, index) => { const exampleDiv = document.createElement('div'); exampleDiv.className = 'example-item slide-in'; exampleDiv.innerHTML = \` <div class="flex-1"> <label class="block text-sm font-medium mb-1">Вход:</label> <input type="text" value="${example.input}" class="smart-input" placeholder="Пример входных данных..." oninput="updateExample(${index}, 'input', this.value)"> </div> <div class="flex-1"> <label class="block text-sm font-medium mb-1">Выход:</label> <input type="text" value="${example.output}" class="smart-input" placeholder="Желаемый результат..." oninput="updateExample(${index}, 'output', this.value)"> </div> <button class="btn-secondary" onclick="removeExample(${index})" title="Удалить пример"> <i class="fas fa-trash"></i> </button> \`; container.appendChild(exampleDiv); }); } function updateExample(index, field, value) { examples\[index\]\[field\] = value; updatePreview(); } // Управление техниками function toggleTechnique(technique) { const checkbox = document.getElementById(technique === 'chain-of-thought' ? 'cot-checkbox' : 'consistency-checkbox'); checkbox.checked = !checkbox.checked; if (checkbox.checked) { currentTechniques.add(technique); } else { currentTechniques.delete(technique); } // Обновляем визуальное состояние карточки checkbox.closest('.technique-card').classList.toggle('active', checkbox.checked); updatePreview(); hideExample('techniques-example'); } // Обновление превью function updatePreview() { const role = document.getElementById('role-input').value.trim(); const task = document.getElementById('task-input').value.trim(); const context = document.getElementById('context-input').value.trim(); const formatInstr = document.getElementById('format-input').value.trim(); let prompt = ''; // Собираем промпт if (role) { prompt += \`${role}\\n\\n\`; } if (task) { prompt += \`Задача: ${task}\\n\\n\`; } if (context) { prompt += \`Контекст: ${context}\\n\\n\`; } if (formatInstr) { prompt += \`Формат ответа: ${formatInstr}\\n\\n\`; } // Добавляем примеры if (examples.length > 0 && examples.some(ex => ex.input || ex.output)) { prompt += \`Примеры:\\n\`; examples.forEach((example, index) => { if (example.input || example.output) { prompt += \`${index + 1}. Вход: "${example.input}" → Выход: "${example.output}"\\n\`; } }); prompt += '\\n'; } // Добавляем техники if (currentTechniques.has('chain-of-thought')) { prompt += \`Рассуждай пошагово перед финальным ответом.\\n\`; } if (currentTechniques.has('self-consistency')) { prompt += \`Предложи несколько вариантов решения и выбери лучший.\\n\`; } const resultContent = document.getElementById('result-content'); resultContent.value = prompt.trim() || 'Заполните поля выше для создания промпта...'; updateStats(); updateSectionStyles(); autoSave(); } function updateStats() { const resultText = document.getElementById('result-content').value; const charCount = resultText.length; const tokenCount = Math.ceil(charCount / 4); // Примерная оценка const costEstimate = (tokenCount \* 0.00002).toFixed(4); // Стоимость для GPT-4 document.getElementById('char-count').textContent = charCount; document.getElementById('token-count').textContent = tokenCount; document.getElementById('cost-estimate').textContent = costEstimate; } function updateSectionStyles() { const fields = \[ { id: 'role-input', section: 'role-section' }, { id: 'task-input', section: 'task-section' }, { id: 'context-input', section: 'context-section' }, { id: 'format-input', section: 'format-section' } \]; fields.forEach(field => { const input = document.getElementById(field.id); const section = document.getElementById(field.section); if (input.value.trim().length > 0) { section.classList.add('has-content'); input.classList.add('has-content'); } else { section.classList.remove('has-content'); input.classList.remove('has-content'); } }); } function generatePrompt() { updatePreview(); document.getElementById('result-content').scrollIntoView({ behavior: 'smooth', block: 'center' }); showNotification('Промпт создан!', 'success'); } function copyPrompt() { const text = document.getElementById('result-content').value; navigator.clipboard.writeText(text).then(() => { showNotification('Промпт скопирован в буфер обмена!', 'success'); }).catch(() => { showNotification('Ошибка копирования', 'error'); }); } function resetForm() { if (!confirm('Очистить все поля?')) return; document.getElementById('role-input').value = ''; document.getElementById('task-input').value = ''; document.getElementById('context-input').value = ''; document.getElementById('format-input').value = ''; document.getElementById('result-content').value = ''; examples = \[\]; currentTechniques.clear(); selectedFormat = ''; document.querySelectorAll('.format-option').forEach(option => { option.classList.remove('selected'); }); document.querySelectorAll('input\[type="checkbox"\]').forEach(cb => { cb.checked = false; }); document.querySelectorAll('.technique-card').forEach(card => { card.classList.remove('active'); }); document.querySelectorAll('.example-text').forEach(example => { example.style.display = 'block'; }); renderExamples(); updatePreview(); showNotification('Форма очищена', 'info'); } function autoSave() { const data = { role: document.getElementById('role-input').value, task: document.getElementById('task-input').value, context: document.getElementById('context-input').value, format: document.getElementById('format-input').value, examples: examples, techniques: Array.from(currentTechniques), selectedFormat: selectedFormat }; localStorage.setItem('prompt-builder-autosave', JSON.stringify(data)); } function loadSavedData() { const saved = localStorage.getItem('prompt-builder-autosave'); if (!saved) return; try { const data = JSON.parse(saved); document.getElementById('role-input').value = data.role || ''; document.getElementById('task-input').value = data.task || ''; document.getElementById('context-input').value = data.context || ''; document.getElementById('format-input').value = data.format || ''; examples = data.examples || \[\]; currentTechniques = new Set(data.techniques || \[\]); selectedFormat = data.selectedFormat || ''; document.getElementById('cot-checkbox').checked = currentTechniques.has('chain-of-thought'); document.getElementById('consistency-checkbox').checked = currentTechniques.has('self-consistency'); document.querySelectorAll('.technique-card').forEach(card => { const checkbox = card.querySelector('input\[type="checkbox"\]'); card.classList.toggle('active', checkbox.checked); }); renderExamples(); } catch (e) { console.error('Ошибка загрузки сохраненных данных:', e); } } function showNotification(message, type = 'info') { const notification = document.createElement('div'); notification.className = \`fixed top-4 right-4 p-4 rounded-lg shadow-lg z-50 slide-in ${ type === 'success' ? 'bg-green-500 text-white' : type === 'error' ? 'bg-red-500 text-white' : 'bg-blue-500 text-white' }\`; notification.innerHTML = \` <div class="flex items-center gap-2"> <i class="fas fa-${type === 'success' ? 'check' : type === 'error' ? 'times' : 'info'}-circle"></i> ${message} </div> \`; document.body.appendChild(notification); setTimeout(() => { notification.style.opacity = '0'; setTimeout(() => notification.remove(), 300); }, 3000); } // Role data with descriptions, examples, and prompts const roleData = { chef: { hint: "Эксперт в кулинарии с глубокими знаниями ингредиентов и техник приготовления", taskExample: "Создай рецепт итальянской пасты с морепродуктами", contextExample: "Время приготовления: 30 минут, уровень сложности: средний, без острых специй", inputExample: "креветки, мидии, паста феттучине, чеснок, белое вино, сливки", exampleTemplate: \`Входные данные: томаты, моцарелла, базилик Ответ: \*\*Капрезе\*\* Ингредиенты: спелые томаты, свежая моцарелла, листья базилика Приготовление: нарезать слоями, добавить оливковое масло и соль\` }, traveler: { hint: "Опытный путешественник с знанием культур, достопримечательностей и логистики", taskExample: "Составь маршрут 7-дневного путешествия по Японии", contextExample: "Первое посещение, бюджет средний, интерес к культуре и традициям", inputExample: "Токио, Киото, Осака, храмы, сакура, традиционная кухня", exampleTemplate: \`Входные данные: Париж, 3 дня, музеи Ответ: \*\*День 1: Лувр и остров Сите\*\* 09:00-Лувр (3 часа) 14:00-Обед на Рю де Риволи 16:00-Собор Парижской Богоматери\` }, gardener: { hint: "Специалист по растениеводству с знанием агротехники и ландшафтного дизайна", taskExample: "Создай план посадки овощного сада для начинающих", contextExample: "Участок 6 соток, средняя полоса России, органическое земледелие", inputExample: "помидоры, огурцы, картофель, морковь, капуста, зелень", exampleTemplate: \`Входные данные: розы, тля, органические методы Ответ: \*\*Защита роз от тли\*\* Причина: высасывание сока растений Решение: опрыскивание мыльным раствором (72% хозяйственное мыло)\` }, marketer: { hint: "Эксперт в области маркетинга и рекламы с пониманием потребительского поведения", taskExample: "Разработай стратегию продвижения нового мобильного приложения", contextExample: "Целевая аудитория: молодежь 18-25 лет, бюджет ограничен, запуск через 2 месяца", inputExample: "фитнес-приложение, тренировки дома, персональные планы, бесплатная версия", exampleTemplate: \`Входные данные: кафе, снижение продаж на 30% Ответ: \*\*Антикризисная стратегия\*\* Проблема: потеря клиентов Решения: 1) Программа лояльности 2) Доставка 3) SMM-активность\` }, lawyer: { hint: "Юрист с экспертизой в различных областях права и опытом составления документов", taskExample: "Объясни процедуру регистрации ООО для начинающего предпринимателя", contextExample: "Россия, 2024 год, один учредитель, сфера IT-услуги", inputExample: "устав, капитал, налогообложение, сроки регистрации, необходимые документы", exampleTemplate: \`Входные данные: трудовой договор, увольнение, нарушения нет Ответ: \*\*Процедура увольнения\*\* Основание: п.3 ст.77 ТК РФ (по собственному желанию) Срок: 2 недели отработки Документы: заявление, приказ, трудовая книжка\` }, fitness: { hint: "Персональный тренер с знанием анатомии, физиологии и программ тренировок", taskExample: "Создай программу тренировок для набора мышечной массы", contextExample: "Мужчина 25 лет, опыт 6 месяцев, цель +5 кг мышц за 3 месяца, тренажерный зал", inputExample: "жим лежа, приседания, становая тяга, подтягивания, базовые упражнения", exampleTemplate: \`Входные данные: похудение, 10 кг, женщина, дом Ответ: \*\*Программа похудения\*\* Кардио: 30 мин 4 раза в неделю Силовые: приседания, планка, отжимания Питание: дефицит 300-500 ккал\` }, programmer: { hint: "Опытный разработчик с знанием различных языков программирования и архитектуры", taskExample: "Создай REST API для системы управления задачами", contextExample: "Python Flask, PostgreSQL, аутентификация JWT, документация Swagger", inputExample: "создание задач, обновление статуса, назначение пользователей, фильтрация", exampleTemplate: \`Входные данные: сортировка массива, Python Ответ: \*\*Quick Sort\*\* \\\`\\\`\\\`python def quicksort(arr): if len(arr) <= 1: return arr pivot = arr\[len(arr) // 2\] return quicksort(\[x for x in arr if x < pivot\]) + \[pivot\] + quicksort(\[x for x in arr if x > pivot\]) \\\`\\\`\\\`\` }, historian: { hint: "Историк с глубоким пониманием исторических процессов и культурных контекстов", taskExample: "Проанализируй причины и последствия Октябрьской революции 1917 года", contextExample: "Научный подход, использование первоисточников, объективная оценка фактов", inputExample: "экономический кризис, Первая мировая война, социальные противоречия, политика царизма", exampleTemplate: \`Входные данные: Древний Рим, падение, причины Ответ: \*\*Падение Западной Римской империи\*\* Внутренние: кризис власти, экономический упадок Внешние: нашествие варваров, давление готов Дата: 476 г. н.э.\` }, finance: { hint: "Финансовый эксперт с пониманием инвестиций, планирования и рынков", taskExample: "Составь личный финансовый план для семьи с доходом 100,000 руб/мес", contextExample: "Цель: покупка квартиры через 5 лет, есть ребенок, стабильная работа", inputExample: "накопления, инвестиции, страхование, ипотека, резервный фонд", exampleTemplate: \`Входные данные: акции, облигации, 500,000 руб, 3 года Ответ: \*\*Портфель "Сбалансированный"\*\* 60% облигации (стабильный доход) 30% акции голубых фишек (рост) 10% резерв (ликвидность)\` }, teacher: { hint: "Педагог с пониманием методик обучения и возрастной психологии", taskExample: "Разработай план урока по математике для 7 класса на тему 'Линейные уравнения'", contextExample: "45 минут, 25 учеников, разный уровень подготовки, интерактивные методы", inputExample: "объяснение теории, практические примеры, самостоятельная работа, домашнее задание", exampleTemplate: \`Входные данные: английский язык, Present Simple, начинающие Ответ: \*\*Урок Present Simple\*\* Введение: что делаю каждый день (5 мин) Правило: I/you/we/they + V1 (10 мин) Практика: упражнения с картинками (20 мин)\` }, designer: { hint: "Дизайнер с пониманием композиции, цвета, типографики и пользовательского опыта", taskExample: "Создай концепцию дизайна мобильного приложения для доставки еды", contextExample: "Молодая аудитория, яркий стиль, удобная навигация, быстрое оформление заказов", inputExample: "главный экран, каталог, корзина, профиль, цветовая схема, типографика", exampleTemplate: \`Входные данные: логотип, кофейня, уютная атмосфера Ответ: \*\*Концепция логотипа\*\* Стиль: минимализм с рукописными элементами Цвета: теплый коричневый + кремовый Символ: стилизованная кофейная чашка с паром\` } }; // Prompt templates for quick start const promptTemplates = { recipe: { role: 'chef', task: 'Создай подробный рецепт блюда на основе указанных ингредиентов', context: 'Время приготовления до 45 минут, средний уровень сложности, пошаговые инструкции', format: 'Пошаговый план', examples: \`Входные данные: курица, рис, овощи Ответ: \*\*Плов с курицей\*\* 1. Обжарить курицу до золотистой корочки 2. Добавить морковь и лук 3. Засыпать промытый рис 4. Залить бульоном и тушить 20 минут\`, inputData: 'говядина, картофель, морковь, лук, томатная паста' }, travel: { role: 'traveler', task: 'Составь детальный план путешествия с маршрутом и рекомендациями', context: 'Бюджет средний, первое посещение региона, интерес к культуре и достопримечательностям', format: 'Пошаговый план', examples: \`Входные данные: Санкт-Петербург, 2 дня, музеи Ответ: \*\*День 1: Исторический центр\*\* 09:00-Эрмитаж (3 часа) 13:00-Обед на Невском проспекте 15:00-Прогулка по каналам 18:00-Исаакиевский собор\`, inputData: 'Казань, 3 дня, семья с детьми, кремль, национальная кухня' }, marketing: { role: 'marketer', task: 'Проанализируй ситуацию и предложи маркетинговую стратегию с конкретными шагами', context: 'Ограниченный бюджет, цифровые каналы продвижения, измеримые результаты', format: 'Пошаговый план', examples: \`Входные данные: онлайн-школа, низкие продажи Ответ: \*\*Стратегия роста продаж\*\* 1. Анализ конкурентов и ЦА 2. Бесплатные вебинары для привлечения 3. Email-воронка с полезным контентом 4. Партнерская программа\`, inputData: 'интернет-магазин одежды, падение конверсии, высокая конкуренция' }, code: { role: 'programmer', task: 'Проведи код-ревью и предложи улучшения с объяснением', context: 'Фокус на читаемость, производительность, следование best practices', format: 'Подробное объяснение', examples: \`Входные данные: функция поиска в массиве Ответ: \*\*Анализ кода\*\* Проблемы: O(n²) сложность, нет обработки ошибок Решение: использовать HashMap для O(1) поиска Код: Map.get(key) вместо nested loops\`, inputData: \`function findUser(users, id) { for(let i = 0; i < users.length; i++) { if(users\[i\].id == id) return users\[i\]; } }\` } }; // DOM elements let elements = {}; // Initialize when DOM is loaded document.addEventListener('DOMContentLoaded', function() { // Get DOM elements elements = { roleSelect: document.getElementById('roleSelect'), taskInput: document.getElementById('taskInput'), contextInput: document.getElementById('contextInput'), formatInput: document.getElementById('formatInput'), examplesInput: document.getElementById('examplesInput'), inputDataField: document.getElementById('inputDataField'), generatedPrompt: document.getElementById('generatedPrompt'), copyBtn: document.getElementById('copyBtn'), clearBtn: document.getElementById('clearBtn'), generateBtn: document.getElementById('generateBtn'), roleHint: document.getElementById('roleHint'), taskExample: document.getElementById('taskExample'), contextExample: document.getElementById('contextExample'), exampleTemplate: document.getElementById('exampleTemplate'), inputExample: document.getElementById('inputExample') }; // Event listeners if (elements.roleSelect) { elements.roleSelect.addEventListener('change', updateRoleInfo); } if (elements.generateBtn) { elements.generateBtn.addEventListener('click', generatePrompt); } if (elements.copyBtn) { elements.copyBtn.addEventListener('click', copyPrompt); } if (elements.clearBtn) { elements.clearBtn.addEventListener('click', clearForm); } // Format buttons document.querySelectorAll('.format-btn').forEach(btn => { btn.addEventListener('click', function() { // Remove active class from all buttons document.querySelectorAll('.format-btn').forEach(b => { b.classList.remove('bg-purple-200', 'border-purple-500'); }); // Add active class to clicked button this.classList.add('bg-purple-200', 'border-purple-500'); // Set format input if (elements.formatInput) { elements.formatInput.value = this.dataset.format; } }); }); // Template buttons document.querySelectorAll('.template-btn').forEach(btn => { btn.addEventListener('click', function() { loadTemplate(this.dataset.template); }); }); // Example click handlers if (elements.taskExample) { elements.taskExample.addEventListener('click', function() { const roleValue = elements.roleSelect?.value; if (roleValue && roleData\[roleValue\]) { elements.taskInput.value = roleData\[roleValue\].taskExample; } }); } if (elements.contextExample) { elements.contextExample.addEventListener('click', function() { const roleValue = elements.roleSelect?.value; if (roleValue && roleData\[roleValue\]) { elements.contextInput.value = roleData\[roleValue\].contextExample; } }); } if (elements.exampleTemplate) { elements.exampleTemplate.addEventListener('click', function() { const roleValue = elements.roleSelect?.value; if (roleValue && roleData\[roleValue\]) { elements.examplesInput.value = roleData\[roleValue\].exampleTemplate; } }); } if (elements.inputExample) { elements.inputExample.addEventListener('click', function() { const roleValue = elements.roleSelect?.value; if (roleValue && roleData\[roleValue\]) { elements.inputDataField.value = roleData\[roleValue\].inputExample; } }); } // Auto-save functionality const inputElements = \[elements.taskInput, elements.contextInput, elements.formatInput, elements.examplesInput, elements.inputDataField\]; inputElements.forEach(element => { if (element) { element.addEventListener('input', saveToLocalStorage); } }); if (elements.roleSelect) { elements.roleSelect.addEventListener('change', saveToLocalStorage); } // Load from localStorage loadFromLocalStorage(); }); function updateRoleInfo() { const role = elements.roleSelect?.value; if (!role || !roleData\[role\]) { elements.roleHint && (elements.roleHint.textContent = ''); elements.taskExample && (elements.taskExample.textContent = ''); elements.contextExample && (elements.contextExample.textContent = ''); elements.exampleTemplate && (elements.exampleTemplate.textContent = ''); elements.inputExample && (elements.inputExample.textContent = ''); return; } const data = roleData\[role\]; if (elements.roleHint) { elements.roleHint.textContent = data.hint; } if (elements.taskExample) { elements.taskExample.textContent = \`💡 Пример: ${data.taskExample}\`; } if (elements.contextExample) { elements.contextExample.textContent = \`💡 Пример: ${data.contextExample}\`; } if (elements.exampleTemplate) { elements.exampleTemplate.textContent = \`💡 Нажмите, чтобы вставить пример\`; } if (elements.inputExample) { elements.inputExample.textContent = \`💡 Пример: ${data.inputExample}\`; } } function generatePrompt() { const role = elements.roleSelect?.value; const task = elements.taskInput?.value.trim(); const context = elements.contextInput?.value.trim(); const format = elements.formatInput?.value.trim(); const examples = elements.examplesInput?.value.trim(); const inputData = elements.inputDataField?.value.trim(); if (!role) { alert('Пожалуйста, выберите роль'); return; } if (!task) { alert('Пожалуйста, опишите задачу'); return; } let prompt = ''; // Role const roleInfo = roleData\[role\]; if (roleInfo) { prompt += \`Ты-${roleInfo.hint.toLowerCase()}. \`; } // Task prompt += \`Задача: ${task} \`; // Context if (context) { prompt += \`Контекст: ${context} \`; } // Format if (format) { prompt += \`Формат ответа: ${format} \`; } // Examples if (examples) { prompt += \`Пример: ${examples} \`; } // Input data if (inputData) { prompt += \`Входные данные: ${inputData}\`; } elements.generatedPrompt && (elements.generatedPrompt.textContent = prompt); elements.copyBtn && (elements.copyBtn.disabled = false); } function loadTemplate(templateName) { const template = promptTemplates\[templateName\]; if (!template) return; // Set role if (elements.roleSelect) { elements.roleSelect.value = template.role; updateRoleInfo(); } // Fill form fields if (elements.taskInput) elements.taskInput.value = template.task; if (elements.contextInput) elements.contextInput.value = template.context; if (elements.formatInput) elements.formatInput.value = template.format; if (elements.examplesInput) elements.examplesInput.value = template.examples; if (elements.inputDataField) elements.inputDataField.value = template.inputData; // Update format buttons document.querySelectorAll('.format-btn').forEach(btn => { btn.classList.remove('bg-purple-200', 'border-purple-500'); if (btn.dataset.format === template.format) { btn.classList.add('bg-purple-200', 'border-purple-500'); } }); // Generate prompt generatePrompt(); // Save to localStorage saveToLocalStorage(); } function copyPrompt() { const promptText = elements.generatedPrompt?.textContent; if (!promptText) return; navigator.clipboard.writeText(promptText).then(() => { showNotification('Промпт скопирован в буфер обмена!'); }).catch(() => { // Fallback for older browsers const textArea = document.createElement('textarea'); textArea.value = promptText; document.body.appendChild(textArea); textArea.select(); document.execCommand('copy'); document.body.removeChild(textArea); showNotification('Промпт скопирован!'); }); } function clearForm() { const confirmClear = confirm('Очистить все поля? Это действие нельзя отменить.'); if (!confirmClear) return; // Clear all form fields if (elements.roleSelect) elements.roleSelect.value = ''; if (elements.taskInput) elements.taskInput.value = ''; if (elements.contextInput) elements.contextInput.value = ''; if (elements.formatInput) elements.formatInput.value = ''; if (elements.examplesInput) elements.examplesInput.value = ''; if (elements.inputDataField) elements.inputDataField.value = ''; if (elements.generatedPrompt) elements.generatedPrompt.textContent = 'Заполните форму выше и нажмите "Создать промпт", чтобы увидеть результат...'; // Clear format button selection document.querySelectorAll('.format-btn').forEach(btn => { btn.classList.remove('bg-purple-200', 'border-purple-500'); }); // Disable copy button if (elements.copyBtn) elements.copyBtn.disabled = true; // Update role info updateRoleInfo(); // Clear localStorage localStorage.removeItem('promptConstructor'); } function showNotification(message) { const notification = document.getElementById('notification'); const notificationText = document.getElementById('notificationText'); if (!notification || !notificationText) return; notificationText.textContent = message; notification.classList.remove('translate-x-full'); setTimeout(() => { notification.classList.add('translate-x-full'); }, 3000); } function saveToLocalStorage() { const data = { role: elements.roleSelect?.value || '', task: elements.taskInput?.value || '', context: elements.contextInput?.value || '', format: elements.formatInput?.value || '', examples: elements.examplesInput?.value || '', inputData: elements.inputDataField?.value || '' }; localStorage.setItem('promptConstructor', JSON.stringify(data)); } function loadFromLocalStorage() { try { const saved = localStorage.getItem('promptConstructor'); if (!saved) return; const data = JSON.parse(saved); if (elements.roleSelect && data.role) { elements.roleSelect.value = data.role; updateRoleInfo(); } if (elements.taskInput && data.task) elements.taskInput.value = data.task; if (elements.contextInput && data.context) elements.contextInput.value = data.context; if (elements.formatInput && data.format) { elements.formatInput.value = data.format; // Highlight corresponding format button document.querySelectorAll('.format-btn').forEach(btn => { if (btn.dataset.format === data.format) { btn.classList.add('bg-purple-200', 'border-purple-500'); } }); } if (elements.examplesInput && data.examples) elements.examplesInput.value = data.examples; if (elements.inputDataField && data.inputData) elements.inputDataField.value = data.inputData; } catch (error) { console.error('Error loading from localStorage:', error); } }

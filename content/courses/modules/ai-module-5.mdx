@@ -1,0 +1,835 @@
+---
+title: "Ai-module-5"
+slug: "ai-module-5"
+description: ":root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E3"
+order: 5
+---
+
+:root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E30613; --accent-inactive: rgba(227,6,19,0.2); --mobile-breakpoint: 768px; --tablet-breakpoint: 1024px; --mobile-padding: 0.1rem; --tablet-padding: 1.5rem; --image-card-bg: #E0F2FE; --video-card-bg: #E6E0FF; --audio-card-bg: #FFF4E5; --image-icon: #3B82F6; --video-icon: #8B5CF6; --audio-icon: #F59E0B; --ethical-bg: #FEF2F2; --ethical-border: #FECACA; --ethical-icon: #DC2626; } /\*свойство для подсветки "База ИИ" в хлебных крошках при наведении \*/ .breadcrumb-item { cursor: pointer; transition: color 0.3s ease; text-decoration: none; } .breadcrumb-item:hover { color: var(--accent-active) !important; } .fa-home { transition: color 0.3s ease; } .fa-home:hover { color: var(--accent-active) !important; } /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ h1 { font-size: 1.75rem; line-height: 1.2; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; } .text-block { line-height: 1.6; max-width: 100%; } body { font-family: "Mulish", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--main-bg); color: var(--primary-text); line-height: 1.6; } /\* ===== АДАПТИВНЫЕ ТАБЫ ===== \*/ .tab-navigation { display: flex; flex-direction: column; gap: 0.25rem; width: 100%; } .tab-button { transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 0.25rem 0.5rem; min-height: 44px; justify-content: center; border-radius: 8px; margin-bottom: 0.25rem; width: 100%; display: flex; align-items: center; text-align: center; cursor: pointer; } .tab-button.active { color: var(--accent-active); border-bottom-color: var(--accent-active); } .tab-button:hover { color: var(--accent-active); background-color: var(--block-bg); } /\* ===== АДАПТИВНЫЕ КРАСНЫЕ КНОПКИ CTA ===== \*/ .ai-module-content .cta-button, .ai-module-content .cta-button \* { background: var(--accent-active) !important; color: white !important; border-radius: 8px !important; text-decoration: none !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.3s ease !important; border: none !important; cursor: pointer !important; text-align: center !important; padding: 0.75rem 1.5rem !important; margin: 0.5rem !important; font-size: 0.9rem !important; min-height: 44px !important; white-space: nowrap !important; /\* ВАЖНО: запрет переноса \*/ } .ai-module-content .cta-button:hover, .ai-module-content .cta-button:hover \* { background: #c4050f !important; transform: translateY(-2px) !important; box-shadow: 0 8px 25px rgba(227, 6, 19, 0.3) !important; } /\* Специфичные стили для кнопок в подвале \*/ .footer-navigation .cta-button { width: 100% !important; max-width: 500px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; } /\*Для всех модулей добавляем ===== КОМПОНЕНТЫ ===== \*/ .quiz-option { transition: all 0.3s ease; cursor: pointer; padding: 0.4rem; margin: 0.3rem 0; border: 1px solid #d1d5db; border-radius: 6px; background: white; font-size: 0.9rem; } .quiz-option:hover { background: var(--block-bg); } .quiz-option.correct { background: #10B981; color: white; border-color: #10B981; } .quiz-option.incorrect { background: var(--accent-active); color: white; border-color: var(--accent-active); } .ai-hierarchy { position: relative; background: linear-gradient(135deg, var(--block-bg) 0%, white 100%); border-radius: 12px; padding: var(--mobile-padding); margin: 0.2rem 0; } .hierarchy-level { margin: 0.25rem 0; padding: 0.5rem; border-radius: 8px; background: white; border-left: 4px solid var(--accent-active); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; transform: none; } .flip-card { background-color: transparent; width: 100%; height: 150px; perspective: 1000px; margin: 0.75rem 0; } .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; } .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); } .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); flex-direction: column; text-align: center; overflow: hidden; box-sizing: border-box; } .flip-card-front { background-color: var(--block-bg); } .flip-card-back { background-color: var(--accent-active); color: white; transform: rotateY(180deg); } .ai-hierarchy { position: relative; background: linear-gradient(135deg, var(--block-bg) 0%, white 100%); border-radius: 12px; padding: 2rem; margin: 2rem 0; } .hierarchy-level { margin: 1rem 0; padding: 1.5rem; border-radius: 8px; background: white; border-left: 4px solid var(--accent-active); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; } .hierarchy-level:hover { transform: translateX(8px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); } .timeline-item { position: relative; padding-left: 2rem; margin: 2rem 0; } .timeline-item::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 12px; height: 12px; background: var(--accent-active); border-radius: 50%; } .timeline-item::after { content: ''; position: absolute; left: 5px; top: 1.2rem; width: 2px; height: calc(100% + 1rem); background: var(--accent-inactive); } .timeline-item:last-child::after { display: none; } .accordion { border: 1px solid #e5e5e5; border-radius: 8px; margin: 1rem 0; } .accordion-header { padding: 1rem; background-color: var(--block-bg); cursor: pointer; border-radius: 8px 8px 0 0; transition: background-color 0.3s ease; } .accordion-header:hover { background-color: rgba(240, 244, 247, 0.7); } .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease; } .accordion.active .accordion-content { max-height: none; padding: 1rem; overflow: visible; } .accordion-header { position: relative; padding: 1rem 1rem 2rem 1rem; /\* Увеличиваем нижний отступ для стрелки \*/ cursor: pointer; transition: all 0.3s ease; } /\* Стрелка под текстом \*/ .accordion-header::after { content: '\\f078'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; left: 50%; bottom: 0.5rem; transform: translateX(-50%); transition: transform 0.3s ease; color: var(--accent-active); font-size: 0.9em; } .accordion.active .accordion-header::after { transform: translateX(-50%) rotate(180deg); } /\* Стрелка поворачивается при раскрытии \*/ .accordion.active .accordion-header::after { transform: translateY(-50%) rotate(180deg); } .accordion-header:hover { background-color: rgba(227, 6, 19, 0.1); /\* Легкий красный оттенок \*/ box-shadow: 0 2px 8px rgba(227, 6, 19, 0.15); transform: translateY(-1px); } .content-block { background: var(--block-bg); padding: 2rem; border-radius: 12px; margin: 2rem 0; border-left: 4px solid var(--accent-active); } @media (min-width: 769px) and (max-width: 1024px) { .accordion-content p { font-size: 0.9rem !important; } .code-block pre { font-size: 0.8rem !important; } } @media (max-width: 360px) { .accordion-header { flex-direction: column !important; align-items: flex-start !important; gap: 0.5rem !important; } .accordion-header::after { position: static !important; transform: none !important; margin-top: 0.25rem !important; } } @media (max-width: 768px) { .accordion-content ul { padding-left: 1rem !important; } .accordion-content li { font-size: 0.8rem !important; line-height: 1.3 !important; margin-bottom: 0.25rem !important; word-break: break-word !important; } } @media (max-width: 768px) { .accordion-content { padding: 0 0.5rem !important; } .accordion.active .accordion-content { padding: 0.75rem !important; } .accordion-content p { font-size: 0.85rem !important; line-height: 1.4 !important; } .code-block { padding: 0.75rem !important; margin-top: 0.5rem !important; } .code-block h4 { font-size: 0.9rem !important; } .code-block pre { font-size: 0.75rem !important; line-height: 1.3 !important; overflow-x: auto !important; } } @media (max-width: 768px) { .accordion-header { padding: 0.75rem 0.5rem 1.5rem 0.5rem !important; } .accordion-header .flex { align-items: flex-start !important; } .accordion-header h3 { text-align: left !important; } } @media (max-width: 768px) { .accordion-header h3 { font-size: 0.9rem !important; line-height: 1.3 !important; } .accordion-header i { font-size: 0.8rem !important; margin-right: 0.5rem !important; } } @media (max-width: 480px) { .accordion-header h3 { font-size: 0.85rem !important; } } .chart-container { position: relative; height: 200px; margin: 1.5rem 0; } .content-section { margin-bottom: 2rem; } .highlight-box { background: linear-gradient(135deg, #fff 0%, var(--block-bg) 100%); border-left: 4px solid var(--accent-active); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; } .example-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1.5rem 0; } .example-card { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; } .media-card { background: var(--block-bg); border-radius: 12px; padding: 1.5rem; margin: 1rem 0; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; } .media-card:hover { transform: translateY(-4px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); } .model-comparison { background: white; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; } .model-header { background: var(--block-bg); padding: 1rem; font-weight: 600; border-bottom: 1px solid #e5e5e5; } .model-content { padding: 1rem; } .gallery-item { position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; transition: transform 0.3s ease; } .gallery-item:hover { transform: scale(1.05); } .gallery-overlay { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; padding: 1rem; transform: translateY(100%); transition: transform 0.3s ease; } .gallery-item:hover .gallery-overlay { transform: translateY(0); } .prompt-template { background: #f8f9fa; border-left: 4px solid var(--accent-active); padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; } .ethical-warning { background: var(--ethical-bg); border: 1px solid var(--ethical-border); border-radius: 8px; padding: 1.5rem; margin: 1rem 0; display: flex; flex-direction: column; gap: 1.5rem; } .ethical-warning .icon { color: #DC2626; color: var(--ethical-icon); font-weight: bold; } @media (max-width: 768px) { .media-card { padding: 1rem; } .flip-card { height: 150px; } } .chart-container { position: relative; height: 400px; margin: 2rem 0; } .filter-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0; } .filter-btn { padding: 0.5rem 1rem; border: 1px solid #e5e5e5; border-radius: 20px; background: white; cursor: pointer; transition: all 0.3s ease; } .filter-btn.active { background: var(--accent-active); color: white; border-color: var(--accent-active); } .filter-btn:hover { background: var(--block-bg); } .code-block { background-color: #f8f9fa; border-left: 4px solid #E30613; padding: 1rem; margin-top: 1rem; border-radius: 0 8px 8px 0; overflow-x: auto; } .code-block h4 { font-weight: bold; color: var(--accent-active); margin-bottom: 0.5rem; } .checklist-item { display: flex; align-items: center; padding: 0.75rem 0; border-bottom: 1px solid #e5e5e5; } .checklist-item:last-child { border-bottom: none; } .service-card { background: var(--block-bg); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 1rem; transition: all 0.3s ease; } .service-card:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); } .service-header { display: flex; align-items: center; gap: 1rem; } .service-icon { display: flex; justify-content: center; align-items: center; width: 4rem; height: 4rem; border-radius: 50%; font-size: 2rem; color: white; } .service-details { flex-grow: 1; } .service-details h3 a { color: #3B82F6; text-decoration: underline; } .service-info { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; } .service-tag { background-color: rgba(0,0,0,0.05); padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.8rem; font-weight: 500; color: rgba(0,0,0,0.6); } .ai-hierarchy { position: relative; background: linear-gradient(135deg, var(--block-bg) 0%, white 100%); border-radius: 12px; padding: 2rem; margin: 2rem 0; } .hierarchy-level { margin: 1rem 0; padding: 1.5rem; border-radius: 8px; background: white; border-left: 4px solid var(--accent-active); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer; } .hierarchy-level:hover { transform: translateX(8px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); } .timeline-item { position: relative; padding-left: 2rem; margin: 2rem 0; } .timeline-item::before { content: ''; position: absolute; left: 0; top: 0.5rem; width: 12px; height: 12px; background: var(--accent-active); border-radius: 50%; } .timeline-item::after { content: ''; position: absolute; left: 5px; top: 1.2rem; width: 2px; height: calc(100% + 1rem); background: var(--accent-inactive); } .timeline-item:last-child::after { display: none; } .flip-card { background-color: transparent; width: 100%; height: 200px; perspective: 1000px; margin: 1rem 0; } .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; cursor: pointer; } .flip-card.flipped .flip-card-inner { transform: rotateY(180deg); } .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 8px; display: flex; align-items: center; justify-content: center; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); } .flip-card-front { background-color: var(--block-bg); } .flip-card-back { background-color: var(--accent-active); color: white; transform: rotateY(180deg); } .chart-container { position: relative; height: 400px; margin: 2rem 0; } .content-section { margin-bottom: 3rem; } .highlight-box { background: linear-gradient(135deg, #fff 0%, var(--block-bg) 100%); border-left: 4px solid var(--accent-active); padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; } .gallery-item { transition: transform 0.3s ease; } .gallery-item:hover { transform: translateY(-5px); } .gallery-overlay { pointer-events: none; } @media (max-width: 768px) { .hierarchy-level { padding: 1rem; } .timeline-item { padding-left: 1.5rem; } .flip-card { height: 150px; } } /\* ===== АДАПТИВНАЯ НАВИГАЦИЯ В ПОДВАЛЕ ===== \*/ .footer-navigation { display: flex; flex-direction: column; gap: 1rem; align-items: center; width: 100%; } .nav-button { width: 100% !important; max-width: 280px !important; justify-content: center; } .anatomy-section { display: grid; grid-template-columns: 1fr; gap: 1rem; margin: 1rem 0; } .anatomy-card { background: white; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-top: 4px solid var(--accent-active); font-size: 0.9rem; } /\* Уменьшаем карточки \*/ .anatomy-card, .template-card, .builder-section { padding: 0.75rem; } /\* ===== МЕДИА-ЗАПРОСЫ ===== \*/ /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ @media (max-width: 768px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 480px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 360px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 768px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 480px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 360px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Уменьшить отступы в хлебных крошках \*/ @media (max-width: 768px) { .breadcrumb .flex { padding: 0.2rem 0 !important; } } /\* Компактные отступы для заголовка модуля \*/ @media (max-width: 768px) { header.text-center { margin-bottom: 0.5rem !important; } header h1 { margin-bottom: 0.2rem !important; } } @media (max-width: 768px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 480px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 360px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } /\* Для очень маленьких экранов \*/ @media (max-width: 480px) { /\* Уменьшаем табы \*/ .tab-navigation { gap: 0.25rem !important; /\* Минимальное расстояние между табами \*/ padding: 0.25rem 0 !important; } .tab-button { padding: 0.5rem 0.75rem !important; /\* Уменьшаем отступы \*/ font-size: 0.75rem !important; /\* Уменьшаем шрифт \*/ min-height: 36px !important; /\* Уменьшаем высоту \*/ margin-bottom: 0 !important; /\* Убираем отступы между табами \*/ } /\* Уменьшаем иконки \*/ .tab-button i { font-size: 0.65rem !important; margin-right: 0.25rem !important; } /\* Делаем табы более компактными \*/ .tab-button { white-space: nowrap; flex: 1; /\* Равномерно распределяем пространство \*/ min-width: 0; /\* Позволяем сжиматься \*/ } /\* Контейнер табов \*/ .tab-navigation { display: flex !important; flex-wrap: nowrap !important; overflow-x: visible !important; /\* Убираем прокрутку \*/ width: 100% !important; } } /\* Для экстремально маленьких экранов (менее 360px) \*/ @media (max-width: 360px) { .tab-button { padding: 0.4rem 0.6rem !important; font-size: 0.7rem !important; min-height: 34px !important; } .tab-button i { font-size: 0.6rem !important; margin-right: 0.2rem !important; } /\* Можно скрыть текст и оставить только иконки на самых маленьких экранах \*/ .tab-button span:not(.fa) { display: none; } .tab-button i { margin-right: 0 !important; } } /\* Мобильная версия \*/ @media (max-width: 768px) { .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.6rem 1.2rem !important; margin: 0.4rem !important; font-size: 0.85rem !important; min-height: 40px !important; } .footer-navigation .nav-button:last-child { max-width: 180px !important; min-width: 150px !important; } .footer-navigation { gap: 0.75rem !important; flex-wrap: wrap !important; justify-content: center !important; } .footer-navigation .cta-button { max-width: 220px !important; } /\* Упрощаем hover-эффекты на мобильных \*/ .hierarchy-level:hover { transform: none; } .example-card:hover { transform: none; } } @media (max-width: 768px) { .flip-card-front, .flip-card-back { padding: 0.5rem; font-size: 0.9em; line-height: 1.3; } } @media (max-width: 480px) { .flip-card-front, .flip-card-back { padding: 0.25rem; font-size: 0.8em; line-height: 1.2; } } /\* Планшетная версия \*/ @media (min-width: 769px) and (max-width: 1024px) { h1 { font-size: 2rem; } h2 { font-size: 1.75rem; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 0.85rem 1.75rem !important; margin: 0.75rem !important; font-size: 0.95rem !important; min-height: 46px !important; } .example-grid { grid-template-columns: repeat(2, 1fr); } .chart-container { height: 250px; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .hierarchy-level:hover { transform: translateX(8px); } .example-card:hover { transform: translateY(-2px); } } /\* Десктопная версия \*/ @media (min-width: 1025px) { h1 { font-size: 2.5rem; } h2 { font-size: 2rem; } .breadcrumb { flex-wrap: nowrap; font-size: 1rem; } .module-counter { text-align: right; margin-top: 0; width: auto; } .ai-module-content .cta-button, .ai-module-content .cta-button \* { padding: 1rem 2rem !important; margin: 1rem !important; font-size: 1rem !important; min-height: 48px !important; } /\* РАВНОМЕРНОЕ РАСПРЕДЕЛЕНИЕ ТАБОВ \*/ .tab-navigation { flex-direction: row; gap: 0.25rem; width: 100%; } .tab-button { width: 100%; flex: 1; } .ai-hierarchy { padding: 2rem; } .hierarchy-level:hover { transform: translateX(8px); } .example-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); } .company-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); } .flip-card { height: 200px; } .chart-container { height: 400px; } .text-block { max-width: 100%; } .content-section { margin-bottom: 3rem; } .footer-navigation { flex-direction: row; justify-content: space-between; gap: 1.5rem; } .nav-button { width: auto !important; max-width: 200px !important; flex: 1; } .example-card:hover { transform: translateY(-2px); } } /\* Добавить в медиа-запросы для мобильных \*/ @media (max-width: 768px) { .quiz-option { padding: 0.75rem !important; margin: 0.5rem 0 !important; font-size: 0.9rem !important; line-height: 1.4 !important; word-wrap: break-word !important; overflow-wrap: break-word !important; hyphens: auto !important; text-align: left !important; min-height: auto !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } .quiz-question h3 { font-size: 1rem !important; line-height: 1.3 !important; } } @media (max-width: 480px) { .quiz-option { padding: 0.6rem !important; font-size: 0.85rem !important; line-height: 1.3 !important; margin: 0.4rem 0 !important; } .quiz-question { padding: 0.75rem !important; } .quiz-question h3 { font-size: 0.95rem !important; } } @media (max-width: 360px) { .quiz-option { padding: 0.6rem !important; font-size: 0.85rem !important; line-height: 1.3 !important; margin: 0.4rem 0 !important; } .quiz-question { padding: 0.75rem !important; } .quiz-question h3 { font-size: 0.95rem !important; }} /\* Компактная версия для очень маленьких экранов \*/ @media (max-width: 360px) { .space-y-2 li { flex-direction: column; align-items: flex-start; margin-bottom: 0.5rem; } .space-y-2 li .fas { margin-bottom: 0.25rem; margin-right: 0; align-self: flex-start; } .space-y-2 li span { padding-left: 0; } } /\* Добавить в существующие медиа-запросы \*/ @media (max-width: 768px) { .space-y-2 li { font-size: 0.9rem !important; line-height: 1.3 !important; margin-bottom: 0.6rem !important; } .space-y-2 li .fas { font-size: 0.8rem !important; margin-right: 0.6rem !important; margin-top: 0.1rem !important; } } @media (max-width: 480px) { .space-y-2 li { font-size: 0.85rem !important; line-height: 1.25 !important; margin-bottom: 0.5rem !important; } .space-y-2 li .fas { font-size: 0.75rem !important; margin-right: 0.5rem !important; } }
+
+[](https://tu.by/ai-main/)[](https://tu.by/ai-main/)/ Модуль 5
+
+Модуль 5 из 7
+
+# Модуль 5: Генеративные медиа
+
+Научитесь управлять ИИ - генераторами, как профессиональный режиссер
+
+Обзор Углубленно Практика
+
+## Анатомия "идеального" промпта: От простого текста к шедеврам. Искусство общения с ИИ
+
+Промпт - инжиниринг - это не просто написание инструкций. Это "искусство точного общения" с вашим творческим ассистентом. Представьте, что вы не просто даете команды, а ведете диалог, уточняете детали, как это делает режиссер с командой на съемочной площадке. Чем точнее ваше видение, тем лучше результат! Это позволяет создавать уникальные изображения просто описав их словами. Создание хорошего промпта-это как написание сценария. Используйте этот пошаговый чек-лист, чтобы ничего не упустить.
+
+### Кто? Что? Где? (Субъект, Действие, Место)
+
+**Пояснение:** Начните с основного: кто ваш главный герой, что он делает и где находится.
+
+**Например:**\`Мужчина-рыцарь в сияющих доспехах стоит на вершине скалы,\`
+
+### Среда и атмосфера (окружение)
+
+**Добавьте атмосферу и опишите место:** \`солнечный день\`, \`туманная долина\`, \`неоновый свет.\`.
+
+**Например:** \`на фоне величественного старинного замка, в туманной, мистической атмосфере,
+
+### Стиль и эстетика
+
+**Укажите стиль:** \`фотореализм\`, \`акварельный рисунок\`, \`арт в стиле студии Ghibli\`
+
+**Например:** \`фэнтези арт, эпический стиль, высокое фэнтези,\`
+
+### Композиция и ракурс (Съемка)
+
+**Используйте термины из кино и фотографии:** \`крупный план\`, \`широкий угол\`, \`с высоты птичьего полета\`. Это поможет ИИ правильно "построить" кадр.
+
+**Например:** \`вид сбоку, сфокусировано на рыцаре,\`
+
+### Технические детали (Рендер)
+
+**Укажите качество и детализацию:** \`высокое разрешение\`, \`8K\`, \`гиперреалистично\`, \`детализированные текстуры\`.
+
+**Например:** \`высокая детализация, 8k, кинематографичное освещение, гиперреализм, --no ugly, blur, duplicate, malformed.\`
+
+### Отрицательный промпт (Стоп-лист)
+
+**Укажите, что не должно быть на изображении:** Это важно для устранения типичных ошибок.
+
+**Негативный промпт:**: \`уродливый, размытый, плохие руки, деформированный\`.
+
+## Text - to - Image: Генераторы изображений
+
+ИИ - генераторы изображений обучаются на миллионах пар "текст-картинка", чтобы создавать уникальные визуальные концепции из слов. Каждый из них имеет свои сильные стороны.
+
+### Midjourney V7
+
+Midjourney Inc., США 🇺🇸
+
+Популярный генератор изображений, работающий через Discord. Отличается художественным стилем и кинематографичностью. Часто используется дизайнерами и художниками для концепт-арта.
+
+-   **Стоимость:** от $10/мес.
+-   **Качество:** Художественное, детализированное
+-   **Особенности:** Доступ через Discord, платная подписка.
+
+[Перейти на сайт](https://www.midjourney.com/)
+
+### DALL-E 3
+
+OpenAI, США 🇺🇸
+
+Модель для генерации и редактирования изображений, встроена в ChatGPT. Создаёт детализированные сцены, умеет заменять и дополнять части картинок. Используется для коммерческих задач.
+
+-   **Стоимость:** от $20/мес. (ChatGPT Plus)
+-   **Качество:** Высокое, детализированное
+-   **Особенности:** Интеграция в ChatGPT, inpainting.
+
+[Перейти на сайт](https://openai.com/dall-e-3)
+
+### Stable Diffusion 3.5
+
+Stability AI, Великобритания 🇬🇧
+
+Открытая модель для генерации изображений. Можно запускать локально, интегрировать плагины и дообученные модели. Отличается высокой гибкостью и кастомизацией параметров.
+
+-   **Стоимость:** Бесплатно / от $20 (API)
+-   **Качество:** Высокая кастомизация
+-   **Особенности:** Open source, плагины, локальная работа.
+
+[Перейти на сайт](https://stability.ai/stable-image)
+
+### Kandinsky 3.1
+
+Sber AI, Россия 🇷🇺
+
+Российский ИИ - генератор, демонстрирующий впечатляющие результаты в разных стилях. Особенно хорошо понимает запросы на русском языке, что делает его удобным для местной аудитории.
+
+-   **Стоимость:** Бесплатно
+-   **Качество:** Высокое
+-   **Особенности:** Отличное понимание русского языка
+
+[Перейти на сайт](https://ai-forever.github.io/Kandinsky-3)
+
+### Seedream 4.0
+
+ByteDance, Китай 🇨🇳
+
+Современный генератор изображений от создателя TikTok. Объединяет генерацию по тексту и продвинутое редактирование в одной модели. Поддерживает работу с несколькими референсами, выделяется высокой скоростью и детализацией до 4K
+
+-   **Стоимость:**от $0.03/изобр. (API) / Бесплатные тарифы
+-   **Качество:** Высокое
+-   **Особенности:** Быстрая генерация, поддержка референсов, единая архитектура для генерации и редактирования
+
+[Перейти на сайт](https://www.bytedance.com/)
+
+### Nano Banana Gemini 2.5
+Flash Image
+
+Google DeepMind, США 🇺🇸
+
+Мощный генератор изображений от Google. Поддерживает создание по тексту, редактирование частей (inpainting), комбинирование до 4 картинок. Отличается точностью деталей и консистентностью объектов.
+
+-   **Стоимость:** от $0.039/изобр. (API)
+-   **Качество:** Одно из лучших
+-   **Особенности:** Поддержка референсов, максимальная скорость и точность
+
+[Перейти на сайт](https://gemini.google.com/)
+
+### Qwen
+
+Alibaba, Китай 🇨🇳
+
+Универсальная модель от Alibaba, совмещающая работу с текстом и изображениями. Поддерживает редактирование картинок и создание сложных композиций. Активно используется в Китае.
+
+-   **Стоимость:** Бесплатный/платный тарифы
+-   **Качество:** Хорошее
+-   **Особенности:** Поддержка редактирования и анализа
+
+[Перейти на сайт](https://chat.qwen.ai/)
+
+### Recraft V3
+
+Recraft, Inc. 🇺🇸
+
+Новый генератор изображений, ориентированный на профессиональных дизайнеров. Отличается векторной графикой, поддержкой редактирования и фокусом на коммерческое использование.
+
+-   **Стоимость:** Бесплатно 30 кред., Pro $10/мес, Teams $55/мес
+-   **Качество:** Высокое
+-   **Особенности:** Функции редактирования, превосходит конкурентов по рейтингу
+
+[Перейти на сайт](https://recraft.ai/)
+
+### Adobe Firefly
+
+Adobe Inc. 🇺🇸
+
+Инструмент от Adobe для генерации изображений. Обучен на лицензированных данных, что снижает риски с авторскими правами. Интегрирован в Photoshop и Illustrator.
+
+-   **Стоимость:** от $9.99/мес
+-   **Качество:** Высокое
+-   **Особенности:** Лицензированные данные, интеграция с Adobe
+
+[Перейти на сайт](https://adobe.com/sensei/generative-ai/firefly.html)
+
+## Text - to - Video: Революция в создании видео
+
+Генерация видео-самая сложная, но и самая захватывающая область. Главная задача-обеспечить "согласованность" (temporal consistency), чтобы персонажи не меняли свой вид, а объекты не "исчезали" между кадрами.
+
+### Google Veo 3
+
+Google DeepMind, США 🇺🇸
+
+Генерация видео и аудио до 8 сек с фотореализмом и 4K. Поддержка Flow, улучшенная физика и движение объектов.
+
+-   **Стоимость:** Google AI Pro $19.99/мес, Ultra $250/мес
+-   **Качество:** Фотореализм, киноуровень
+-   **Особенности:** Видео+звук, контроль камеры, 4K
+
+[Перейти на сайт](https://deepmind.google/models/veo/ )
+
+### OpenAI Sora
+
+OpenAI, США 🇺🇸
+
+Генерация и редактирование видео до 20 сек, сложные сцены, звук, раскадровка для точного контроля. Поддержка форматов 480p - 1080p. .
+
+-   **Стоимость:**Plus $20/мес, Pro $200/мес
+-   **Качество:** Высокое, до 1080p
+-   **Особенности:** Форматы 9:16, 16:9, 1:1
+
+[Перейти на сайт](https://openai.com/sora/)
+
+### Runway Gen-3 Alpha
+
+Runway, США 🇺🇸
+
+Видео из текста, изображений и видео. Реализм, плавные движения, Motion Brush, Director Mode.
+
+-   **Стоимость:** Бесплатно (125 кред.), платно от $12/мес
+-   **Качество:** Высокое, до 720p, 20 сек\*\*
+-   **Особенности:** Веб-доступ, контроль через промпты, апскейл до 4K
+
+[Перейти на сайт](https://runwayml.com/research/introducing-gen-3-alpha )
+
+### Kling 2.1
+
+Kuaishou Technology, Китай 🇨🇳
+
+Видео до 10 сек, высокая детализация, плавные движения, Master-режим с топ-качеством. Поддержка 1080p и генерации звука.
+
+-   **Стоимость:** По кредитам (20 - 1000+ за видео)
+-   **Качество:** Кинематографическое, до 1080p
+-   **Особенности:** Камера-контроль, глобальный доступ
+
+[Перейти на сайт](https://klingai.com/global/ )
+
+### Hailuo AI
+
+MiniMax, Китай 🇨🇳
+
+Генерация 6 - 10 сек видео из текста/изображений, 1080p, быстрый рендер, многоязычные подсказки.
+
+-   **Стоимость:** Бесплатно (500 кред.), платно $10 - 125/мес
+-   **Качество:** Реалистичное, высокая связность
+-   **Особенности:** Поддержка S2V, T2V, I2V, управление камерой
+
+[Перейти на сайт](https://hailuoai.video/ )
+
+### Synthesia
+
+Synthesia, Великобритания 🇬🇧
+
+Создание AI-видео с 180+ аватарами, 140+ языками, персональными аватарами и дубляжом.
+
+-   **Стоимость:** от $18/мес (год), $29/мес (месячн.), Creator $64/мес
+-   **Качество:** Высокое (4.7/5 G2)
+-   **Особенности:** Для бизнеса, обучение, маркетинг, SOC 2, GDPR
+
+[Перейти на сайт](https://www.synthesia.io/)
+
+### Luma (Dream Machine)
+
+Luma Labs AI, США 🇺🇸
+
+Видео из текста, фото и видео. Модели Ray2, Photon. Редактирование и создание сцен в 1080p.
+
+-   **Стоимость:** Бесплатно (только фото), Lite $9.99/мес, Plus $29.99/мес, Unlimited $94.99/мес
+-   **Качество:** Высокое, реалистичные движения
+-   **Особенности:** Коммерческое использование, API, iOS-приложение
+
+[Перейти на сайт](https://lumalabs.ai/dream-machine )
+
+### Wan 2.2
+
+Alibaba Group, Китай 🇨🇳
+
+Open source модель с MoE, генерация T2V, I2V, TI2V, 480p - 1080p, сложные движения. Работает на потребительских GPU.
+
+-   **Стоимость:** Бесплатно (Apache 2.0)
+-   **Качество:** высокое, опережает коммерческие аналоги
+-   **Особенности:** Open source, GitHub/HuggingFace, исследовательский и коммерческий доступ
+
+[Перейти на сайт](https://wan.video/ )
+
+## Галерея примеров
+
+Пример генерации 1
+
+Демонстрация возможностей AI - генерации изображений
+
+Пример генерации 2
+
+Создание уникальных визуальных концепций
+
+Пример генерации 3
+
+Трансформация идей в визуальные образы
+
+Пример генерации 4
+
+AI-генерация для креативных проектов
+
+Пример генерации 5
+
+Инновационные подходы к визуализации
+
+Пример генерации 6
+
+Продвинутые техники AI-генерации
+
+## Text - to - Audio: Генерация музыки и звука
+
+ИИ - генераторы аудио - это мощные инструменты для создания уникальной музыки, звуковых эффектов и даже целых песен с вокалом, которые не требуют знания нотной грамоты.
+
+### Udio
+
+Udio, США
+
+Генерация музыки и вокала из текста, ремиксы и расширение треков, загрузка аудио для стиля, интерфейс "Sessions" для редактирования.
+
+-   **Стоимость:** Бесплатно 10 кред., Standard $10/мес, Pro $30/мес
+-   **Качество:** Реалистичный, эмоциональный вокал
+-   **Особенности:** Публичная бета, судебные иски по авторским правам
+
+[Перейти на сайт](https://www.udio.com/ )
+
+### ElevenLabs
+
+ElevenLabs, США 🇺🇸
+
+Реалистичная синтеза речи, клонирование голосов, генерация музыки, API для разработчиков, многоязычная поддержка.
+
+-   **Стоимость:** Бесплатно 10к кред., Starter $5/мес, Pro $99/мес
+-   **Качество:** Высокое, выразительные голоса
+-   **Особенности:** Для разработчиков, контента и бизнеса
+
+[Перейти на сайт](https://elevenlabs.io/music  )
+
+### Suno AI
+
+Suno, Inc., США 🇺🇸
+
+Генерация песен и инструментальных треков из текста, реалистичный вокал, разделение дорожек на 12 стемов, коммерческие права для платных планов.
+
+-   **Стоимость:** Бесплатно ограниченно, Pro $8 - 10/мес
+-   **Качество:** Реалистичный вокал, до 8 мин
+-   **Особенности:** Поддержка жанров, текст песен, iOS/Android, Microsoft Copilot
+
+[Перейти на сайт](https://suno.com/ )
+
+### AIVA
+
+AIVA Technologies Sarl, Люксембург 🇱🇺
+
+Создание эмоциональных саундтреков в 250+ стилях, загрузка референсов, редактирование треков, форматы MP3/MIDI/WAV.
+
+-   **Стоимость:** Бесплатно €0, Standard €11, Pro €33/мес
+-   **Качество:** До 5:30 мин треков (Pro)
+-   **Особенности:** Легенда рынка, официальный композитор AI
+
+[Перейти на сайт](https://www.aiva.ai/ )
+
+### Soundful
+
+Soundful, Inc., США 🇺🇸
+
+AI - генерация фоновых треков и лупов, 150+ стилей, загрузка STEM-паков и MIDI, royalty-free музыка, прямая публикация.
+
+-   **Стоимость:** Standard бесплатно, Premium $5/мес, Pro $9.99 - 14.99/мес
+-   **Качество:** Студийный звук, коммерческая лицензия
+-   **Особенности:** Неограниченные генерации, публикация на SoundCloud
+
+[Перейти на сайт](https://soundful.com/ )
+
+### Mubert
+
+Mubert Inc. 🇺🇸
+
+Генерация треков и лупов по тексту, 100+ жанров и 30 настроений, настройка длительности, BPM и тональности, монетизация для артистов, API и интеграции с Adobe.
+
+-   **Стоимость:** Бесплатно ограниченно, платно от $14/мес
+-   **Качество:** Полноценные треки 5 сек - 25 мин, коммерческая лицензия
+-   **Особенности:** Для работы, сна, медитации, защищено от DMCA
+
+[Перейти на сайт](https://mubert.com/ )
+
+## JSON Промптинг: От Текста к Структуре
+
+Представьте, что вы работаете с ИИ не как с художником, которому вы пытаетесь объяснить свою идею на словах, а как с профессиональной командой на съёмочной площадке, где каждый параметр чётко задан: освещение, камера, композиция. Это и есть суть **JSON - промптинга** - структурированного подхода к генерации изображений, который превращает творческий хаос в предсказуемый результат.
+
+### Что такое JSON - промптинг?
+
+**JSON (JavaScript Object Notation)** - это формат структурированных данных, где информация организована в виде пар "ключ - значение". В контексте генерации изображений JSON - промпт работает как детальный технический рецепт, где каждый аспект будущего изображения описан отдельным параметром.
+
+Вместо фразы "красивый закат над океаном" вы создаёте структуру с чёткими инструкциями: стиль (фотореализм), освещение (золотой час), камера (широкоугольный объектив 24mm), настроение (умиротворённое).
+
+## Обычный промптинг ил JSON - промптинг
+
+### Естественный язык
+
+Пример:
+
+"Красивый рыцарь в доспехах стоит на скале на фоне замка в туманной атмосфере"
+
+**Низкий порог входа** - понятно всем
+
+**Творческая свобода** - ИИ интерпретирует
+
+**Высокая неоднозначность** - разные результаты
+
+**Сложно повторить** - каждый раз новое
+
+### JSON-структура
+
+Пример:
+
+{
+  "subject": "knight in armor",
+  "scene": {"environment": "cliff"},
+  "lighting": {"quality": "soft"},
+  "mood": "epic"
+}
+
+**Точность** - 89% снижение вариативности
+
+**Повторяемость** - одинаковый результат
+
+**Контроль** - каждый параметр под управлением
+
+**Технический барьер** - нужно знать структуру
+
+### Измеримые преимущества JSON - промптинга
+
+89%
+
+снижение вариативности результатов
+
+74%
+
+уменьшение сбоев в автоматизации
+
+52%
+
+ускорение обучения новых специалистов
+
+## Анатомия JSON - схемы для изображений
+
+Эффективная JSON - схема разбивает визуальную задачу на логические блоки. Каждый блок отвечает за свой аспект изображения, что даёт полный контроль над результатом.
+
+### 1\. Цель и стиль изображения
+
+Определяет общее назначение и художественное направление изображения.
+
+#### Пример:
+
+{
+  "image\_purpose": "product\_showcase",
+  "style": "photorealistic, minimalist"
+}
+
+-   **image\_purpose:** "portrait", "still\_life", "cinematic\_storytelling", "concept\_art"
+-   **style:** "realistic photography", "watercolor", "cyberpunk", "studio Ghibli"
+
+### 2\. Субъект и действие
+
+Детальное описание главного объекта, персонажа или сцены.
+
+#### Пример:
+
+{
+  "subject": "Dark-haired detective wearing futuristic coat,
+             standing on rooftop, looking over neon-lit city"
+}
+
+**Совет:** Будьте конкретны - указывайте детали внешности, позу, действия, реквизит.
+
+### 3\. Окружение и сцена
+
+Описывает место действия, фон и поверхности.
+
+#### Пример:
+
+{
+  "scene": {
+    "environment": "studio",
+    "background": {
+      "material": "seamless paper",
+      "color\_tone": "neutral-cool",
+      "cleanliness": "clean"
+    },
+    "surface": {
+      "material": "glass"
+    }
+  }
+}
+
+-   **environment:** "studio", "interior", "exterior", "urban"
+-   **background:** материал, цветовой тон, чистота/текстура
+-   **surface:** поверхность для натюрмортов (дерево, камень, металл)
+
+### 4\. Освещение
+
+Контролирует тип, направление и качество света.
+
+#### Пример:
+
+{
+  "lighting": {
+    "type": "natural",
+    "direction": "left, 45 degrees",
+    "quality": "soft, diffused"
+  }
+}
+
+-   **type:** "natural", "strobe", "continuous", "neon", "candlelight"
+-   **direction:** "top", "left", "right", "back (rim lighting)", "front"
+-   **quality:** "soft", "hard", "diffused", "dramatic"
+
+### 5\. Настройки камеры
+
+Определяет технические параметры съёмки и ракурс.
+
+#### Пример:
+
+{
+  "camera": {
+    "lens": "50mm",
+    "aperture": "f/1.8",
+    "angle": "low-angle shot, wide",
+    "movement": "slow zoom-in"
+  }
+}
+
+-   **lens:** "24mm" (широкоугольный), "50mm" (стандарт), "100mm" (макро)
+-   **aperture:** "f/1.8" (малая глубина резкости), "f/8" (всё в фокусе)
+-   **angle:** "close-up", "wide shot", "bird's eye view", "low-angle"
+-   **movement:** (для видео) "dolly zoom", "pan", "tilt"
+
+### 6\. Настроение и эмоции
+
+Добавляет эмоциональный контекст и общую атмосферу.
+
+#### Пример:
+
+{
+  "mood\_emotion": "dark, melancholic, suspenseful"
+}
+
+**Варианты:** "dramatic", "joyful", "mysterious", "peaceful", "epic", "sophisticated"
+
+## Практические примеры JSON - промптов
+
+### Пример 1: Продуктовая фотография (E - commerce)
+
+Идеально для интернет-магазинов и рекламы
+
+{
+  "image\_purpose": "product\_showcase",
+  "subject": "Matte black smartwatch spinning slowly on sleek glass surface",
+  "style": "Minimalist, photorealistic, clean background",
+  "mood\_emotion": "Sophisticated, high-end",
+  "scene": {
+    "environment": "studio",
+    "background": {
+      "material": "seamless paper",
+      "color\_tone": "neutral-cool",
+      "cleanliness": "clean"
+    },
+    "surface": {
+      "material": "glass"
+    }
+  },
+  "lighting": {
+    "type": "continuous",
+    "direction": "top and front (key light)",
+    "quality": "soft"
+  },
+  "camera": {
+    "lens": "100mm (macro)",
+    "aperture": "f/4.0",
+    "angle": "close-up, rotating around watch"
+  }
+}
+
+**Результат:** Профессиональная студийная фотография продукта с контролируемым освещением, подходящая для каталогов и маркетплейсов. Каждый кадр будет идентичным по стилю.
+
+### Пример 2: Кинематографический концепт - арт
+
+Для игр, фильмов и арт - проектов
+
+{
+  "image\_purpose": "cinematic\_storytelling",
+  "subject": "Dark-haired detective wearing futuristic coat stands on rooftop,
+             looking over neon-lit city",
+  "style": "Cyberpunk, cinematic film grain",
+  "mood\_emotion": "Dark, melancholic, suspenseful",
+  "scene": {
+    "environment": "exterior",
+    "background": {
+      "material": "futuristic city skyline",
+      "color\_tone": "cool blue hues with neon glows",
+      "cleanliness": "wet"
+    },
+    "surface": {
+      "material": "concrete"
+    }
+  },
+  "lighting": {
+    "type": "strobe (simulating neon)",
+    "direction": "back (rim lighting)",
+    "quality": "hard"
+  },
+  "camera": {
+    "lens": "35mm",
+    "aperture": "f/2.8",
+    "angle": "wide shot, low angle"
+  }
+}
+
+**Результат:** Атмосферный кадр в стиле киберпанк с драматическим освещением и кинематографической композицией, готовый для использования в концепт - артах или сториборде.
+
+## Инструменты для работы с JSON-промптингом
+
+### ComfyUI
+
+Визуальный редактор для AI - воркфлоу
+
+Мощная платформа для создания и автоматизации генеративных процессов. Позволяет экспортировать рабочие процессы в JSON - формате, выполнять пакетную обработку и интегрироваться через REST API.
+
+[Узнать больше →](https://github.com/comfyanonymous/ComfyUI)
+
+
+
+### Prompt JSON Node
+
+Конвертер промптов для ComfyUI
+
+Узел для ComfyUI, который автоматически преобразует простые текстовые промпты в структурированный JSON по заданной схеме. Упрощает переход к структурированному подходу.
+
+
+
+### Google Gemini API
+
+Структурированная генерация
+
+API от Google с поддержкой responseSchema, позволяющий генерировать контент строго по заданной JSON - схеме. Идеально для интеграции в производственные системы.
+
+[Документация API →](https://ai.google.dev/)
+
+
+
+### JSON Schema Builder
+
+Визуальный конструктор схем
+
+Инструменты для визуального создания и валидации JSON - схем. Позволяют проектировать сложные структуры без глубоких знаний синтаксиса.
+
+
+
+#### 💡 Ключевой принцип
+
+**Prompt Engineering - это новое "программирование" естественным языком.** Вместо кода вы используете структурированные инструкции для получения предсказуемых результатов. Чем точнее инструкция, тем лучше результат.
+
+
+
+
+## Лучшие практики JSON - промптинга
+
+**Атомарность полей**
+
+Каждое поле - одна идея. Не объединяйте несколько концепций в одном ключе.
+
+**Шаблонизация**
+
+Создавайте и сохраняйте готовые шаблоны для типовых задач (портрет, продукт, пейзаж).
+
+**Версионирование**
+
+Храните JSON - промпты в системах контроля версий (Git) как программный код.
+
+**Валидация схемы**
+
+Проверяйте обязательные поля, типы данных и диапазоны значений перед генерацией.
+
+**Гибридный подход**
+
+Комбинируйте JSON - структуру с полем для творческого текста (description).
+
+**Профессиональная терминология**
+
+Используйте термины из фотографии и кино (bokeh, dolly zoom, rim lighting).
+
+## Когда использовать JSON - промптинг?
+
+### Используйте JSON, если:
+
+Нужна **повторяемость** - одинаковый стиль для серии изображений
+
+Создаёте **коммерческий контент** - товары, реклама, каталоги
+
+Автоматизируете **массовую генерацию** - сотни изображений
+
+Интегрируете в **производственный пайплайн** - API, CI/CD
+
+Требуется **точный контроль** над каждым параметром
+
+### Используйте естественный язык, если:
+
+Экспериментируете и **исследуете идеи**
+
+Создаёте **художественные работы** с творческой свободой
+
+Делаете **быстрые прототипы** без технических ограничений
+
+Работаете **один раз** - уникальные изображения
+
+Нет технических знаний и не нужна **автоматизация**
+
+### Ключевые выводы
+
+JSON-промптинг - это переход от **творческого хаоса к инженерной точности**
+
+Структурированный подход снижает вариативность на **89%** и сбои на **74%**
+
+JSON-схемы превращают ИИ в **надёжный производственный инструмент**
+
+Идеален для **коммерции, автоматизации и масштабирования** контента
+
+Требует технических знаний, но окупается **предсказуемостью и качеством**
+
+* * *
+
+## Этические аспекты и авторские права
+
+### Критически важно для бизнеса
+
+Использование генеративного ИИ в коммерческих целях требует глубокого понимания правовых рисков и этических обязательств.
+
+#### Правовые вопросы
+
+-   Авторские права: Контент, созданный исключительно ИИ, не защищен авторским правом в США. Необходимо человеческое участие для получения защиты.
+-   Данные обучения: Многие модели обучены на материалах без согласия авторов. \*\*Getty Images\*\*, \*\*NYT\*\* и другие подают иски против компаний ИИ.
+-   Безопасные варианты: Некоторые сервисы, например, \*\*Adobe Firefly\*\*, обучены на лицензированных данных Adobe Stock, а \*\*Shutterstock AI\*\* выплачивает роялти создателям.
+
+#### Этические проблемы
+
+-   Дипфейки: ИИ может создавать реалистичные, но поддельные видео и аудио. Это создает риск дезинформации и мошенничества.
+-   Замещение творцов: ИИ может имитировать стили художников без их согласия, потенциально влияя на их заработок.
+-   Прозрачность: Важно указывать, что контент создан ИИ. Некоторые платформы, такие как \*\*Adobe\*\*, требуют обязательную маркировку.
+
+## Проверка знаний
+
+#### 1\. Что такое промпт в контексте генерации изображений?
+
+Это текстовая инструкция для ИИ, описывающая желаемый результат
+
+Это набор правил для использования программы
+
+Это сгенерированное ИИ изображение
+
+Это специальный графический редактор для обработки фото
+
+✓ Правильно! Seedream 3.0 от ByteDance специализируется на точной генерации текста в изображениях
+
+#### 2\. Какова основная функция отрицательного промпта (стоп - листа) при генерации изображений?
+
+Сформировать промпт, написанный в отрицательном ключе
+
+Указать ИИ, какие элементы или качества не должны присутствовать на изображении
+
+Задавать стилистику, которой ИИ должен избегать
+
+Сгенерировать низкокачественное изображение
+
+✓ Верно! Google Veo предлагает 4K разрешение с встроенным аудио
+
+#### 3\. Что из перечисленного не является обязательным элементом «анатомии» идеального промпта, согласно данному модулю?
+
+Информация о дате создания промпта
+
+Композиция и ракурс
+
+Технические детали
+
+Среда и атмосфера
+
+✓ Правильно! Adobe Firefly обучен на лицензированных данных Adobe Stock
+
+#### 4\. Какая ключевая особенность отличает модель Stable Diffusion от других генераторов изображений, упомянутых в модуле?
+
+Она специализируется исключительно на фотореалистичных изображениях
+
+Это открытая (open-source) модель, доступная для свободного использования и модификации
+
+Она может генерировать только анимированные изображения
+
+Она предназначена исключительно для использования в промышленных целях
+
+✓ Верно! ElevenLabs поддерживает более 70 языков с нативным произношением
+
+#### 5\. В чем заключается главная трудность при генерации человеческой речи с помощью Text - to - Audio моделей?
+
+Невозможность генерировать речь на разных языках
+
+Обеспечение естественности звучания, правильной интонации и эмоционального окраса
+
+Необходимость использования очень больших по объему файлов для обучения
+
+Ограничение на количество слов в промпте
+
+✓ Правильно! Hunyuan Video от Tencent-крупнейшая открытая модель для генерации видео
+
+## Ключевые термины
+
+### Промпт-инжиниринг
+
+Практика составления детализированных текстовых запросов (промптов) для генеративных ИИ - моделей, чтобы получить точный и качественный результат
+
+### Негативный промпт
+
+Текстовая инструкция или стоп-лист, который указывает ИИ, какие элементы или качества не должны присутствовать на итоговом сгенерированном изображении
+
+### Text - to - Image
+
+Технология искусственного интеллекта, которая генерирует изображения на основе текстового описания
+
+### Мультимодальность
+
+Способность ИИ - модели работать с несколькими типами данных одновременно, например, с текстом и изображениями, как это делает Google Gemini
+
+### Генеративные медиа
+
+Медиа, создаваемые искусственным интеллектом, такие как изображения, видео и аудио, на основе заданных параметров или текстовых описаний
+
+### Временная согласованность (Temporal consistency)
+
+Ключевая задача в генерации видео, которая обеспечивает стабильность и непрерывность объектов и персонажей от кадра к кадру
+
+Обзор Углубленно Практика
+
+[Предыдущий модуль](https://tu.by/ai-module-4/)
+
+Модуль 5 из 7
+
+[Следующий модуль](https://tu.by/ai-module-6/)
+
+// Управление табами document.addEventListener('DOMContentLoaded', function() { console.log('🚀 Инициализация системы табов'); // Переменные для отслеживания прогресса (если нужно) let completedSteps = 0; let scrollProgress = false; // Функция для переключения табов function switchTab(targetTab) { console.log(\`🔄 Переключение на таб: ${targetTab}\`); // Удаляем активный класс со всех кнопок табов const allTabButtons = document.querySelectorAll('.tab-button'); allTabButtons.forEach(button => { button.classList.remove('active'); }); // Скрываем все контентные блоки табов const allTabContent = document.querySelectorAll('.tab-content'); allTabContent.forEach(content => { content.style.display = 'none'; content.classList.remove('active'); }); // Активируем все кнопки табов с соответствующим data-tab const targetButtons = document.querySelectorAll(\`\[data-tab="${targetTab}"\]\`); targetButtons.forEach(button => { button.classList.add('active'); console.log(\`✅ Кнопка таба "${targetTab}" активирована\`); }); // Показываем целевой контент const targetContent = document.getElementById(targetTab); if (targetContent) { targetContent.style.display = 'block'; targetContent.classList.add('active'); console.log(\`✅ Контент таба "${targetTab}" показан\`); // Прокрутка до самого верха страницы window.scrollTo({ top: 0, behavior: 'smooth' }); } else { console.error(\`❌ Контент для таба "${targetTab}" не найден\`); } } // Находим все кнопки табов const tabButtons = document.querySelectorAll('.tab-button'); console.log(\`📋 Найдено ${tabButtons.length} кнопок табов\`); // Добавляем обработчики клика для всех кнопок табов tabButtons.forEach(button => { const tabId = button.getAttribute('data-tab'); console.log(\`🔗 Настройка обработчика для таба: ${tabId}\`); button.addEventListener('click', function(e) { e.preventDefault(); switchTab(tabId); // Обновляем URL history.pushState(null, null, \`#${tabId}\`); }); }); // Определяем начальный активный таб let activeTab = null; // Проверяем, есть ли уже активный таб в URL const hash = window.location.hash.substring(1); if (hash && document.getElementById(hash)) { activeTab = hash; console.log(\`🎯 Активный таб из URL: ${activeTab}\`); } else { // Ищем активную кнопку в HTML const activeButton = document.querySelector('.tab-button.active'); if (activeButton) { activeTab = activeButton.getAttribute('data-tab'); console.log(\`🎯 Найден активный таб в HTML: ${activeTab}\`); } } // Если активный таб не найден, используем первый доступный if (!activeTab && tabButtons.length > 0) { activeTab = tabButtons\[0\].getAttribute('data-tab'); console.log(\`🎯 Установлен первый таб по умолчанию: ${activeTab}\`); } // Применяем начальное состояние if (activeTab) { switchTab(activeTab); } console.log('✨ Система табов успешно инициализирована'); }); // Квизы document.querySelectorAll('.quiz-option').forEach(option => { option.addEventListener('click', function() { const question = this.closest('.quiz-question'); const options = question.querySelectorAll('.quiz-option'); const feedback = question.querySelector('.quiz-feedback'); const isCorrect = this.getAttribute('data-correct') === 'true'; // Отключение кликов options.forEach(opt => { opt.style.pointerEvents = 'none'; if (opt.getAttribute('data-correct') === 'true') { opt.classList.add('correct'); } else if (opt === this && !isCorrect) { opt.classList.add('incorrect'); } }); // Показ обратной связи feedback.classList.remove('hidden'); if (isCorrect) { feedback.innerHTML = '<p class="text-green-600">✓ Правильно!</p>'; } else { feedback.innerHTML = '<p class="text-red-600">✗ Неправильно. Правильный ответ выделен зеленым.</p>'; } }); }); // Флип-карточки document.querySelectorAll('.flip-card').forEach(card => { card.addEventListener('click', function() { this.classList.toggle('flipped'); }); }); // Аккордеоны document.querySelectorAll('.accordion-header').forEach(header => { header.addEventListener('click', function() { const accordion = this.closest('.accordion'); const isActive = accordion.classList.contains('active'); // Закрытие всех аккордеонов document.querySelectorAll('.accordion').forEach(acc => { acc.classList.remove('active'); }); // Открытие текущего, если он был закрыт if (!isActive) { accordion.classList.add('active'); } }); }); // Фильтры таблицы document.querySelectorAll('.filter-btn').forEach(button => { button.addEventListener('click', function() { const filter = this.getAttribute('data-filter'); document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active')); this.classList.add('active'); const rows = document.querySelectorAll('.model-row'); rows.forEach(row => { if (filter === 'all') { row.style.display = ''; } else if (filter === 'chinese' || filter === 'western') { row.style.display = row.getAttribute('data-region') === filter ? '' : 'none'; } else { row.style.display = row.getAttribute('data-type') === filter ? '' : 'none'; } }); completedSteps++; updateProgress(); }); }); // Отслеживание скролла let scrollProgress = false; window.addEventListener('scroll', function() { if (!scrollProgress && window.scrollY > 500) { scrollProgress = true; completedSteps++; updateProgress(); } }); // Интерактивность галереи document.querySelectorAll('.gallery-item').forEach(item => { item.addEventListener('click', function() { completedSteps++; updateProgress(); }); }); // Иерархия ИИ document.querySelectorAll('.hierarchy-level').forEach(level => { level.addEventListener('click', function() { // Анимация клика this.style.transform = 'translateX(12px)'; setTimeout(() => { this.style.transform = 'translateX(8px)'; }, 200); }); });

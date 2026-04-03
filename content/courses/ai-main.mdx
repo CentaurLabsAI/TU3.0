@@ -1,0 +1,184 @@
+---
+title: "AI-Main"
+slug: "ai-main"
+description: ":root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E3"
+order: 0
+---
+
+:root { --primary-text: #000000; --secondary-text: rgba(0,0,0,0.6); --nav-text: rgba(0,0,0,0.302); --block-bg: #F0F4F7; --main-bg: #FFFFFF; --accent-active: #E30613; --accent-inactive: rgba(227,6,19,0.2); --mobile-breakpoint: 768px; --tablet-breakpoint: 1024px; --mobile-padding: 0.1rem; --tablet-padding: 1.5rem; } .module-number-text { color: var(--accent-active); font-weight: bold; } .module-title-text { color: var(--primary-text); } /\*свойство для подсветки "База ИИ" в хлебных крошках при наведении \*/ .breadcrumb-item { cursor: pointer; transition: color 0.3s ease; text-decoration: none; } .breadcrumb-item:hover { color: var(--accent-active) !important; } .fa-home { transition: color 0.3s ease; } .fa-home:hover { color: var(--accent-active) !important; } /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ h1 { font-size: 1.75rem; line-height: 1.2; } h2 { font-size: 1.5rem; } h3 { font-size: 1.25rem; } .text-block { line-height: 1.6; max-width: 100%; } body { font-family: "Mulish", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: var(--main-bg); color: var(--primary-text); line-height: 1.6; } /\* ===== АДАПТИВНЫЕ ТАБЫ ===== \*/ .tab-navigation { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; width: 100%; } .tab-button i { font-size: 0.7rem !important; margin-right: 0 !important; margin-bottom: 0.1rem; } .tab-button { transition: all 0.3s ease; border-bottom: 2px solid transparent; padding: 0.25rem 0.5rem; min-height: 44px; justify-content: center; border-radius: 8px; margin-bottom: 0.25rem; width: 100%; display: flex; align-items: center; text-align: center; cursor: pointer; font-size: 0.9rem; flex-direction: row; /\* По умолчанию - иконка слева \*/ gap: 0.3rem; transition: all 0.3s ease; } .tab-button.active { color: var(--accent-active); border-bottom-color: var(--accent-active); } .tab-button:hover { color: var(--accent-active); background-color: var(--block-bg); } /\* ===== АДАПТИВНЫЕ КРАСНЫЕ КНОПКИ CTA ===== \*/ .ai-module-content .cta-button, .ai-module-content .cta-button \* { background: var(--accent-active) !important; color: white !important; border-radius: 8px !important; text-decoration: none !important; font-weight: 600 !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; transition: all 0.3s ease !important; border: none !important; cursor: pointer !important; text-align: center !important; padding: 0.75rem 1.5rem !important; margin: 0.5rem !important; font-size: 0.9rem !important; min-height: 44px !important; white-space: nowrap !important; /\* ВАЖНО: запрет переноса \*/ } .ai-module-content .cta-button:hover, .ai-module-content .cta-button:hover \* { background: #c4050f !important; transform: translateY(-2px) !important; box-shadow: 0 8px 25px rgba(227, 6, 19, 0.3) !important; } /\* Специфичные стили для кнопок в подвале \*/ .footer-navigation .cta-button { width: 100% !important; max-width: 500px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; } .hero-section { background: linear-gradient(135deg, var(--block-bg) 0%, #ffffff 100%); border-radius: 16px; margin: 2rem 0; padding: 3rem; text-align: center; position: relative; overflow: hidden; } .hero-section::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, var(--accent-inactive) 0%, transparent 70%); opacity: 0.1; animation: float 6s ease-in-out infinite; } @keyframes float { 0%, 100% { transform: translateY(-10px) rotate(0deg); } 50% { transform: translateY(10px) rotate(180deg); } } .hero-content { position: relative; z-index: 2; } .cta-button { background: var(--accent-active); color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; margin: 1rem; transition: all 0.3s ease; border: none; cursor: pointer; } .cta-button:hover { background: #c4050f; transform: translateY(-2px); box-shadow: 0 8px 25px rgba(227, 6, 19, 0.3); color: white; text-decoration: none; } .module-card { background: var(--block-bg); border-radius: 12px; padding: 2rem; margin: 1.5rem 0; transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent; position: relative; overflow: hidden; } .module-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(227, 6, 19, 0.1), transparent); transition: left 0.5s ease; } .module-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); border-color: var(--accent-active); background: white; } .module-card:hover::before { left: 100%; } .module-number { background: var(--accent-active); color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; margin-bottom: 1rem; } .module-title { font-size: 1.5rem; font-weight: bold; margin: 1rem 0 0.5rem 0; color: var(--primary-text); } .module-description { color: var(--secondary-text); font-size: 1rem; line-height: 1.6; } .module-stats { display: flex; align-items: center; gap: 1rem; margin-top: 1rem; font-size: 0.9rem; color: var(--nav-text); } .difficulty-badge { padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.8rem; font-weight: 500; } .difficulty-beginner { background: #e8f5e8; color: #2d5a2d; } .difficulty-intermediate { background: #fff3cd; color: #856404; } .difficulty-advanced { background: #f8d7da; color: #721c24; } .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 3rem 0; } .feature-item { text-align: center; padding: 1.5rem; background: white; border-radius: 8px; border: 1px solid #e5e5e5; } .feature-icon { font-size: 2.5rem; color: var(--accent-active); margin-bottom: 1rem; } .stats-section { background: var(--block-bg); border-radius: 12px; padding: 2rem; margin: 3rem 0; text-align: center; } .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem; margin-top: 2rem; } .stat-item { text-align: center; } .stat-number { font-size: 2.5rem; font-weight: bold; color: var(--accent-active); margin-bottom: 0.5rem; } .stat-label { color: var(--secondary-text); font-size: 0.9rem; } @media (max-width: 768px) { .hero-section { padding: 2rem 1rem; } .module-card { padding: 1.5rem; } .module-number { width: 40px; height: 40px; font-size: 1rem; } .module-title { font-size: 1.3rem; } } /\* ===== МЕДИА-ЗАПРОСЫ ===== \*/ /\* ===== MOBILE FIRST ТИПОГРАФИЯ ===== \*/ @media (max-width: 768px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 480px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } @media (max-width: 360px) { h1 { font-size: 1.5rem !important; line-height: 1.3; } h2 { font-size: 1.3rem !important; } h3 { font-size: 1.1rem !important; } .text-block, p { line-height: 1.4 !important; font-size: 0.9rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 768px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 480px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Добавить в медиа-запрос для мобильных \*/ @media (max-width: 360px) { .content-section { margin-bottom: 1rem !important; } .ai-hierarchy { padding: 0.5rem !important; } .hierarchy-level { padding: 0.75rem !important; margin: 0.5rem 0 !important; } .example-card, .country-section { padding: 1rem !important; margin-bottom: 1rem !important; } .highlight-box { padding: 1rem !important; margin: 1rem 0 !important; } .quiz-question { padding: 1rem !important; margin-bottom: 1.5rem !important; } } /\* Уменьшить отступы в хлебных крошках \*/ @media (max-width: 768px) { .breadcrumb .flex { padding: 0.2rem 0 !important; } } /\* Компактные отступы для заголовка модуля \*/ @media (max-width: 768px) { header.text-center { margin-bottom: 0.5rem !important; } header h1 { margin-bottom: 0.2rem !important; } } @media (max-width: 768px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 480px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } @media (max-width: 360px) { .max-w-6xl.mx-auto { padding-left: 0.5rem !important; padding-right: 0.5rem !important; } } .stat-number { font-size: 3rem; font-weight: bold; color: var(--accent-active); text-align: center; transition: font-size 0.3s ease; } /\* Адаптивность для мобильных \*/ @media (max-width: 768px) { .stat-number { font-size: 1.5rem !important; } } @media (max-width: 480px) { .stat-number { font-size: 1rem !important; } } @media (max-width: 360px) { .stat-number { font-size: 1rem !important; } } .module-stats { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; } .module-stats span { display: inline-flex; align-items: center; padding: 0.4rem 0.75rem; background: var(--block-bg); border-radius: 20px; font-size: 0.9rem; white-space: nowrap; } .difficulty-beginner { background: #dcfce7 !important; color: #166534; border: 1px solid #bbf7d0; } /\* Адаптивность \*/ @media (max-width: 768px) { .module-stats { flex-direction: column; align-items: flex-start; gap: 0.5rem; } .module-stats span { width: 100%; justify-content: flex-start; padding: 0.5rem 0.75rem; font-size: 0.85rem; } } @media (max-width: 480px) { .module-stats { gap: 0.4rem; } .module-stats span { padding: 0.4rem 0.6rem; font-size: 0.8rem; } .module-stats i { font-size: 0.8rem; } }
+
+База знаний по ИИ
+
+Точка входа в будущее
+
+# Освойте ИИ в несколько шагов
+
+Искусственный интеллект больше не магия - это инструмент, которым может овладеть каждый. Пройдите путь от полного новичка до уверенного пользователя ИИ и откройте для себя технологии, которые уже меняют мир.
+
+[Программа обучения](#modules) [Почему эта база знаний](#about)
+
+## Что вас ждет
+
+7
+
+Модулей обучения
+
+50+
+
+Практических инструментов
+
+100%
+
+Актуальной информации
+
+2025
+
+Год релиза
+
+### От новичка до эксперта
+
+Структурированное обучение с постепенным усложнением материала
+
+### Практические инструменты
+
+Реальные решения и сервисы, которые можно применить сразу
+
+### Актуальные данные
+
+Последние модели, тренды и технологии 2025 года
+
+## Программа обучения
+
+7 комплексных модулей для полного понимания ИИ
+
+[
+
+### Модуль 1
+
+ИИ сегодня - Простая картина мира
+
+Введение в мир искусственного интеллекта. Изучите иерархию ИИ → ML → Deep Learning → Generative AI → LLM. Узнайте об истории развития, текущих трендах и ключевых терминах. Идеальная отправная точка для понимания современного ИИ.
+
+Новичок Основы ИИ История развития Тренды 2025
+
+](https://tu.by/ai-module-1/)
+
+[](https://tu.by/ai-module-1/)
+
+[](https://tu.by/ai-module-1/)[
+
+### Модуль 2
+
+Большие языковые модели - Как это работает
+
+Разберитесь в принципах работы LLM доступным языком. Узнайте про токены, контекстные окна, температуру генерации. Поймите, почему ChatGPT "понимает" вас и как модели обучаются на текстах всего интернета.
+
+Новичок Принципы работы Обработка языка Обучение моделей
+
+](https://tu.by/ai-module-2/)
+
+[](https://tu.by/ai-module-2/)
+
+[](https://tu.by/ai-module-2/)[
+
+### Модуль 3
+
+Топовые модели 2025: Сравнение лидеров
+
+Подробный обзор лучших LLM 2025 года: GPT-5, Claude 4, Gemini 2.5 Pro, DeepSeek V3.2 Включая китайские модели, российские и европейские разработки. Сравнительные характеристики и рекомендации по выбору.
+
+Средний Топ модели Международный обзор Сравнение
+
+](https://tu.by/ai-module-3/)
+
+[](https://tu.by/ai-module-3/)
+
+[](https://tu.by/ai-module-3/)[
+
+### Модуль 4
+
+Prompt Engineering: Искусство общения с ИИ
+
+Научитесь создавать эффективные промпты. Изучите анатомию промпта, техники Zero-shot, Few-shot, Chain-of-Thought. Получите практические навыки создания промптов с помощью интерактивного конструктора.
+
+Средний Техники промптов Готовые шаблоны Конструктор
+
+](https://tu.by/ai-module-4/)
+
+[](https://tu.by/ai-module-4/)
+
+[](https://tu.by/ai-module-4/)[
+
+### Модуль 5
+
+Генеративные медиа: От текста к изображениям, видео, аудио
+
+Обзор инструментов для генерации изображений (Nano banana, DALL-E, Midjourney, Stable Diffusion), видео (Veo 3, Sora, Runway, Seedream) и аудио (Suno, ElevenLabs). Продвинутые техники промпта для генерации изображений.
+
+Средний Генерация изображений Создание видео Аудио контент
+
+](https://tu.by/ai-module-5/)
+
+[](https://tu.by/ai-module-5/)
+
+[](https://tu.by/ai-module-5/)[
+
+### Модуль 6
+
+ИИ-агенты: Автономные помощники
+
+Разберитесь в разнице между обычными чат-ботами и умными ИИ-агентами. Узнайте, что такое системы из нескольких агентов и где их использовать в бизнесе. Поймите, как автономные системы на ИИ работают сами и сотрудничают между собой.
+
+Продвинутый ИИ-агенты Мульти-агентность Workflow
+
+](https://tu.by/ai-module-6/)
+
+[](https://tu.by/ai-module-6/)
+
+[](https://tu.by/ai-module-6/)[
+
+### Модуль 7
+
+Этика, ограничения и будущее ИИ
+
+Ответственное использование ИИ: этические дилеммы, bias, privacy, влияние на рынок труда. Текущие ограничения (галлюцинации, reasoning), вопросы безопасности (jailbreaking, prompt injection). Прогнозы развития AGI и практический чек-лист ответственного применения.
+
+Продвинутый Этика и безопасность Ограничения Будущее AGI
+
+](https://tu.by/ai-module-7/)
+
+[](https://tu.by/ai-module-7/)
+
+[
+
+## Почему эта база знаний
+
+### Доступность для новичков
+
+Сложные концепции изложены доступно и понятно. Материал адаптирован специально для тех, кто только начинает знакомство с ИИ. Подходит для людей без опыта в программировании или технических областях.
+
+### Актуальность 2025
+
+Все данные обновлены за октябрь 2025 года. Включены последние модели, международные разработки и свежие тренды индустрии.
+
+### Практическая направленность
+
+Каждый модуль содержит интерактивные элементы, конкретные инструменты и пошаговые инструкции. Теория подкреплена практикой.
+
+### Структурированное обучение
+
+Логичная последовательность от основ к продвинутым темам. Можете изучать модули в любом порядке или следовать рекомендуемому пути.
+
+](https://tu.by/ai-module-7/)
+
+[](https://tu.by/ai-module-7/)
+
+[
+
+## Готовы освоить ИИ?
+
+Присоединяйтесь к тысячам людей, которые уже изучают искусственный интеллект и открывают для себя новые возможности в работе и жизни
+
+](https://tu.by/ai-module-7/)[Начать с Модуля 1](https://tu.by/ai-module-1/)
+
+// Плавная прокрутка к якорям document.addEventListener('DOMContentLoaded', function() { const links = document.querySelectorAll('a\[href^="#"\]'); links.forEach(link => { link.addEventListener('click', function(e) { e.preventDefault(); const targetId = this.getAttribute('href'); const targetElement = document.querySelector(targetId); if (targetElement) { targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); }); }); // Анимация появления элементов при прокрутке const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }; const observer = new IntersectionObserver(function(entries) { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; } }); }, observerOptions); // Применяем анимацию к карточкам модулей document.addEventListener('DOMContentLoaded', function() { const moduleCards = document.querySelectorAll('.module-card'); moduleCards.forEach((card, index) => { card.style.opacity = '0'; card.style.transform = 'translateY(30px)'; card.style.transition = \`opacity 0.6s ease ${index \* 0.1}s, transform 0.6s ease ${index \* 0.1}s\`; observer.observe(card); }); });
