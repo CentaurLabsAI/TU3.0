@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TU3.0 — Сайт SEO-агентства «Точка Успеха»
 
-## Getting Started
+Корпоративный сайт SEO-агентства [tu.by](https://tu.by). Построен на Next.js с MDX-контентом, оптимизирован для поисковых систем.
 
-First, run the development server:
+## Технологии
+
+- **Next.js 16** + React 19 + TypeScript 5
+- **Tailwind CSS v4** + next-themes (тёмная тема)
+- **MDX** — контент хранится в `content/` как `.mdx` файлы
+- **Деплой** — Vercel
+
+## Запуск локально
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Сайт будет доступен на [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Другие команды
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build    # продакшн-сборка
+npm run start    # запуск продакшн-сервера
+npm run lint     # проверка кода (ESLint)
+```
 
-## Learn More
+## Структура проекта
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/              # Страницы (App Router)
+    about/          # О компании
+    blog/           # Блог (список + [slug])
+    contact/        # Контакты
+    courses/        # Курсы (список + [slug])
+    faq/            # Часто задаваемые вопросы
+    services/       # Услуги (список + [slug])
+    layout.tsx      # Корневой layout
+    page.tsx        # Главная страница
+    robots.ts       # robots.txt
+    sitemap.ts      # sitemap.xml
+  components/       # UI-компоненты (Header, Footer, карточки и т.д.)
+  lib/              # Утилиты для загрузки MDX-контента
+content/
+  blog/             # Статьи блога (.mdx)
+  courses/          # Курсы и модули (.mdx)
+  faq/              # FAQ (JSON)
+  pages/            # Статические страницы (.mdx)
+  services/         # Описания услуг (.mdx)
+scripts/            # Вспомогательные скрипты (импорт из WordPress)
+docs/               # Документация проекта (ADR, спецификации)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Как добавлять контент
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Новая услуга
 
-## Deploy on Vercel
+Создайте файл `content/services/my-service.mdx`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```mdx
+---
+title: "Название услуги"
+description: "Краткое описание для SEO"
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Текст описания услуги в формате MDX...
+```
+
+### Новая статья в блог
+
+Создайте файл `content/blog/my-article.mdx`:
+
+```mdx
+---
+title: "Заголовок статьи"
+description: "Описание для SEO"
+date: "2026-04-03"
+---
+
+Текст статьи...
+```
+
+### FAQ
+
+Отредактируйте `content/faq/faq-items.json` — добавьте новый объект с полями `question` и `answer`.
+
+## Деплой
+
+Сайт деплоится на **Vercel** автоматически при пуше в ветку `main`. CI (GitHub Actions) проверяет lint и build перед мержем.
