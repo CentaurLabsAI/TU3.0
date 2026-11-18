@@ -1,150 +1,133 @@
 import Link from "next/link";
+import Image from "next/image";
+import { ContactForm } from "./ContactForm";
 
 const footerNav = [
-  { href: "/services", label: "Услуги" },
-  { href: "/blog", label: "Блог" },
-  { href: "/courses", label: "Курсы" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/", label: "Главная" },
+  { href: "/blog", label: "Блог компании" },
   { href: "/about", label: "О нас" },
   { href: "/contact", label: "Контакты" },
+  { href: "/privacy-policy", label: "Политика обработки данных" },
 ];
 
 const services = [
-  { href: "/services/seo-audit", label: "SEO аудит" },
   { href: "/services/seo-prodvizhenie", label: "SEO продвижение" },
+  { href: "/services/seo-audit", label: "SEO аудит" },
   { href: "/services/semanticheskoe-yadro", label: "Семантическое ядро" },
-  { href: "/services/kontent-plan", label: "Контент план" },
+  { href: "/services/kontent-plan", label: "Контент-план" },
   { href: "/services/migracziya-sajta", label: "Миграция сайта" },
-  { href: "/services/sozdanie-seo-dashbordov", label: "SEO дашборды" },
 ];
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="bg-surface border-t border-border">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company info */}
-          <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 text-lg font-bold text-primary">
-              <svg className="w-7 h-7" viewBox="0 0 32 32" fill="none">
-                <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="2.5" />
-                <path
-                  d="M10 16.5L14.5 21L22 11"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span>Точка Успеха</span>
-            </Link>
-            <p className="mt-3 text-small text-muted leading-relaxed">
-              SEO агентство с экспертизой в продвижении, аудите и аналитике. Помогаем бизнесу расти в поисковых системах.
-            </p>
+    <footer>
+      {/* Section 1: Contact form CTA */}
+      <section className="bg-[#2a2a2a] py-16">
+        <div className="container-divi">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <h2 className="text-[28px] md:text-[36px] font-bold text-white mb-4">
+              Задайте вопрос прямо сейчас
+            </h2>
+            <h4 className="text-[16px] md:text-[18px] text-gray-300 font-normal leading-relaxed">
+              Заполните форму и наш консультант свяжется с вами и поможет выбрать
+              оптимальное решение SEO активностей для роста вашего бизнеса.
+            </h4>
           </div>
+          <div className="max-w-3xl mx-auto">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
 
-          {/* Navigation */}
-          <div>
-            <h3 className="text-small font-semibold text-foreground uppercase tracking-wider mb-3">
-              Навигация
-            </h3>
-            <ul className="space-y-2">
-              {footerNav.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-small text-muted hover:text-primary transition-colors"
+      {/* Section 2: Footer info */}
+      <section className="bg-[#1a1a1a] py-12">
+        <div className="container-divi">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {/* Column 1: Company info */}
+            <div>
+              <h4 className="text-[15px] font-semibold text-white leading-relaxed mb-4">
+                Мы – бутиковое SEO-агентство, специализирующееся на оптимизации сайтов.
+              </h4>
+              <div className="text-[13px] text-gray-400 space-y-1">
+                <p>&laquo;Точка Успеха&raquo;, г. Минск, 220124, улица Масюковщина, 2Б, к.90</p>
+                <p>ИП Кононцев — УНП: 192388517</p>
+                <p>
+                  e-mail:{" "}
+                  <a
+                    href="mailto:info@tu.by"
+                    className="text-[#E30613] hover:text-white transition-colors"
                   >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+                    info@tu.by
+                  </a>
+                </p>
+              </div>
+            </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-small font-semibold text-foreground uppercase tracking-wider mb-3">
-              Услуги
-            </h3>
-            <ul className="space-y-2">
-              {services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-small text-muted hover:text-primary transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {/* Column 2: Navigation + Services + AI promo */}
+            <div>
+              <div className="grid grid-cols-2 gap-6 mb-6">
+                {/* Nav links */}
+                <ul className="space-y-2">
+                  {footerNav.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-[13px] text-[#E30613] hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+                {/* Services links */}
+                <ul className="space-y-2">
+                  {services.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="text-[13px] text-[#E30613] hover:text-white transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Contact info */}
-          <div>
-            <h3 className="text-small font-semibold text-foreground uppercase tracking-wider mb-3">
-              Контакты
-            </h3>
-            <ul className="space-y-2 text-small text-muted">
-              <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <a href="mailto:info@tu.by" className="hover:text-primary transition-colors">
-                  info@tu.by
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                </svg>
-                <a href="https://tu.by" className="hover:text-primary transition-colors">
-                  tu.by
-                </a>
-              </li>
-            </ul>
+              {/* AI course promo */}
+              <div className="border-t border-gray-700 pt-4">
+                <p className="text-[13px] text-gray-300 leading-relaxed mb-2">
+                  🚀 Освойте ИИ бесплатно! 7 модулей о нейросетях, ChatGPT и Prompt Engineering.
+                </p>
+                <Link
+                  href="/courses/ai-main"
+                  className="text-[13px] text-[#E30613] hover:text-white transition-colors font-semibold"
+                >
+                  Начать обучение →
+                </Link>
+              </div>
+            </div>
 
-            {/* Social links */}
-            <div className="mt-4 flex gap-3">
-              <a
-                href="https://t.me/tochka_uspeha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-(--radius-md) bg-surface-sunken hover:bg-primary-light hover:text-primary text-muted transition-colors"
-                aria-label="Telegram"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.linkedin.com/company/tochka-uspeha"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center rounded-(--radius-md) bg-surface-sunken hover:bg-primary-light hover:text-primary text-muted transition-colors"
-                aria-label="LinkedIn"
-              >
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                </svg>
-              </a>
+            {/* Column 3: Big logo */}
+            <div className="flex flex-col items-center lg:items-end justify-center">
+              <Image
+                src="/images/logo/logo-tochka.png"
+                alt="Точка Успеха"
+                width={300}
+                height={250}
+                className="w-auto h-auto max-w-[280px] opacity-30"
+              />
             </div>
           </div>
-        </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-caption text-muted">
-            &copy; {currentYear} SEO Агентство &laquo;Точка Успеха&raquo;. Все права защищены.
-          </p>
-          <Link href="/privacy-policy" className="text-caption text-muted hover:text-primary transition-colors">
-            Политика конфиденциальности
-          </Link>
+          {/* Copyright */}
+          <div className="mt-10 pt-6 border-t border-gray-700 text-center">
+            <p className="text-[12px] text-gray-500">
+              2009 &ndash; 2026 : SEO Агентство &laquo;Точка успеха&raquo; tu.by
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
     </footer>
   );
 }

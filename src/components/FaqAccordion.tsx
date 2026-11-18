@@ -26,7 +26,7 @@ export function FaqAccordion({ items }: FaqAccordionProps) {
               aria-controls={`faq-panel-${item.slug}`}
               id={`faq-btn-${item.slug}`}
             >
-              <span className="text-body font-medium text-foreground">
+              <span className="text-body font-semibold text-foreground">
                 {item.question}
               </span>
               <svg

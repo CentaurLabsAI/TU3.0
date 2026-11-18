@@ -1,0 +1,352 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "SEO Агентство \"Точка Успеха\"" [ref=e7] [cursor=pointer]:
+          - /url: https://tu.by/
+          - img "SEO Агентство \"Точка Успеха\"" [ref=e8]
+        - generic [ref=e9]:
+          - link "info@tu.by" [ref=e12] [cursor=pointer]:
+            - /url: mailto:info@tu.by
+          - generic [ref=e14] [cursor=pointer]: Меню
+    - navigation [ref=e16]:
+      - list [ref=e21]:
+        - listitem [ref=e22]:
+          - link "Главная" [ref=e23] [cursor=pointer]:
+            - /url: https://tu.by/
+        - listitem [ref=e24]:
+          - link "Услуги" [ref=e25] [cursor=pointer]:
+            - /url: "#"
+          - list [ref=e26]:
+            - listitem [ref=e27]:
+              - link "SEO продвижение" [ref=e28] [cursor=pointer]:
+                - /url: https://tu.by/seo-prodvizhenie/
+            - listitem [ref=e29]:
+              - link "SEO аудит" [ref=e30] [cursor=pointer]:
+                - /url: https://tu.by/seo-audit/
+            - listitem [ref=e31]:
+              - link "Семантическое ядро" [ref=e32] [cursor=pointer]:
+                - /url: https://tu.by/semanticheskoe-yadro/
+            - listitem [ref=e33]:
+              - link "Контент-план" [ref=e34] [cursor=pointer]:
+                - /url: https://tu.by/kontent-plan/
+            - listitem [ref=e35]:
+              - link "Миграция сайта" [ref=e36] [cursor=pointer]:
+                - /url: https://tu.by/migracziya-sajta/
+        - listitem [ref=e37]:
+          - link "О нас" [ref=e38] [cursor=pointer]:
+            - /url: https://tu.by/o-nas/
+        - listitem [ref=e39]:
+          - link "Контакты" [ref=e40] [cursor=pointer]:
+            - /url: https://tu.by/kontakty/
+        - listitem [ref=e41]:
+          - link "Блог" [ref=e42] [cursor=pointer]:
+            - /url: https://tu.by/blog/
+        - listitem [ref=e43]:
+          - link "Онлайн курс по нейросетям" [ref=e44] [cursor=pointer]:
+            - /url: https://tu.by/ai-main/
+    - generic [ref=e45]:
+      - article [ref=e47]:
+        - generic [ref=e50]:
+          - generic [ref=e52]:
+            - generic [ref=e55]:
+              - heading "Бутиковое SEO агентство" [level=1] [ref=e56]
+              - paragraph [ref=e58]: Не используем шаблонные решения, а подбираем стратегию под ваши цели и амбиции.
+            - generic [ref=e62]:
+              - generic [ref=e63]:
+                - status
+                - list
+              - form "Контактная форма" [ref=e64]:
+                - paragraph [ref=e66]:
+                  - textbox "Имя" [ref=e68]
+                - paragraph [ref=e70]:
+                  - textbox "Email или телефон" [ref=e72]
+                - paragraph [ref=e74]:
+                  - textbox "Адрес сайта" [ref=e76]
+                - generic [ref=e77]:
+                  - paragraph [ref=e78]:
+                    - combobox [ref=e80]:
+                      - option "Тема" [selected]
+                      - option "Аудит сайта"
+                      - option "SEO продвижение"
+                      - option "Консультация"
+                  - text: "3"
+                - paragraph [ref=e82]:
+                  - textbox "Сообщение" [ref=e84]
+                - paragraph [ref=e86]:
+                  - generic [ref=e90]:
+                    - checkbox "Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности" [ref=e91]
+                    - text: Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности
+                - generic [ref=e92]:
+                  - iframe [ref=e94]:
+                    - generic [ref=f39e4]:
+                      - generic [ref=f39e5]:
+                        - checkbox "Я не робот" [ref=f39e7] [cursor=pointer]
+                        - generic [ref=f39e9]:
+                          - generic [ref=f39e11]: Я не робот
+                          - generic [ref=f39e12]: Нажмите, чтобы продолжить
+                      - generic [ref=f39e13]:
+                        - button "Показать ссылки" [ref=f39e14]:
+                          - img [ref=f39e15]
+                        - link "SmartCaptcha by Yandex Cloud" [ref=f39e18] [cursor=pointer]:
+                          - /url: https://yandex.cloud/ru/services/smartcaptcha?utm_source=smart-captcha&utm_medium=chbx&utm_campaign=security
+                  - paragraph [ref=e95]:
+                    - button "Отправить" [disabled] [ref=e96] [cursor=pointer]
+          - generic [ref=e101]:
+            - generic [ref=e104]:
+              - heading "Услуги SEO продвижения для:" [level=2] [ref=e105]
+              - list [ref=e106]:
+                - listitem [ref=e107]: интернет-магазинов
+                - listitem [ref=e108]: компаний B2C, продающих услуги через сайт
+                - listitem [ref=e109]: платформ B2B
+                - listitem [ref=e110]: профессиональных и корпоративных блогов
+            - paragraph [ref=e114]:
+              - text: "Экспертная поддержка на всех этапах SEO: от консультаций и аудита до наращивания ссылочной массы."
+              - text: Разработка стратегии, учитывающей особенности вашего бизнеса и целевой аудитории.
+              - text: "Профессиональная поддержка: коммуникация и координация работы разработчиков, настройка удобной и понятной для вас аналитики, SEO дашбордов."
+              - text: "Надежные методы: гарантируем белое SEO и строгое соблюдение рекомендаций поисковых систем."
+          - generic [ref=e116]:
+            - heading "Услуги" [level=2] [ref=e120]:
+              - generic [ref=e121]: Услуги
+            - generic [ref=e122]:
+              - generic [ref=e125]:
+                - generic [ref=e126]:
+                  - heading "SEO Продвижение" [level=3] [ref=e127]
+                  - paragraph [ref=e128]: Создаем ваше преимущество в Google и Яндексе, рост посещаемости и, соответственно, продаж. Мы подбираем тактику в соответствии с вашими целями и отраслью. Оказываем SEO-поддержку, помогаем в восстановлении трафика и строим эффективный линкбилдинг для вашего бизнеса.
+                - link "Подробнее >" [ref=e130] [cursor=pointer]:
+                  - /url: /seo-prodvizhenie/
+                  - generic [ref=e131]: Подробнее
+                  - generic [ref=e132]: ">"
+              - generic [ref=e135]:
+                - generic [ref=e136]:
+                  - heading "Технический SEO аудит" [level=3] [ref=e137]
+                  - paragraph [ref=e138]: Комплекс работ, нацеленный на оценку технического соответствия сайта требованиям и рекомендациям поисковых машин. Исследование ошибок индекса, внутренних структурных несоответствий.
+                - link "Подробнее >" [ref=e140] [cursor=pointer]:
+                  - /url: /seo-audit/
+                  - generic [ref=e141]: Подробнее
+                  - generic [ref=e142]: ">"
+              - generic [ref=e145]:
+                - generic [ref=e146]:
+                  - heading "Аудит интернет-магазина" [level=3] [ref=e147]
+                  - paragraph [ref=e148]: Комплексный анализ, включающий технические и UX аспекты, с целью оценки коммерческих факторов вашего бизнеса в онлайн-торговле. Анализ конкурентов. Оптимизация магазина для увеличения конверсии и прибыльности.
+                - link "Подробнее >" [ref=e150] [cursor=pointer]:
+                  - /url: /seo-audit/
+                  - generic [ref=e151]: Подробнее
+                  - generic [ref=e152]: ">"
+              - generic [ref=e155]:
+                - generic [ref=e156]:
+                  - heading "Проектирование сайтов" [level=3] [ref=e157]
+                  - paragraph [ref=e158]: Разработка прототипа сайта с планированием функционала и интерфейса взаимодействия с пользователем. Делаем его на основе семантического ядра и рекомендаций поисковых систем. Вы получаете до деталей продуманный прототип сайта, который передаете дизайнеру.
+                - link "Подробнее >" [ref=e160] [cursor=pointer]:
+                  - /url: /seo-prodvizhenie/
+                  - generic [ref=e161]: Подробнее
+                  - generic [ref=e162]: ">"
+              - generic [ref=e165]:
+                - generic [ref=e166]:
+                  - heading "Миграция сайта" [level=3] [ref=e167]
+                  - paragraph [ref=e168]: SEO-сопровождение для минимизации рисков потери органического трафика при переезде на новую CMS. Мы обеспечиваем сохранение целостности структуры и корректную переадресацию, чтобы гарантировать сохранение трафика.
+                - link "Подробнее >" [ref=e170] [cursor=pointer]:
+                  - /url: /seo-prodvizhenie/
+                  - generic [ref=e171]: Подробнее
+                  - generic [ref=e172]: ">"
+              - generic [ref=e175]:
+                - generic [ref=e176]:
+                  - heading "Контент план" [level=3] [ref=e177]
+                  - paragraph [ref=e178]: Выверенный контент-план - ваш ключ к успеху в контентной стратегии! Мы исследуем ключевые слова, выявляем потребности целевой аудитории. Вы получаете план контента для увеличения трафика, повышения лояльности к бренду и конверсии в продажах.
+                - link "Подробнее >" [ref=e180] [cursor=pointer]:
+                  - /url: /kontent-plan/
+                  - generic [ref=e181]: Подробнее
+                  - generic [ref=e182]: ">"
+          - generic [ref=e183]:
+            - heading "Этапы поисковой оптимизации в SEO агентстве:" [level=2] [ref=e188]
+            - generic [ref=e189]:
+              - generic [ref=e190]:
+                - img "Рабочий ноутбук SEO специалиста" [ref=e193]
+                - heading "3 Аудит 1" [level=5] [ref=e195] [cursor=pointer]
+                - heading "3 Оптимизация и развитие контента 2" [level=5] [ref=e197] [cursor=pointer]
+                - heading "3 Линкбилдинг 3" [level=5] [ref=e199] [cursor=pointer]
+                - heading "3 Консультации и SEO поддержка 4" [level=5] [ref=e201] [cursor=pointer]
+              - generic [ref=e204]:
+                - paragraph [ref=e205]: Начинаем с аудита, аналитики, консультаций и анализа ниши. Координируем работу копирайтеров и разработчиков. Занимаемся комплексной оптимизацией сайта, расширением и улучшением контента, контентным маркетингом и линкбилдингом. Все, что мы делаем, направлено на достижение бизнес-целей вашей компании.
+                - paragraph [ref=e206]
+                - paragraph [ref=e207]:
+                  - link "Свяжитесь с нами" [ref=e208] [cursor=pointer]:
+                    - /url: "#contactform"
+          - generic [ref=e209]:
+            - generic [ref=e211]:
+              - heading "О нас" [level=2] [ref=e214]
+              - paragraph [ref=e217]: Доверяя заботу о вашем бренде, продукте или сайте, важно знать, с кем вы имеете дело. Давайте познакомимся поближе!
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic [ref=e226]:
+                  - heading "Кононцев Владимир" [level=2] [ref=e227]
+                  - paragraph [ref=e229]: "Практикующий специалист в SEO с 2009 года, специализирующийся на крупных E-commerce проектах. Мой опыт включает успешное увеличение трафика, антикризисное SEO, а также полный цикл работы с интернет-магазинами: от проектирования и запуска до достижения стабильной лидогенерации из органического трафика. Реализовал проекты в России, Беларуси, США и Европе."
+                  - link "Подробнее 5" [ref=e231] [cursor=pointer]:
+                    - /url: "#"
+                - text: "5"
+              - generic:
+                - link "4" [ref=e232] [cursor=pointer]:
+                  - /url: "#"
+                - link "5" [ref=e233] [cursor=pointer]:
+                  - /url: "#"
+              - generic [ref=e234]:
+                - link "1" [ref=e235] [cursor=pointer]:
+                  - /url: "#"
+                - link "2" [ref=e236] [cursor=pointer]:
+                  - /url: "#"
+          - generic [ref=e237]:
+            - heading "Наши партнеры" [level=2] [ref=e242]
+            - generic [ref=e243]:
+              - generic [ref=e245]:
+                - generic:
+                  - img "логотип партнера Paxento"
+              - generic [ref=e247]:
+                - generic:
+                  - img "логотип партнера M207"
+            - heading "Наши клиенты" [level=2] [ref=e252]
+            - generic [ref=e253]:
+              - generic [ref=e255]:
+                - generic:
+                  - img "логотип клиента JRDunn"
+              - generic [ref=e257]:
+                - generic:
+                  - img "логотип клиента 50"
+              - generic [ref=e259]:
+                - generic:
+                  - img "логотип клиента Massive"
+              - generic [ref=e261]:
+                - generic:
+                  - img "логотип клиента sila"
+              - generic [ref=e263]:
+                - generic:
+                  - img "логотип клиента ОМА"
+          - generic [ref=e264]:
+            - heading "Отзывы" [level=2] [ref=e269]
+            - generic [ref=e270]:
+              - generic [ref=e271]:
+                - generic [ref=e274]:
+                  - paragraph [ref=e277]: Сотрудничаем с Владимиром с 2015 года, и за это время он проявил себя как специалист высокого уровня в разных крупных e-commerce проектах. Владимир отлично показал себя не только в SEO, но и как руководитель, проектировщик и специалист по UX. Все задачи, в которых участвовал Владимир, были успешно реализованы и привели к значительному росту поискового трафика. Рекомендую его как профессионала своего дела!
+                  - generic [ref=e278]: Илья Гурков
+                  - paragraph [ref=e279]: Global Marketing Director, Sam Solutions
+                - generic [ref=e282]:
+                  - paragraph [ref=e285]: Мы были очень впечатлены работой Владимира по семантическому ядру для одного из наших проектов. Он нашел реальные точки роста и идеи для развития нашего бизнеса, о которых мы даже не задумывались. Все было выполнено точно и в срок. Рекомендую.
+                  - generic [ref=e286]: Ян Гардиан
+                  - paragraph [ref=e287]: Marketing Consultant | Full-Stack Developer
+              - generic [ref=e288]:
+                - generic [ref=e291]:
+                  - paragraph [ref=e298]: Было приятно и комфортно работать с Владимиром над несколькими проектами. Он тщательно прорабатывал требования и пожелания клиентов, приходил на встречи подготовленным, подробно объяснял принятые решения и возможные сложности, внимательно относился к обратной связи от коллег и клиентов. Клиенты благодарили его за реализованные успешные проекты. Рекомендую Владимира как высококлассного специалиста!
+                  - generic [ref=e299]: Константин Конюхов
+                  - paragraph [ref=e300]: Teamlead / React.js & PHP Software Developer
+                - generic [ref=e303]:
+                  - paragraph [ref=e310]: Владимир всегда внимательно подходит к требованиям и пожеланиям, быстро отвечает на запросы и соблюдает все сроки. Его профессионализм и внимательность к деталям обеспечивают успех нашим проектам. Рекомендую Владимира как компетентного и надежного специалиста.
+                  - generic [ref=e311]: Сергей Панкевич
+                  - paragraph [ref=e312]: Head of Development at Paxento, Ltd
+      - contentinfo [ref=e313]:
+        - generic [ref=e314]:
+          - generic [ref=e315]:
+            - generic [ref=e319]:
+              - heading "Задайте вопрос прямо сейчас" [level=2] [ref=e320]
+              - heading "Заполните форму и наш консультант свяжется с вами и поможет выбрать оптимальное решение SEO активностей для роста вашего бизнеса." [level=4] [ref=e321]
+            - generic [ref=e326]:
+              - generic [ref=e327]:
+                - status
+                - list [ref=e328]
+              - form "Контактная форма" [ref=e329]:
+                - paragraph [ref=e331]:
+                  - textbox "Имя" [ref=e333]
+                - paragraph [ref=e335]:
+                  - textbox "Email или телефон" [ref=e337]
+                - paragraph [ref=e339]:
+                  - textbox "Адрес сайта" [ref=e341]
+                - generic [ref=e342]:
+                  - paragraph [ref=e343]:
+                    - combobox [ref=e345]:
+                      - option "Тема" [selected]
+                      - option "Аудит сайта"
+                      - option "SEO продвижение"
+                      - option "Консультация"
+                  - text: "3"
+                - paragraph [ref=e347]:
+                  - textbox "Сообщение" [ref=e349]
+                - paragraph [ref=e351]:
+                  - generic [ref=e355]:
+                    - checkbox "Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности" [ref=e356]
+                    - text: Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности
+                - generic [ref=e357]:
+                  - iframe [ref=e359]:
+                    - generic [ref=f41e4]:
+                      - generic [ref=f41e5]:
+                        - checkbox "Я не робот" [ref=f41e7] [cursor=pointer]
+                        - generic [ref=f41e9]:
+                          - generic [ref=f41e11]: Я не робот
+                          - generic [ref=f41e12]: Нажмите, чтобы продолжить
+                      - generic [ref=f41e13]:
+                        - button "Показать ссылки" [ref=f41e14]:
+                          - img [ref=f41e15]
+                        - link "SmartCaptcha by Yandex Cloud" [ref=f41e18] [cursor=pointer]:
+                          - /url: https://yandex.cloud/ru/services/smartcaptcha?utm_source=smart-captcha&utm_medium=chbx&utm_campaign=security
+                  - paragraph [ref=e360]:
+                    - button "Отправить" [disabled] [ref=e361] [cursor=pointer]
+          - generic [ref=e362]:
+            - generic [ref=e363]:
+              - generic [ref=e364]:
+                - heading "Мы – бутиковое SEO-агентство, специализирующееся на оптимизации сайтов." [level=4] [ref=e367]
+                - generic [ref=e369]:
+                  - paragraph [ref=e370]:
+                    - text: «Точка Успеха»
+                    - generic [ref=e371]:
+                      - text: г. Минск, 220124,
+                      - text: улица Масюковщина,
+                    - text: 2Б, к.90
+                    - text: "ИП Кононцев — УНП: 192388517"
+                  - paragraph [ref=e372]:
+                    - text: "e-mail:"
+                    - link "info@tu.by" [ref=e374] [cursor=pointer]:
+                      - /url: mailto:info@tu.by
+              - generic [ref=e375]:
+                - generic [ref=e378]:
+                  - navigation [ref=e380]:
+                    - list [ref=e381]:
+                      - listitem [ref=e382]:
+                        - link "Главная" [ref=e383] [cursor=pointer]:
+                          - /url: https://tu.by/
+                      - listitem [ref=e384]:
+                        - link "Блог компании" [ref=e385] [cursor=pointer]:
+                          - /url: https://tu.by/blog/
+                      - listitem [ref=e386]:
+                        - link "О нас" [ref=e387] [cursor=pointer]:
+                          - /url: https://tu.by/o-nas/
+                      - listitem [ref=e388]:
+                        - link "Контакты" [ref=e389] [cursor=pointer]:
+                          - /url: https://tu.by/kontakty/
+                      - listitem [ref=e390]:
+                        - link "Политика обработки данных" [ref=e391] [cursor=pointer]:
+                          - /url: https://tu.by/privacy-policy/
+                  - text: a
+                - generic [ref=e394]:
+                  - navigation [ref=e396]:
+                    - list [ref=e397]:
+                      - listitem [ref=e398]:
+                        - link "SEO продвижение" [ref=e399] [cursor=pointer]:
+                          - /url: https://tu.by/seo-prodvizhenie/
+                      - listitem [ref=e400]:
+                        - link "SEO аудит" [ref=e401] [cursor=pointer]:
+                          - /url: https://tu.by/seo-audit/
+                      - listitem [ref=e402]:
+                        - link "Семантическое ядро" [ref=e403] [cursor=pointer]:
+                          - /url: https://tu.by/semanticheskoe-yadro/
+                      - listitem [ref=e404]:
+                        - link "Контент-план" [ref=e405] [cursor=pointer]:
+                          - /url: https://tu.by/kontent-plan/
+                      - listitem [ref=e406]:
+                        - link "Миграция сайта" [ref=e407] [cursor=pointer]:
+                          - /url: https://tu.by/migracziya-sajta/
+                  - text: a
+                - generic [ref=e409]:
+                  - text: 🚀 Освойте ИИ бесплатно! 7 модулей о нейросетях, ChatGPT и Prompt Engineering.
+                  - link "Начать обучение →" [ref=e410] [cursor=pointer]:
+                    - /url: https://tu.by/ai-main/
+            - generic [ref=e412]:
+              - img "logo-RGB-980x196 copy" [ref=e415]
+              - paragraph [ref=e418]: "2009 – 2025 : SEO Агентство «Точка успеха» tu.by"
+  - text: "2"

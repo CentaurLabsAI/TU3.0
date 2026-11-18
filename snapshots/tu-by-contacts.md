@@ -1,0 +1,262 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "SEO Агентство \"Точка Успеха\"" [ref=e7] [cursor=pointer]:
+          - /url: https://tu.by/
+          - img "SEO Агентство \"Точка Успеха\"" [ref=e8]
+        - generic [ref=e9]:
+          - link "info@tu.by" [ref=e12] [cursor=pointer]:
+            - /url: mailto:info@tu.by
+          - generic [ref=e14] [cursor=pointer]: Меню
+    - navigation [ref=e16]:
+      - list [ref=e21]:
+        - listitem [ref=e22]:
+          - link "Главная" [ref=e23] [cursor=pointer]:
+            - /url: https://tu.by/
+        - listitem [ref=e24]:
+          - link "Услуги" [ref=e25] [cursor=pointer]:
+            - /url: "#"
+          - list [ref=e26]:
+            - listitem [ref=e27]:
+              - link "SEO продвижение" [ref=e28] [cursor=pointer]:
+                - /url: https://tu.by/seo-prodvizhenie/
+            - listitem [ref=e29]:
+              - link "SEO аудит" [ref=e30] [cursor=pointer]:
+                - /url: https://tu.by/seo-audit/
+            - listitem [ref=e31]:
+              - link "Семантическое ядро" [ref=e32] [cursor=pointer]:
+                - /url: https://tu.by/semanticheskoe-yadro/
+            - listitem [ref=e33]:
+              - link "Контент-план" [ref=e34] [cursor=pointer]:
+                - /url: https://tu.by/kontent-plan/
+            - listitem [ref=e35]:
+              - link "Миграция сайта" [ref=e36] [cursor=pointer]:
+                - /url: https://tu.by/migracziya-sajta/
+        - listitem [ref=e37]:
+          - link "О нас" [ref=e38] [cursor=pointer]:
+            - /url: https://tu.by/o-nas/
+        - listitem [ref=e39]:
+          - link "Контакты" [ref=e40] [cursor=pointer]:
+            - /url: https://tu.by/kontakty/
+        - listitem [ref=e41]:
+          - link "Блог" [ref=e42] [cursor=pointer]:
+            - /url: https://tu.by/blog/
+        - listitem [ref=e43]:
+          - link "Онлайн курс по нейросетям" [ref=e44] [cursor=pointer]:
+            - /url: https://tu.by/ai-main/
+    - generic [ref=e45]:
+      - article [ref=e47]:
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - heading "Контакты" [level=1] [ref=e56]
+            - paragraph [ref=e59]:
+              - text: SEO агентство «Точка Успеха»
+              - text: г. Минск , ул. Масюковщина 2Б, офис 90
+              - generic [ref=e60]: "ИП Кононцев, УНП: 192388517"
+              - text: "телефон:"
+              - link "+375296299726" [ref=e61] [cursor=pointer]:
+                - /url: tel:+375296299726
+              - generic [ref=e62]:
+                - text: "e-mail:"
+                - link "Отправить email":
+                  - /url: mailto:info@tu.by
+                - text: info@tu.by
+          - iframe [ref=e68]:
+            - generic [ref=f51e2]:
+              - generic:
+                - generic:
+                  - generic [ref=f51e6]:
+                    - generic:
+                      - generic:
+                        - img
+                      - generic [ref=f51e7] [cursor=pointer]:
+                        - img [ref=f51e8]
+                        - img [ref=f51e14]
+                        - generic [ref=f51e16]: Офис
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic [ref=f51e17]:
+                          - generic [ref=f51e18]:
+                            - button [ref=f51e21] [cursor=pointer]:
+                              - generic:
+                                - generic:
+                                  - img
+                            - button "Пробки" [ref=f51e23] [cursor=pointer]:
+                              - generic [ref=f51e24]:
+                                - generic:
+                                  - img
+                              - generic [ref=f51e26]: Пробки
+                          - iframe [ref=f51e27]:
+                            
+                        - generic [ref=f51e28]:
+                          - generic [ref=f51e31]:
+                            - button "Приблизить" [ref=f51e33] [cursor=pointer]:
+                              - generic:
+                                - generic:
+                                  - img
+                            - button "Отдалить" [ref=f51e35] [cursor=pointer]:
+                              - generic:
+                                - generic:
+                                  - img
+                          - iframe [ref=f51e36]:
+                            
+                        - generic [ref=f51e37]:
+                          - button "Моё местоположение" [ref=f51e40] [cursor=pointer]:
+                            - generic:
+                              - generic:
+                                - img
+                          - iframe [ref=f51e41]:
+                            
+                        - generic [ref=f51e42]:
+                          - button "Открыть в Яндекс Картах" [ref=f51e45] [cursor=pointer]:
+                            - generic:
+                              - generic:
+                                - img
+                            - generic [ref=f51e46]: Открыть в Яндекс Картах
+                          - iframe [ref=f51e47]:
+                            
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Открыть в Картах":
+                                - generic:
+                                  - generic:
+                                    - img
+                                - generic: Открыть в Картах
+                          - iframe [ref=f51e48]:
+                            
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button:
+                                - generic:
+                                  - generic:
+                                    - img
+                          - iframe [ref=f51e49]:
+                            
+                      - generic:
+                        - generic:
+                          - contentinfo:
+                            - generic [ref=f51e51]:
+                              - generic [ref=f51e52]: © Яндекс
+                              - link "Условия использования" [ref=f51e53] [cursor=pointer]:
+                                - /url: https://yandex.ru/legal/maps_termsofuse/?lang=ru
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic: 100 м
+                      - iframe [ref=f51e54]:
+                        
+                  - iframe [ref=f51e55]:
+                    
+      - contentinfo [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e75]:
+              - heading "Задайте вопрос прямо сейчас" [level=2] [ref=e76]
+              - heading "Заполните форму и наш консультант свяжется с вами и поможет выбрать оптимальное решение SEO активностей для роста вашего бизнеса." [level=4] [ref=e77]
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - status
+                - list [ref=e84]
+              - form "Контактная форма" [ref=e85]:
+                - paragraph [ref=e87]:
+                  - textbox "Имя" [ref=e89]
+                - paragraph [ref=e91]:
+                  - textbox "Email или телефон" [ref=e93]
+                - paragraph [ref=e95]:
+                  - textbox "Адрес сайта" [ref=e97]
+                - generic [ref=e98]:
+                  - paragraph [ref=e99]:
+                    - combobox [ref=e101]:
+                      - option "Тема" [selected]
+                      - option "Аудит сайта"
+                      - option "SEO продвижение"
+                      - option "Консультация"
+                  - text: "3"
+                - paragraph [ref=e103]:
+                  - textbox "Сообщение" [ref=e105]
+                - paragraph [ref=e107]:
+                  - generic [ref=e111]:
+                    - checkbox "Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности" [ref=e112]
+                    - text: Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности
+                - generic [ref=e113]:
+                  - iframe [ref=e115]:
+                    - generic [ref=f49e4]:
+                      - generic [ref=f49e5]:
+                        - checkbox "Я не робот" [ref=f49e7] [cursor=pointer]
+                        - generic [ref=f49e9]:
+                          - generic [ref=f49e11]: Я не робот
+                          - generic [ref=f49e12]: Нажмите, чтобы продолжить
+                      - generic [ref=f49e13]:
+                        - button "Показать ссылки" [ref=f49e14]:
+                          - img [ref=f49e15]
+                        - link "SmartCaptcha by Yandex Cloud" [ref=f49e18] [cursor=pointer]:
+                          - /url: https://yandex.cloud/ru/services/smartcaptcha?utm_source=smart-captcha&utm_medium=chbx&utm_campaign=security
+                  - paragraph [ref=e116]:
+                    - button "Отправить" [disabled] [ref=e117] [cursor=pointer]
+          - generic [ref=e118]:
+            - generic [ref=e119]:
+              - generic [ref=e120]:
+                - heading "Мы – бутиковое SEO-агентство, специализирующееся на оптимизации сайтов." [level=4] [ref=e123]
+                - generic [ref=e125]:
+                  - paragraph [ref=e126]:
+                    - text: «Точка Успеха»
+                    - generic [ref=e127]:
+                      - text: г. Минск, 220124,
+                      - text: улица Масюковщина,
+                    - text: 2Б, к.90
+                    - text: "ИП Кононцев — УНП: 192388517"
+                  - paragraph [ref=e128]:
+                    - text: "e-mail:"
+                    - link "info@tu.by" [ref=e130] [cursor=pointer]:
+                      - /url: mailto:info@tu.by
+              - generic [ref=e131]:
+                - generic [ref=e134]:
+                  - navigation [ref=e136]:
+                    - list [ref=e137]:
+                      - listitem [ref=e138]:
+                        - link "Главная" [ref=e139] [cursor=pointer]:
+                          - /url: https://tu.by/
+                      - listitem [ref=e140]:
+                        - link "Блог компании" [ref=e141] [cursor=pointer]:
+                          - /url: https://tu.by/blog/
+                      - listitem [ref=e142]:
+                        - link "О нас" [ref=e143] [cursor=pointer]:
+                          - /url: https://tu.by/o-nas/
+                      - listitem [ref=e144]:
+                        - link "Контакты" [ref=e145] [cursor=pointer]:
+                          - /url: https://tu.by/kontakty/
+                      - listitem [ref=e146]:
+                        - link "Политика обработки данных" [ref=e147] [cursor=pointer]:
+                          - /url: https://tu.by/privacy-policy/
+                  - text: a
+                - generic [ref=e150]:
+                  - navigation [ref=e152]:
+                    - list [ref=e153]:
+                      - listitem [ref=e154]:
+                        - link "SEO продвижение" [ref=e155] [cursor=pointer]:
+                          - /url: https://tu.by/seo-prodvizhenie/
+                      - listitem [ref=e156]:
+                        - link "SEO аудит" [ref=e157] [cursor=pointer]:
+                          - /url: https://tu.by/seo-audit/
+                      - listitem [ref=e158]:
+                        - link "Семантическое ядро" [ref=e159] [cursor=pointer]:
+                          - /url: https://tu.by/semanticheskoe-yadro/
+                      - listitem [ref=e160]:
+                        - link "Контент-план" [ref=e161] [cursor=pointer]:
+                          - /url: https://tu.by/kontent-plan/
+                      - listitem [ref=e162]:
+                        - link "Миграция сайта" [ref=e163] [cursor=pointer]:
+                          - /url: https://tu.by/migracziya-sajta/
+                  - text: a
+                - generic [ref=e165]:
+                  - text: 🚀 Освойте ИИ бесплатно! 7 модулей о нейросетях, ChatGPT и Prompt Engineering.
+                  - link "Начать обучение →" [ref=e166] [cursor=pointer]:
+                    - /url: https://tu.by/ai-main/
+            - generic [ref=e168]:
+              - img "logo-RGB-980x196 copy" [ref=e171]
+              - paragraph [ref=e174]: "2009 – 2025 : SEO Агентство «Точка успеха» tu.by"
+  - text: "2"

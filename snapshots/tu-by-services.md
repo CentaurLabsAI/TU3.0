@@ -1,0 +1,206 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "SEO Агентство \"Точка Успеха\"" [ref=e7] [cursor=pointer]:
+          - /url: https://tu.by/
+          - img "SEO Агентство \"Точка Успеха\"" [ref=e8]
+        - generic [ref=e9]:
+          - link "info@tu.by" [ref=e12] [cursor=pointer]:
+            - /url: mailto:info@tu.by
+          - generic [ref=e14] [cursor=pointer]: Меню
+    - navigation [ref=e16]:
+      - list [ref=e21]:
+        - listitem [ref=e22]:
+          - link "Главная" [ref=e23] [cursor=pointer]:
+            - /url: https://tu.by/
+        - listitem [ref=e24]:
+          - link "Услуги" [ref=e25] [cursor=pointer]:
+            - /url: "#"
+          - list [ref=e26]:
+            - listitem [ref=e27]:
+              - link "SEO продвижение" [ref=e28] [cursor=pointer]:
+                - /url: https://tu.by/seo-prodvizhenie/
+            - listitem [ref=e29]:
+              - link "SEO аудит" [ref=e30] [cursor=pointer]:
+                - /url: https://tu.by/seo-audit/
+            - listitem [ref=e31]:
+              - link "Семантическое ядро" [ref=e32] [cursor=pointer]:
+                - /url: https://tu.by/semanticheskoe-yadro/
+            - listitem [ref=e33]:
+              - link "Контент-план" [ref=e34] [cursor=pointer]:
+                - /url: https://tu.by/kontent-plan/
+            - listitem [ref=e35]:
+              - link "Миграция сайта" [ref=e36] [cursor=pointer]:
+                - /url: https://tu.by/migracziya-sajta/
+        - listitem [ref=e37]:
+          - link "О нас" [ref=e38] [cursor=pointer]:
+            - /url: https://tu.by/o-nas/
+        - listitem [ref=e39]:
+          - link "Контакты" [ref=e40] [cursor=pointer]:
+            - /url: https://tu.by/kontakty/
+        - listitem [ref=e41]:
+          - link "Блог" [ref=e42] [cursor=pointer]:
+            - /url: https://tu.by/blog/
+        - listitem [ref=e43]:
+          - link "Онлайн курс по нейросетям" [ref=e44] [cursor=pointer]:
+            - /url: https://tu.by/ai-main/
+    - generic [ref=e45]:
+      - article [ref=e47]:
+        - generic [ref=e50]:
+          - generic [ref=e53]:
+            - heading "Our offer" [level=1] [ref=e56]
+            - generic [ref=e58]: Since 2012, we have been supporting companies by building their advantage in organic results. We conduct comprehensive SEO efforts for websites and online stores on Google. We deal with audits and technical optimization as well as content marketing focused on SEO. In addition, we offer our clients assistance in Google Analytics and UX audits.
+          - generic [ref=e64]:
+            - heading "Scope of the services" [level=2] [ref=e68]:
+              - generic [ref=e69]: Scope of the services
+            - generic [ref=e70]:
+              - generic [ref=e73]:
+                - generic [ref=e74]:
+                  - heading "SEO services" [level=3] [ref=e75]
+                  - paragraph [ref=e76]: We build your advantage in Google! We implement effective SEO strategies, supporting your company in link building and on-page activities. We select tactics to suit your goals and industry to achieve results while mitigating the risk of Google penalties.
+                - link "Read More >" [ref=e78] [cursor=pointer]:
+                  - /url: /en/seo-services/
+                  - generic [ref=e79]: Read More
+                  - generic [ref=e80]: ">"
+              - generic [ref=e83]:
+                - generic [ref=e84]:
+                  - heading "SEO services" [level=3] [ref=e85]
+                  - paragraph [ref=e86]: We build your advantage in Google! We implement effective SEO strategies, supporting your company in link building and on-page activities. We select tactics to suit your goals and industry to achieve results while mitigating the risk of Google penalties.
+                - link "Read More >" [ref=e88] [cursor=pointer]:
+                  - /url: /en/seo-services/
+                  - generic [ref=e89]: Read More
+                  - generic [ref=e90]: ">"
+              - generic [ref=e93]:
+                - generic [ref=e94]:
+                  - heading "SEO services" [level=3] [ref=e95]
+                  - paragraph [ref=e96]: We build your advantage in Google! We implement effective SEO strategies, supporting your company in link building and on-page activities. We select tactics to suit your goals and industry to achieve results while mitigating the risk of Google penalties.
+                - link "Read More >" [ref=e98] [cursor=pointer]:
+                  - /url: /en/seo-services/
+                  - generic [ref=e99]: Read More
+                  - generic [ref=e100]: ">"
+              - generic [ref=e103]:
+                - generic [ref=e104]:
+                  - heading "SEO services" [level=3] [ref=e105]
+                  - paragraph [ref=e106]: We build your advantage in Google! We implement effective SEO strategies, supporting your company in link building and on-page activities. We select tactics to suit your goals and industry to achieve results while mitigating the risk of Google penalties.
+                - link "Read More >" [ref=e108] [cursor=pointer]:
+                  - /url: /en/seo-services/
+                  - generic [ref=e109]: Read More
+                  - generic [ref=e110]: ">"
+              - generic [ref=e113]:
+                - generic [ref=e114]:
+                  - heading "SEO services" [level=3] [ref=e115]
+                  - paragraph [ref=e116]: We build your advantage in Google! We implement effective SEO strategies, supporting your company in link building and on-page activities. We select tactics to suit your goals and industry to achieve results while mitigating the risk of Google penalties.
+                - link "Read More >" [ref=e118] [cursor=pointer]:
+                  - /url: /en/seo-services/
+                  - generic [ref=e119]: Read More
+                  - generic [ref=e120]: ">"
+      - contentinfo [ref=e121]:
+        - generic [ref=e122]:
+          - generic [ref=e123]:
+            - generic [ref=e127]:
+              - heading "Задайте вопрос прямо сейчас" [level=2] [ref=e128]
+              - heading "Заполните форму и наш консультант свяжется с вами и поможет выбрать оптимальное решение SEO активностей для роста вашего бизнеса." [level=4] [ref=e129]
+            - generic [ref=e134]:
+              - generic [ref=e135]:
+                - status
+                - list [ref=e136]
+              - form "Контактная форма" [ref=e137]:
+                - paragraph [ref=e139]:
+                  - textbox "Имя" [ref=e141]
+                - paragraph [ref=e143]:
+                  - textbox "Email или телефон" [ref=e145]
+                - paragraph [ref=e147]:
+                  - textbox "Адрес сайта" [ref=e149]
+                - generic [ref=e150]:
+                  - paragraph [ref=e151]:
+                    - combobox [ref=e153]:
+                      - option "Тема" [selected]
+                      - option "Аудит сайта"
+                      - option "SEO продвижение"
+                      - option "Консультация"
+                  - text: "3"
+                - paragraph [ref=e155]:
+                  - textbox "Сообщение" [ref=e157]
+                - paragraph [ref=e159]:
+                  - generic [ref=e163]:
+                    - checkbox "Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности" [ref=e164]
+                    - text: Ваши данные будут обрабатываться в соответствии с Политикой конфиденциальности
+                - generic [ref=e165]:
+                  - iframe [ref=e167]:
+                    - generic [ref=f65e4]:
+                      - generic [ref=f65e5]:
+                        - checkbox "Я не робот" [ref=f65e7] [cursor=pointer]
+                        - generic [ref=f65e9]:
+                          - generic [ref=f65e11]: Я не робот
+                          - generic [ref=f65e12]: Нажмите, чтобы продолжить
+                      - generic [ref=f65e13]:
+                        - button "Показать ссылки" [ref=f65e14]:
+                          - img [ref=f65e15]
+                        - link "SmartCaptcha by Yandex Cloud" [ref=f65e18] [cursor=pointer]:
+                          - /url: https://yandex.cloud/ru/services/smartcaptcha?utm_source=smart-captcha&utm_medium=chbx&utm_campaign=security
+                  - paragraph [ref=e168]:
+                    - button "Отправить" [disabled] [ref=e169] [cursor=pointer]
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - generic [ref=e172]:
+                - heading "Мы – бутиковое SEO-агентство, специализирующееся на оптимизации сайтов." [level=4] [ref=e175]
+                - generic [ref=e177]:
+                  - paragraph [ref=e178]:
+                    - text: «Точка Успеха»
+                    - generic [ref=e179]:
+                      - text: г. Минск, 220124,
+                      - text: улица Масюковщина,
+                    - text: 2Б, к.90
+                    - text: "ИП Кононцев — УНП: 192388517"
+                  - paragraph [ref=e180]:
+                    - text: "e-mail:"
+                    - link "info@tu.by" [ref=e182] [cursor=pointer]:
+                      - /url: mailto:info@tu.by
+              - generic [ref=e183]:
+                - generic [ref=e186]:
+                  - navigation [ref=e188]:
+                    - list [ref=e189]:
+                      - listitem [ref=e190]:
+                        - link "Главная" [ref=e191] [cursor=pointer]:
+                          - /url: https://tu.by/
+                      - listitem [ref=e192]:
+                        - link "Блог компании" [ref=e193] [cursor=pointer]:
+                          - /url: https://tu.by/blog/
+                      - listitem [ref=e194]:
+                        - link "О нас" [ref=e195] [cursor=pointer]:
+                          - /url: https://tu.by/o-nas/
+                      - listitem [ref=e196]:
+                        - link "Контакты" [ref=e197] [cursor=pointer]:
+                          - /url: https://tu.by/kontakty/
+                      - listitem [ref=e198]:
+                        - link "Политика обработки данных" [ref=e199] [cursor=pointer]:
+                          - /url: https://tu.by/privacy-policy/
+                  - text: a
+                - generic [ref=e202]:
+                  - navigation [ref=e204]:
+                    - list [ref=e205]:
+                      - listitem [ref=e206]:
+                        - link "SEO продвижение" [ref=e207] [cursor=pointer]:
+                          - /url: https://tu.by/seo-prodvizhenie/
+                      - listitem [ref=e208]:
+                        - link "SEO аудит" [ref=e209] [cursor=pointer]:
+                          - /url: https://tu.by/seo-audit/
+                      - listitem [ref=e210]:
+                        - link "Семантическое ядро" [ref=e211] [cursor=pointer]:
+                          - /url: https://tu.by/semanticheskoe-yadro/
+                      - listitem [ref=e212]:
+                        - link "Контент-план" [ref=e213] [cursor=pointer]:
+                          - /url: https://tu.by/kontent-plan/
+                      - listitem [ref=e214]:
+                        - link "Миграция сайта" [ref=e215] [cursor=pointer]:
+                          - /url: https://tu.by/migracziya-sajta/
+                  - text: a
+                - generic [ref=e217]:
+                  - text: 🚀 Освойте ИИ бесплатно! 7 модулей о нейросетях, ChatGPT и Prompt Engineering.
+                  - link "Начать обучение →" [ref=e218] [cursor=pointer]:
+                    - /url: https://tu.by/ai-main/
+            - generic [ref=e220]:
+              - img "logo-RGB-980x196 copy" [ref=e223]
+              - paragraph [ref=e226]: "2009 – 2025 : SEO Агентство «Точка успеха» tu.by"
+  - text: "2"

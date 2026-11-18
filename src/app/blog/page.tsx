@@ -12,9 +12,9 @@ export default function BlogPage() {
 
   return (
     <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-7xl">
+      <div className="container-divi">
         <div className="text-center mb-12">
-          <h1 className="text-h1 font-bold text-foreground">Блог</h1>
+          <h1 className="text-h1 font-semibold text-foreground">Блог</h1>
           <p className="mt-3 text-body text-muted max-w-2xl mx-auto">
             Статьи, кейсы и полезные материалы по SEO и digital-маркетингу
           </p>

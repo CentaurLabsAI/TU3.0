@@ -1,5 +1,15 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { ServiceMeta } from "@/lib/types";
+
+const serviceImages: Record<string, string> = {
+  "seo-audit": "/images/services/seo-audit-main.jpg",
+  "seo-prodvizhenie": "/images/services/seo-at-work.jpg",
+  "semanticheskoe-yadro": "/images/services/seo-specialist-semantic-core.jpg",
+  "kontent-plan": "/images/services/seo-content-plan-creation.jpg",
+  "migracziya-sajta": "/images/services/seo-migration-work.jpg",
+  "sozdanie-seo-dashbordov": "/images/services/site-migration-process-fin.jpg",
+};
 
 const iconMap: Record<string, React.ReactNode> = {
   search: (
@@ -25,7 +35,6 @@ const iconMap: Record<string, React.ReactNode> = {
       <polyline points="14 2 14 8 20 8" />
       <line x1="16" y1="13" x2="8" y2="13" />
       <line x1="16" y1="17" x2="8" y2="17" />
-      <polyline points="10 9 9 9 8 9" />
     </svg>
   ),
   "refresh-cw": (
@@ -49,20 +58,34 @@ interface ServiceCardProps {
 }
 
 export function ServiceCard({ service }: ServiceCardProps) {
+  const imageSrc = serviceImages[service.slug];
+
   return (
     <Link
       href={`/services/${service.slug}`}
-      className="group block p-6 rounded-(--radius-lg) bg-surface-elevated border border-border hover:border-primary/30 hover:shadow-lg transition-all"
+      className="group block rounded-[40px] bg-surface-elevated shadow-sm hover:shadow-lg transition-all overflow-hidden"
     >
-      <div className="w-10 h-10 flex items-center justify-center rounded-(--radius-md) bg-primary-light text-primary mb-4">
-        {iconMap[service.icon] ?? iconMap.search}
+      {imageSrc && (
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <Image
+            src={imageSrc}
+            alt={service.title}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      )}
+      <div className="p-5 text-center">
+        <div className="w-10 h-10 flex items-center justify-center mx-auto mb-3 text-primary">
+          {iconMap[service.icon] ?? iconMap.search}
+        </div>
+        <h3 className="text-[18px] font-semibold text-foreground group-hover:text-primary transition-colors">
+          {service.title}
+        </h3>
+        <p className="mt-2 text-[13px] text-muted leading-relaxed">
+          {service.description}
+        </p>
       </div>
-      <h3 className="text-h4 font-semibold text-foreground group-hover:text-primary transition-colors">
-        {service.title}
-      </h3>
-      <p className="mt-2 text-small text-muted leading-relaxed">
-        {service.description}
-      </p>
     </Link>
   );
 }

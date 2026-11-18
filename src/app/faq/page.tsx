@@ -20,9 +20,9 @@ export default function FaqPage() {
 
   return (
     <div className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-3xl">
+      <div className="container-divi mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-h1 font-bold text-foreground">Частые вопросы</h1>
+          <h1 className="text-h1 font-semibold text-foreground">Частые вопросы</h1>
           <p className="mt-3 text-body text-muted">
             Ответы на популярные вопросы о наших услугах
           </p>
@@ -34,7 +34,7 @@ export default function FaqPage() {
             if (items.length === 0) return null;
             return (
               <section key={cat}>
-                <h2 className="text-h3 font-bold text-foreground mb-4">
+                <h2 className="text-h3 font-semibold text-foreground mb-4">
                   {categoryLabels[cat] ?? cat}
                 </h2>
                 <FaqAccordion items={items} />
